@@ -1,65 +1,65 @@
 # 主流大模型全景对比与 API 定价（Markdown 版）
 
-> 数据截至：**2026-10-25**（联网核实 11:00 刷新）；汇率固定 1 USD = 6.7351 CNY（四舍五入到分）。
+> 数据截至：**2026-10-27**（联网核实 11:00 刷新）；汇率固定 1 USD = 6.7351 CNY（四舍五入到分）。
 
 ## 本期变更摘要（刷新要点）
 
-本期为「OR 双榜刷新 + 事件倒计时重算 + 差异表真实快照对比」刷新——① OpenRouter 周榜：Top3 DeepSeek V4.1 Flash 1017 33.56T / DeepSeek V4.1 Flash 18.00T / MiniMax M3.1 Flash 13.68T；② OpenRouter 日榜：Top3 DeepSeek V4.1 Flash 1017 5.77T / GLM 5.3 Flash 2.12T / DeepSeek V4.1 Flash 1.91T；③ OpenRouter 挂牌价漂移（A-3b 自动发现）：跨日期检测到 12 处 OR 挂牌价变动（详见差异表「OR 改价」行）；④ 事件日历：倒计时重算（更新 5 行，基准 2026-10-27）；⑤ 汇率：6.7351（当日 CFETS 中间价判定与偏差见变更摘要）；⑥ 价格核实：第一梯队 14 家 WebSearch 全量核实由 LLM 步骤 2 执行，核实结论见差异表「官方定价」行（骨架单元格须由 LLM 覆写为真实核实结论）与家族总览核实卡；⑦ 规则 A：OpenRouter 全量扫描 466 模型完成（vendor/模型数见差异表「市场覆盖」行；A-2 发现见「待补录」行）。
+本期为「OR 双榜刷新 + 事件倒计时重算 + 差异表真实快照对比」刷新——① OpenRouter 周榜：Top3 DeepSeek V4.1 Flash 1017 35.37T / DeepSeek V4.1 Flash 17.40T / GLM 5.3 Flash 13.77T；② OpenRouter 日榜：Top3 DeepSeek V4.1 Flash 1017 5.42T / GLM 5.3 Flash 2.27T / DeepSeek V4.1 Flash 2.21T；③ OpenRouter 挂牌价漂移（A-3b 自动发现）：跨日期检测到 13 处 OR 挂牌价变动（详见差异表「OR 改价」行）；④ 事件日历：倒计时重算（更新 0 行，基准 2026-10-27）；⑤ 汇率：6.7351（当日 CFETS 中间价判定与偏差见变更摘要）；⑥ 价格核实：第一梯队 14 家 WebSearch 全量核实由 LLM 步骤 2 执行，核实结论见差异表「官方定价」行（骨架单元格须由 LLM 覆写为真实核实结论）与家族总览核实卡；⑦ 规则 A：OpenRouter 全量扫描 464 模型完成（vendor/模型数见差异表「市场覆盖」行；A-2 发现见「待补录」行）。
 
 ---
 
 ## 表 1：两期对比差异表
 
-| 变动类型 | 模型家族 / 厂商 | 上期 · 10-26 10:42 | 本期 · 10-27 00:09 | 变动说明 |
+| 变动类型 | 模型家族 / 厂商 | 上期 · 10-26 10:42 | 本期 · 10-27 09:24 | 变动说明 |
 | --- | --- | --- | --- | --- |
-| 排行榜 | OpenRouter 周榜Top10 调用量（总 tokens） | 周榜 Top10（2026-10-26）：DeepSeek V4.1 Flash 1017 33.56T / DeepSeek V4.1 Flash 18.00T / MiniMax M3.1 Flash 13.68T / GLM 5.3 Flash 13.24T / Hy4 preview 8.97T / GPT-6 Luna 8.35T / Claude Opus 5.5 8.27T / MiMo-V2.6-Flash 6.07T / Nemotron 3 Ultra 5.85T / GLM 5.3 5.05T / 快照日期 2026-10-26 | ↻周榜 Top10（2026-10-27）：DeepSeek V4.1 Flash 1017 33.56T / DeepSeek V4.1 Flash 18.00T / MiniMax M3.1 Flash 13.68T / GLM 5.3 Flash 13.24T / Hy4 preview 8.97T / GPT-6 Luna 8.35T / Claude Opus 5.5 8.27T / MiMo-V2.6-Flash 6.07T / Nemotron 3 Ultra 5.85T / GLM 5.3 5.05T / 快照日期 2026-10-27 | Top10 阵容与排序均不变；数据来自 OpenRouter 前端 rankings API（view=week） |
-| 排行榜 | OpenRouter 日榜Top10 调用量（总 tokens） | 日榜 Top10（2026-10-26）：DeepSeek V4.1 Flash 1017 5.77T / GLM 5.3 Flash 2.12T / DeepSeek V4.1 Flash 1.91T / GPT-6 Luna 1.46T / Hy4 preview 0.97T / Claude Opus 5.5 0.83T / Step 5 Preview 0.80T / Nemotron 3 Ultra 0.66T / GLM 5.3 0.57T / DeepSeek V4 Flash 0731 0.51T / 快照日期 2026-10-26 | ↻日榜 Top10（2026-10-27）：DeepSeek V4.1 Flash 1017 5.77T / GLM 5.3 Flash 2.12T / DeepSeek V4.1 Flash 1.91T / GPT-6 Luna 1.46T / Hy4 preview 0.97T / Claude Opus 5.5 0.83T / Step 5 Preview 0.80T / Nemotron 3 Ultra 0.66T / GLM 5.3 0.57T / DeepSeek V4 Flash 0731 0.51T / 快照日期 2026-10-27 | Top10 阵容与排序均不变；数据来自 OpenRouter 前端 rankings API（view=day） |
-| 市场覆盖 | 规则 A 全量扫描OpenRouter vendor 枚举 | 2026-10-26 基线（家族总数以家族总览实际行数为准） | —本期扫描 59 vendor / 466 模型；A-2 扫描无未登记的新型号 | 社区微调类（nousresearch 等）不纳入；notable 新厂商/新型号的补录由 LLM 步骤 2 策展完成，主表变动见对应行 |
-| 官方定价 | 规则 B 官网一致性主表价格快照对比 | 主表价格（2026-10-26 基线） | ↻快照机械对比 0 变动；人工核实发现家族总览 3 行滞后于排序总览/柱状图，已按规则 B 对齐 | 经 2026-10-27 WebSearch 逐家核实（第一梯队 14 家）：11 家一致 —— OpenAI（benchlm / aicostbudget 10-14~10-16 多源）、Google Gemini 4 Argon 与 3.8 Flash 促销（aicostbudget / puter，与官方引导价口径一致）、DeepSeek（api-docs.deepseek.com，10-17 官方「调用与价格不变」→ V4.1-Flash-1017 与 V4 Flash 同峰谷价）、Qwen（developer.aliyun.com 10-26：Max ¥12/¥36 隐式缓存 ¥1.5、Flash ¥0.80/¥2.70）、GLM（bigmodel 定价页，经 aidailyinsights 10-25 / cloud.tencent 09-21 转述：5.3 ¥8/¥28、Flash ¥0.8/¥2.8、FlashX ¥2/¥7）、Kimi（platform.kimi.com，经 juejin 10-25 / csdn 10-26：K3.1 Pro ¥13/¥68 缓存 ¥1.3）、豆包 2.1 Pro（ai.volcengine.com ¥6/¥30）、文心 5.1（cloud.baidu.com 千帆计费页 ¥4/¥18、¥6/¥22）、混元（cloud.tencent.com：Hy3 ¥1/¥4、Hy4 preview ¥6/¥18）、MiniMax（官方按量页经 zhihu 转述：M3.1 Flash ¥1/¥4、M3 ≤512k 五折 ¥2.1/¥8.4）、Grok 4.7（docs.x.ai 10-25 $2/$6 缓存 $0.50、>200K $4/$1/$12）。1 家已更新 —— Mistral Large 4：首发五折已结束 → docs list $1.36/$4.18（缓存 $0.14）＝¥9.16/¥28.15。3 家待核实 —— Meta Llama 5 仍无官方 API 价（Together $3.5/$7 一手记录停在 04-11，现行托管表未见 Llama 5 行 → 维持第三方口径并标注）；Gemini 3.5 Pro $2/$12 官方定价页仍无条目（tokenando 标未 GA，与 puter/benchlm 冲突）；豆包 4.0 ¥2/¥6 档官方定价页未检索到对应型号。近 3 天新发布 —— 第一梯队 0 款未收录新型号（腾讯混元 Hy-SimulMT 10-26 开源、Hy-Nomas 10-21 视频世界模型均非按 token 计费的通用文本 API；Kimi K3.1 Pro 10-24 发布已于 10-24 期完成四方补录）。 |
-| 价格修正 | Mistral Large 4Mistral AI（欧洲）· 家族总览滞后 | ¥4.58 / ¥14.08（$0.68/$2.09） | ▲¥9.16 / ¥28.15（$1.36/$4.18） | 家族总览自 10-21 起未随排序总览/柱状图同步（后者已在促销结束时重算并混合价 ¥6.96→¥13.91）。本期按规则 B 补对齐，同时修正特惠列口径：首发五折（促销价 $0.68/$2.09）已结束、恢复 list $1.36/$4.18；官方 docs changelog 仅写「50% off for 2 weeks」、始终未公布确切截止日，到期日 10-20 系第三方（Vercel AI Gateway）口径。 |
+| 排行榜 | OpenRouter 周榜Top10 调用量（总 tokens） | 周榜 Top10（2026-10-26）：DeepSeek V4.1 Flash 1017 33.56T / DeepSeek V4.1 Flash 18.00T / MiniMax M3.1 Flash 13.68T / GLM 5.3 Flash 13.24T / Hy4 preview 8.97T / GPT-6 Luna 8.35T / Claude Opus 5.5 8.27T / MiMo-V2.6-Flash 6.07T / Nemotron 3 Ultra 5.85T / GLM 5.3 5.05T / 快照日期 2026-10-26 | ↻周榜 Top10（2026-10-27）：DeepSeek V4.1 Flash 1017 35.37T / DeepSeek V4.1 Flash 17.40T / GLM 5.3 Flash 13.77T / MiniMax M3.1 Flash 12.63T / Hy4 preview 9.00T / GPT-6 Luna 9.00T / Claude Opus 5.5 8.23T / Nemotron 3 Ultra 5.49T / MiMo-V2.6-Flash 5.32T / GLM 5.3 5.19T / 快照日期 2026-10-27 | MiniMax M3.1 Flash 3→4 ↓；GLM 5.3 Flash 4→3 ↑；MiMo-V2.6-Flash 8→9 ↓；Nemotron 3 Ultra 9→8 ↑；数据来自 OpenRouter 前端 rankings API（view=week） |
+| 排行榜 | OpenRouter 日榜Top10 调用量（总 tokens） | 日榜 Top10（2026-10-26）：DeepSeek V4.1 Flash 1017 5.77T / GLM 5.3 Flash 2.12T / DeepSeek V4.1 Flash 1.91T / GPT-6 Luna 1.46T / Hy4 preview 0.97T / Claude Opus 5.5 0.83T / Step 5 Preview 0.80T / Nemotron 3 Ultra 0.66T / GLM 5.3 0.57T / DeepSeek V4 Flash 0731 0.51T / 快照日期 2026-10-26 | ↻日榜 Top10（2026-10-27）：DeepSeek V4.1 Flash 1017 5.42T / GLM 5.3 Flash 2.27T / DeepSeek V4.1 Flash 2.21T / GPT-6 Luna 1.52T / Hy4 preview 1.40T / Claude Opus 5.5 1.04T / GLM 5.3 0.89T / Step 5 Preview 0.80T / MiniMax M3.1 Flash 0.68T / DeepSeek V4 Flash 0731 0.63T / 快照日期 2026-10-27 | Step 5 Preview 7→8 ↓；Nemotron 3 Ultra 跌出 Top10；GLM 5.3 9→7 ↑；MiniMax M3.1 Flash 新入第 9；数据来自 OpenRouter 前端 rankings API（view=day） |
+| 市场覆盖 | 规则 A 全量扫描OpenRouter vendor 枚举 | 2026-10-26 基线（家族总数以家族总览实际行数为准） | —本期扫描 59 vendor / 464 模型；A-2 / A-4 扫描发现 2 个第一梯队新上架型号（openai/gpt-6.1-terra、openai/gpt-6.1-terra-pro），已按 §0.1 当日自动补录四方（见下方「新增模型」行） | 社区微调类（nousresearch 等）不纳入；notable 新厂商/新型号的补录由 LLM 步骤 2 策展完成，主表变动见对应行；本期 2 款第一梯队型号已完成策展与四方补录 |
+| 新增模型 | OpenAI GPT-6.1 Terra / Terra ProA-2 + A-4 双源命中 · T1 第一梯队 · 10-26 ~ 10-27 发布 | —（上期未收录） | ＋$1.00 / $5.00 每 MTok ＝ ¥6.74 / ¥33.68（混合价 ¥13.47、缓存读 ¥0.34）；1.05M 上下文 / 128K 输出；AA Index 33.5 | 已按 §0.1 四方同步自动补录：① 家族总览 s-family（GPT-6.1 Sol 行后新增 Terra 行，Terra Pro 于最新产品列注明同底模 reasoning.mode=pro 档）；② 排序总览 s-sort（新 #55，插于 Meta Muse Spark Open 之后、整体重编至 #81）；③ 柱状图 var data（in 6.74 / out 33.68 / v 13.47 / val 2.49）；④ 本差异表「新增模型」行。官方价 developers.openai.com/api/docs/pricing 核实 Standard 档 $1.00/$5.00；OR openai/gpt-6.1-terra 10-27 上架（ctx 1,050,000、缓存读 $0.05、>272K 输入 $2/$7.5、Batch 五折）。明细见 data/a2_new_models.json 与 data/new_releases_2026-10-27.json |
+| 官方定价 | 规则 B 官网一致性主表价格快照对比 | 主表价格（2026-10-26 基线） | —快照机械对比 0 变动；第一梯队 14 家逐家核实：12 家一致 / 0 家价格更新 / 4 项待核实；1 款新增已自动补录 | 经 2026-10-27 联网逐家核实（第一梯队 14 家）：12 家一致 / 0 家价格更新 / 4 项待核实 —— OpenAI（developers.openai.com/api/docs/pricing 官方，10-27 抓取）：GPT-6 Astra $10/$50、GPT-6.1 Sol $2/$10、GPT-6 Luna $0.10/$0.50、GPT-5.6 Sol $4/$20 与主表一致，新增 GPT-6.1 Terra $1/$5（10-26 发布 / 10-27 OR 上架）已自动补录；Anthropic（maximem.ai 二级源 + 官方口径）：Opus 5.5 $4/$20、Sonnet 5 $2/$10、Haiku 4.5 $1/$5、Fable 5.1 $10/$50 一致；Google（ai.google.dev/gemini-api/docs/pricing 官方，页标 last updated 2026-10-26）：Gemini 4 Argon $2/$10（引导价至 11-30）、3.8 Flash $0.75/$3.75、3.6 Flash、3.1 Pro Preview $2/$12 一致；DeepSeek（api-docs.deepseek.com 官方）：V4 Pro 峰 $9 / 谷 $4.5、$13.5，V4.1 Flash 峰 $2 / 谷 $1、$4，缓存命中 $0.04/$0.02 一致；阿里 Qwen（help.aliyun.com/zh/model-studio/model-pricing 官方，last-modified 2026-10-26）：qwen3.8-max ¥12/¥36 一致；智谱 GLM（docs.bigmodel.cn 官方）：GLM-5.3 ¥8/¥28 缓存 ¥2、GLM-5.3-Flash ¥0.8/¥2.8 缓存 ¥0.23、FlashX ¥2/¥7 缓存 ¥0.57 一致；豆包（docs.volcengine.com/docs/82379/1544106 官方）：doubao-seed-2.1-pro ¥6/¥30、2.1-lite ¥0.8/¥2.7、2.1-turbo ¥3/¥15 一致；文心（cloud.baidu.com 千帆计费页官方）：ERNIE-5.1 ≤32k ¥4/¥18、>32k-128k ¥6/¥22 一致；混元（cloud.tencent.com 官方）：Hy4 preview ¥6/¥18、Hy3 ¥1/¥4 一致；MiniMax（platform.minimax.cn 官方）：M3 ≤512k ¥2.10/¥8.40 缓存 ¥0.42（永久五折）、M3.1 Flash ¥1/¥4 缓存 ¥0.10 一致；Grok（benchlm.ai 二级源 + OR 挂牌）：Grok 4.7 $2/$6 缓存 $0.50 上下文 500K 一致；Mistral（docs.mistral.ai/inference/pricing 官方）：Large 4 $1.36/$4.18 缓存 $0.14（首发五折已于 10-21 结束、list 价延续）、Large 3 $0.50/$1.50 一致。4 项待核实：① Meta Llama 5 无官方 API 价（开放权重、Meta 第一方无 token 价目表，属结构性缺项）；② Claude Haiku 5.5 $0.10/$0.50 未在所查源出现；③ 智谱 GLM-5.3-Prime 官方页无对应条目；④ Kimi K3 ¥20/¥100 —— platform.kimi.com 官方定价表 JS 未渲染（空表），仅 K3.1 Pro ¥13/¥68 经火山引擎方舟页交叉确认一致。近 14 天新发布：A-2 / A-4 命中第一梯队 2 款（GPT-6.1 Terra / Terra Pro，已自动补录）；其余 8 款为第二梯队，逐项维持既往判定（Nemotron 3.5 Bolt E4B 4GB / 74B-A9B 按铁律 24 仅入 Nemotron 家族描述、Ling 3.1 Flash 1019 与已收录 ling-3.1-flash 行同族同价判已覆盖、unbiased Pareto 26.9 与基名行同源判已覆盖、Moondream 3.1 / 3 Preview 与 scaledown Summarize / Extract 维持非 notable）。 |
+| 价格修正 | Mistral Large 4Mistral AI（欧洲）· 家族总览滞后 | ¥4.58 / ¥14.08（$0.68/$2.09） | ▲¥9.16 / ¥28.15（$1.36/$4.18） | 家族总览自 10-21 起未随排序总览/柱状图同步（后者已在促销结束时重算并混合价 ¥6.96→¥13.91）。本期按规则 B 补对齐，同时修正特惠列口径：首发五折（促销价 $0.68/$2.09）已结束、恢复 list $1.36/$4.18；官方 docs changelog 仅写「50% off for 2 weeks」、始终未公布确切截止日，到期日 10-20 系第三方（Vercel AI Gateway）口径。10-27 复核 docs.mistral.ai 仍逐模型公示 list 价、无促销标识，判定不变。 |
 | 口径对齐 | OpenAI GPT-6 Astra ／ NVIDIA Nemotron 3 Ultra 550B家族总览 vs 排序总览 | ¥67.10/¥335.48（标 $0/$0）；Ultra 550B ¥4.09/¥24.51 | —¥67.35/¥336.75（$10/$50）；Ultra 550B ¥4.04/¥16.16（$0.60/$2.40） | 两处均为 OR 实时挂牌价（openrouter.ai/api/v1/models 今日快照）与家族总览旧值不一致：Astra 为折算尾差（0.37%，OR in/out $10/$50）+ 原「0/0」标签系占位残留；Nemotron Ultra 为 10 月中旬前挂牌遗留（输出侧 -34%）。排序总览与柱状图本已为新值，故仅家族总览对齐，不改排序与混合价。 |
-| 待核实 | 四处价格口径冲突留档不改数，仅登记 | 报告现值 | ✦维持现值 + 标注待核实 | ① 阿里 Qwen3.8 Omni Flash：OR 今挂 $0.15/$0.47（＝¥1.01/¥3.16，与家族总览一致，故不动），但 developer.aliyun.com 10-14 有二手转述记 ¥0.80/¥2.70（与 Qwen3.8 Flash 同价，疑同族混记）→ 冲突待核实。② Microsoft phi-4：Azure 官方定价页 Phi 行数值未渲染，多源列 Phi-4-reasoning $0.125/$0.50（azurespeed 09-30、litellm 10-23）；报告口径为 OR 挂牌 $0.07/$0.14 并已标「待官网核实」→ 维持。③ NVIDIA AA 记录 $0.25/$0.65 与 OR 挂牌 $0.15/$0.50 差异未解 → 维持 OR 口径。④ Claude Sonnet 5「$2/$10 永久」（dev.to 10-14 源自官方）vs「09-01 起涨至 $3/$15」（g2 07-08、funwithtext 10-25）→ 维持 09-14 三处一手源结论不变。周二第二梯队（MiMo / Nemotron / StepFun / Phi / Granite）：MiMo 一致（另有国内价表 ¥3/¥6 与折算值并存）、StepFun 一致且权重 10-15 已开放（BF16/FP8，以官方 HF 仓库为准）、Granite 一致（watsonx 文档站 500 未能直读）、Nemotron 与 Phi 见①③。 |
-| 市场覆盖 | A-4 新发布扫描 · 8 项第二梯队既往判定维持第一梯队 0 未收录 | 10-26 期 8 项未收录 | —同一批 8 项（复检 3~7 次），本期 0 新增 | data/new_releases_2026-10-27.json：Nemotron 3.5 Bolt 74B-A9B / Bolt E4B 4GB（AA 独有、无托管 API 价）、InclusionAI Ling 3.1 Flash 1019、Moondream 3.1 / 3 Preview、unbiased Pareto 26.9、scaledown Summarize / Extract。均第二梯队非 notable 或无第一方 API 价，维持既往「不入主表」判定；A-2 近 30 天同族扫描 0 未收录（已知 288 / 报告集合 362 key）。 |
+| 待核实 | 四处价格口径冲突留档不改数，仅登记 | 报告现值 | ✦维持现值 + 标注待核实 | ① 阿里 Qwen3.8 Omni Flash：OR 今挂 $0.15/$0.47（＝¥1.01/¥3.16，与家族总览一致，故不动），但 developer.aliyun.com 10-14 有二手转述记 ¥0.80/¥2.70（与 Qwen3.8 Flash 同价，疑同族混记）→ 冲突待核实。② Microsoft phi-4：Azure 官方定价页 Phi 行数值未渲染，多源列 Phi-4-reasoning $0.125/$0.50（azurespeed 09-30、litellm 10-23）；报告口径为 OR 挂牌 $0.07/$0.14 并已标「待官网核实」→ 维持。③ NVIDIA AA 记录 $0.25/$0.65 与 OR 挂牌 $0.15/$0.50 差异未解 → 维持 OR 口径。④ Claude Sonnet 5「$2/$10 永久」（dev.to 10-14 源自官方）vs「09-01 起涨至 $3/$15」（g2 07-08、funwithtext 10-25）→ 维持 09-14 三处一手源结论不变。第二梯队（MiMo / Nemotron / StepFun / Phi / Granite）：MiMo 一致（另有国内价表 ¥3/¥6 与折算值并存）、StepFun 一致且权重 10-15 已开放（BF16/FP8，以官方 HF 仓库为准）、Granite 一致（watsonx 文档站 500 未能直读）、Nemotron 与 Phi 见①③。 |
 | 结构维护 | 环境根因修复：子进程输出解码update_daily_v2.py 步骤 9 / 9.5 / 9.6 / 9.7~9.10 | 6 个子环节 IndexError 假降级 | ✦显式 encoding=utf-8 / errors=replace，6 项全部补跑成功 | Windows 宿主 locale=GBK，父进程 subprocess(text=True) 以 GBK 解码子进程 UTF-8 输出 → reader 线程 UnicodeDecodeError 崩溃 → Python 3.7 的 _communicate 取空 buffer[0] 抛 IndexError，表现为 price_watch 翻回、Terminal-Bench 采集、图像 / Embedding / 语音 / 视频 / 本地部署赛道共 6 项「异常已忽略」降级（实际子脚本可正常跑通）。修复后逐项补跑：price_watch 无到期项（Sol 25 天 / Gemini Flash 65 天）、Terminal-Bench 18 条、图像 14 模型、Embedding 9、语音 19 行、视频 8、本地部署 35 行，自检全过。限时价翻回本就不需执行，故主报告无因降级而过期的价格。 |
-| OR 改价 | OpenRouter 挂牌价漂移A-3b 自动发现 · 挂牌价 vs 上期基线 | 上期 OR 挂牌价（基线 2026-10-26） | ▲检测到 12 处 OR 挂牌价变动：gemma-4-31b-it ↑入 101%、deepseek-v4-flash-0731 ↓出 90%、DeepSeek V4 Flash ↑入 79%、deepseek-v4.1-flash-1017 ↓入 50% 等 | 脚本自动对比本期 or_models.json 与上期基线（data/or_price_baseline.json），过滤 :free/:batch 变体与 None↔0 噪声后得出；自 2026-08-28 起每次自动运行均自动播报 |
+| OR 改价 | OpenRouter 挂牌价漂移A-3b 自动发现 · 挂牌价 vs 上期基线 | 上期 OR 挂牌价（基线 2026-10-26） | ▲检测到 13 处 OR 挂牌价变动：Xiaomi MiMo V2.5 ↑出 742%、deepseek-v4.1-flash ↑入 623%、mimo-v2.5-pro ↑出 196%、DeepSeek V4 Flash ↑入 176% 等 | 脚本自动对比本期 or_models.json 与上期基线（data/or_price_baseline.json），过滤 :free/:batch 变体与 None↔0 噪声后得出；自 2026-08-28 起每次自动运行均自动播报 |
+| OR 改价 | Xiaomi MiMo V2.5OpenRouter 挂牌价 | 输入 ¥0.80 / 输出 ¥1.60 | ▲¥0.80 → ¥2.69 / ▲¥1.60 → ¥13.47 | 输入 +236%；输出 +742% |
+| OR 改价 | deepseek-v4.1-flashOpenRouter 挂牌价 | 输入 ¥0.13 / 输出 ¥6.74 | ▲¥0.13 → ¥0.94 / ▼¥6.74 → ¥2.83 | 输入 +623%；输出 -58% |
+| OR 改价 | mimo-v2.5-proOpenRouter 挂牌价 | 输入 ¥2.05 / 输出 ¥4.10 | ▲¥2.05 → ¥3.23 / ▲¥4.10 → ¥12.12 | 输入 +58%；输出 +196% |
+| OR 改价 | DeepSeek V4 FlashOpenRouter 挂牌价 | 输入 ¥0.34 / 输出 ¥3.03 | ▲¥0.34 → ¥0.94 / ▼¥3.03 → ¥1.89 | 输入 +176%；输出 -38% |
 | OR 改价 | gemma-4-31b-itOpenRouter 挂牌价 | 输入 ¥0.67 / 输出 ¥2.29 | ▲¥0.67 → ¥1.35 / ▲¥2.29 → ¥2.69 | 输入 +101%；输出 +17% |
-| OR 改价 | deepseek-v4-flash-0731OpenRouter 挂牌价 | 输入 ¥2.96 / 输出 ¥8.89 | ▼¥2.96 → ¥0.30 / ▼¥8.89 → ¥0.90 | 输入 -90%；输出 -90% |
-| OR 改价 | DeepSeek V4 FlashOpenRouter 挂牌价 | 输入 ¥0.34 / 输出 ¥3.03 | ▲¥0.34 → ¥0.61 / ▼¥3.03 → ¥1.23 | 输入 +79%；输出 -59% |
-| OR 改价 | deepseek-v4.1-flash-1017OpenRouter 挂牌价 | 输入 ¥2.02 / 输出 ¥8.08 | ▼¥2.02 → ¥1.01 / ▼¥8.08 → ¥4.04 | 输入 -50%；输出 -50% |
-| OR 改价 | deepseek-v4-pro-0813OpenRouter 挂牌价 | 输入 ¥8.89 / 输出 ¥26.67 | ▼¥8.89 → ¥4.45 / ▼¥26.67 → ¥13.34 | 输入 -50%；输出 -50% |
-| OR 改价 | Tencent Hunyuan Hy3OpenRouter 挂牌价 | 输入 ¥0.89 / 输出 ¥3.56 | ▼¥0.89 → ¥0.56 / ▼¥3.56 → ¥2.22 | 输入 -37%；输出 -38% |
-| OR 改价 | gemma-4-26b-a4b-itOpenRouter 挂牌价 | 输入 ¥0.45 / 输出 ¥1.52 | ▲¥0.45 → ¥0.61 / ▲¥1.52 → ¥2.02 | 输入 +36%；输出 +33% |
-| OR 改价 | kimi-k3OpenRouter 挂牌价 | 输入 ¥1.29 / 输出 ¥107.76 | ▼¥1.29 → ¥1.27 / ▲¥107.76 → ¥134.70 | 输入 -2%；输出 +25% |
+| OR 改价 | qwen3.8-27bOpenRouter 挂牌价 | 输入 ¥1.35 / 输出 ¥16.84 | ▼¥1.35 → ¥0.26 / ▼¥16.84 → ¥8.42 | 输入 -81%；输出 -50% |
+| OR 改价 | glm-5.1OpenRouter 挂牌价 | 输入 ¥9.43 / 输出 ¥29.63 | ▼¥9.43 → ¥6.51 / ▼¥29.63 → ¥20.45 | 输入 -31%；输出 -31% |
+| OR 改价 | kimi-k3OpenRouter 挂牌价 | 输入 ¥1.29 / 输出 ¥107.76 | ▼¥1.29 → ¥1.14 / ▲¥107.76 → ¥134.70 | 输入 -12%；输出 +25% |
 
 ## 表 2：（一）OpenRouter 调用量周榜（本周前十大 AI 模型，按总 tokens）
 
 | 排名 | 模型 | 调用量（总 tokens） | 涨跌幅 | 输入价¥/MTok · 上行OR/下行官方 | 输出价¥/MTok · 上行OR/下行官方 | 缓存命中价¥/MTok · 上行OR/下行官方 | 上下文 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | DeepSeek V4.1 Flash 1017 | 33.56 万亿调用 5.55 亿次 | 801.24% | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.02官方 ¥0.02 | 1.0M |
-| 2 | DeepSeek V4.1 Flash | 18.00 万亿调用 5.17 亿次 | -45.19% | ¥0.13官方 ¥1.00 | ¥6.74官方 ¥4.00 | ¥0.10官方 ¥0.02 | 1.0M |
-| 3 | MiniMax M3.1 Flash | 13.68 万亿调用 1.08 亿次 | — | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.10官方 ¥0.10 | 1.0M |
-| 4 | GLM 5.3 Flash | 13.24 万亿调用 6.39 亿次 | 8.21% | ¥1.01官方 ¥0.80 | ¥3.37官方 ¥2.80 | ¥0.20官方 ¥0.23 | 1.0M |
-| 5 | Hy4 preview | 8.97 万亿调用 8609.2 万次 | 18.74% | ¥5.06官方 ¥6.00 | ¥15.16官方 ¥18.00 | ¥0.25官方 ¥0.30 | 1.0M |
-| 6 | GPT-6 Luna | 8.35 万亿调用 5.02 亿次 | 34.58% | ¥0.67官方 — | ¥3.37官方 — | ¥0.07官方 — | 1.1M |
-| 7 | Claude Opus 5.5 | 8.27 万亿调用 5947.0 万次 | 33.74% | ¥26.94官方 — | ¥134.70官方 — | ¥1.35官方 — | 1.0M |
-| 8 | MiMo-V2.6-Flash | 6.07 万亿调用 8575.3 万次 | -38.89% | ¥0.94官方 — | ¥1.89官方 — | ¥0.02官方 — | 1.1M |
-| 9 | Nemotron 3 Ultra | 5.85 万亿调用 4329.9 万次 | 17.78% | ¥4.04官方 — | ¥16.16官方 — | ¥0.81官方 — | 262K |
-| 10 | GLM 5.3 | 5.05 万亿调用 6914.4 万次 | -2.78% | ¥0.47官方 — | ¥9.43官方 — | ¥0.46官方 — | 1.0M |
+| 1 | DeepSeek V4.1 Flash 1017 | 35.37 万亿调用 5.82 亿次 | 382.10% | ¥2.02官方 ¥1.00 | ¥8.08官方 ¥4.00 | ¥0.04官方 ¥0.02 | 1.0M |
+| 2 | DeepSeek V4.1 Flash | 17.40 万亿调用 5.08 亿次 | -41.23% | ¥0.94官方 ¥1.00 | ¥2.83官方 ¥4.00 | ¥0.03官方 ¥0.02 | 1.0M |
+| 3 | GLM 5.3 Flash | 13.77 万亿调用 6.82 亿次 | 15.30% | ¥1.01官方 ¥0.80 | ¥3.37官方 ¥2.80 | ¥0.20官方 ¥0.23 | 1.0M |
+| 4 | MiniMax M3.1 Flash | 12.63 万亿调用 9730.3 万次 | 1099.67% | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.10官方 ¥0.10 | 1.0M |
+| 5 | Hy4 preview | 9.00 万亿调用 8643.1 万次 | 15.03% | ¥5.62官方 ¥6.00 | ¥16.84官方 ¥18.00 | ¥0.28官方 ¥0.30 | 1.0M |
+| 6 | GPT-6 Luna | 9.00 万亿调用 5.12 亿次 | 44.40% | ¥0.67官方 — | ¥3.37官方 — | ¥0.07官方 — | 1.1M |
+| 7 | Claude Opus 5.5 | 8.23 万亿调用 5929.5 万次 | 27.20% | ¥26.94官方 — | ¥134.70官方 — | ¥1.35官方 — | 1.0M |
+| 8 | Nemotron 3 Ultra | 5.49 万亿调用 4254.2 万次 | 18.46% | ¥4.04官方 — | ¥16.16官方 — | ¥0.81官方 — | 262K |
+| 9 | MiMo-V2.6-Flash | 5.32 万亿调用 7760.8 万次 | -44.41% | ¥0.94官方 — | ¥1.89官方 — | ¥0.02官方 — | 1.1M |
+| 10 | GLM 5.3 | 5.19 万亿调用 6896.5 万次 | -1.72% | ¥0.47官方 — | ¥9.43官方 — | ¥0.46官方 — | 1.1M |
 
 ## 表 3：（二）OpenRouter 调用量日榜（Today 前十大 AI 模型，按总 tokens）
 
 | 排名 | 模型 | 调用量（总 tokens） | 涨跌幅 | 输入价¥/MTok · 上行OR/下行官方 | 输出价¥/MTok · 上行OR/下行官方 | 缓存命中价¥/MTok · 上行OR/下行官方 | 上下文 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | DeepSeek V4.1 Flash 1017 | 5.77 万亿调用 9099.9 万次 | 20.65% | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.02官方 ¥0.02 | 1.0M |
-| 2 | GLM 5.3 Flash | 2.12 万亿调用 1.05 亿次 | -4.03% | ¥1.01官方 ¥0.80 | ¥3.37官方 ¥2.80 | ¥0.20官方 ¥0.23 | 1.0M |
-| 3 | DeepSeek V4.1 Flash | 1.91 万亿调用 6362.6 万次 | -15.12% | ¥0.13官方 ¥1.00 | ¥6.74官方 ¥4.00 | ¥0.10官方 ¥0.02 | 1.0M |
-| 4 | GPT-6 Luna | 1.46 万亿调用 7564.2 万次 | -0.53% | ¥0.67官方 — | ¥3.37官方 — | ¥0.07官方 — | 1.1M |
-| 5 | Hy4 preview | 0.97 万亿调用 923.5 万次 | -0.40% | ¥5.06官方 ¥6.00 | ¥15.16官方 ¥18.00 | ¥0.25官方 ¥0.30 | 1.0M |
-| 6 | Claude Opus 5.5 | 0.83 万亿调用 631.7 万次 | -18.65% | ¥26.94官方 — | ¥134.70官方 — | ¥1.35官方 — | 1.0M |
-| 7 | Step 5 Preview | 0.80 万亿调用 311.6 万次 | 0.07% | ¥6.74官方 — | ¥18.18官方 — | ¥0.67官方 — | 1.0M |
-| 8 | Nemotron 3 Ultra | 0.66 万亿调用 564.3 万次 | 5.70% | ¥4.04官方 — | ¥16.16官方 — | ¥0.81官方 — | 262K |
-| 9 | GLM 5.3 | 0.57 万亿调用 866.6 万次 | -6.46% | ¥0.47官方 — | ¥9.43官方 — | ¥0.46官方 — | 1.0M |
-| 10 | DeepSeek V4 Flash 0731 | 0.51 万亿调用 4697.9 万次 | 1.24% | ¥0.30官方 ¥1.00 | ¥0.90官方 ¥4.00 | ¥0.01官方 ¥0.02 | 1.0M |
+| 1 | DeepSeek V4.1 Flash 1017 | 5.42 万亿调用 8863.1 万次 | -5.99% | ¥2.02官方 ¥1.00 | ¥8.08官方 ¥4.00 | ¥0.04官方 ¥0.02 | 1.0M |
+| 2 | GLM 5.3 Flash | 2.27 万亿调用 1.10 亿次 | 7.11% | ¥1.01官方 ¥0.80 | ¥3.37官方 ¥2.80 | ¥0.20官方 ¥0.23 | 1.0M |
+| 3 | DeepSeek V4.1 Flash | 2.21 万亿调用 6502.4 万次 | 15.88% | ¥0.94官方 ¥1.00 | ¥2.83官方 ¥4.00 | ¥0.03官方 ¥0.02 | 1.0M |
+| 4 | GPT-6 Luna | 1.52 万亿调用 7377.9 万次 | 4.23% | ¥0.67官方 — | ¥3.37官方 — | ¥0.07官方 — | 1.1M |
+| 5 | Hy4 preview | 1.40 万亿调用 1362.9 万次 | 43.60% | ¥5.62官方 ¥6.00 | ¥16.84官方 ¥18.00 | ¥0.28官方 ¥0.30 | 1.0M |
+| 6 | Claude Opus 5.5 | 1.04 万亿调用 839.2 万次 | 25.16% | ¥26.94官方 — | ¥134.70官方 — | ¥1.35官方 — | 1.0M |
+| 7 | GLM 5.3 | 0.89 万亿调用 981.1 万次 | 56.30% | ¥0.47官方 — | ¥9.43官方 — | ¥0.46官方 — | 1.1M |
+| 8 | Step 5 Preview | 0.80 万亿调用 310.6 万次 | 0.06% | ¥6.74官方 — | ¥18.18官方 — | ¥0.67官方 — | 1.0M |
+| 9 | MiniMax M3.1 Flash | 0.68 万亿调用 694.4 万次 | 100.60% | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.10官方 ¥0.10 | 1.0M |
+| 10 | DeepSeek V4 Flash 0731 | 0.63 万亿调用 4767.3 万次 | 22.39% | ¥2.96官方 ¥1.00 | ¥8.89官方 ¥4.00 | ¥0.09官方 ¥0.02 | 1.0M |
 
 ## 表 4：一、🌍 家族总览——各家旗舰与参数一表看全
 
@@ -69,6 +69,7 @@
 | GPT-6 Astra / OpenAI（美） | 美国 | 闭源商业 | GPT-6 / 2026-09-03 | GPT-6 Astra（2026-09-03） / Astra Pro 2026-09-05 | 1.05M / 输出 128K | 未公开 / MoE 闭源 | 文本+图像 / 闭源商业 | Astra ¥67.35 / ¥336.75 / $10/$50（OR 挂牌，缓存读 $1.00≈¥6.74；10-27 规则 B 与排序总览/柱状图对齐） | — | ChatGPT Free 有限免费 | GPT-6 系列旗舰；Astra Pro 同价更高性能档 |
 | GPT-6 Sol / OpenAI（美） | 美国 | 闭源商业 | GPT-6 / 2026-09-22 | GPT-6 Sol（2026-09-22 发布） / Sol Pro 同价更高性能档；Astra 仍为最强档 | 1.05M / 输出 128K | 未公开 / MoE 闭源 | 文本+图像 / 闭源商业 | ¥13.47 / ¥67.35 / $2/$10（永久标准价，非促销；缓存读 $0.20≈¥1.34） | —（永久降价而非限时；Batch 5 折、缓存命中降 90%） | ChatGPT Free 有限免费 | GPT-6 中阶档（专业工作/编码/Agent）；较 GPT-5.6 Sol 促销价再降 50%、Terra 级定价；1.05M 上下文；AA Index 47.5；代码推理已接近 Astra |
 | GPT-6.1 Sol / OpenAI（美） | 美国 | 闭源商业 | GPT-6.1 / 2026-09-29（DevDay） | GPT-6.1 Sol（2026-09-29 DevDay 发布） / Sol Pro（同价 reason.pro 档）；GPT-6.1 Astra 因安全测试未达标取消 10 月发布；Astra 仍为最强档 | 1.05M / 输出 128K | 未公开 / MoE 闭源 | 文本+图像 / 闭源商业 | ¥13.47 / ¥67.35 / $2/$10（与 GPT-6 Sol 同价；缓存读 $0.10≈¥0.68，较 GPT-6 Sol $0.20 减半；>272K 输入 2×/1.5×；Batch 五折） | — | Plus/Pro/Business/Enterprise/Edu 可用（ChatGPT Work + Codex；Ultrafast 档数日内上线） | 09-29 DevDay 发布；近 Astra 级 agentic coding/计算机操作；DeepSWE 超 GPT-6 Sol 6.4 分；OSWorld 2.0 距 Astra 2.1 分；AA Index 51.8（AA 09-29 收录） |
+| GPT-6.1 Terra / OpenAI（美） | 美国 | 闭源商业 | GPT-6.1 / 2026-10-26（Terra 首发） | GPT-6.1 Terra（2026-10-26 发布，10-27 OpenRouter 上架） / GPT-6.1 系列中档（官方定价低于 Sol 一半）；Terra Pro 为同一底模 + reasoning.mode=pro 高质量档；OR 官方描述「日常 agentic / 编码 / 写作，擅长读图」 | 1.05M / 输出 128K | 未公开 / 闭源 | 文本+图像+文件 / 闭源商业 | ¥6.74 / ¥33.68 / $1/$5（缓存读 $0.05≈¥0.34；>272K 输入 $2/$7.5；Batch 五折；10-27 官方 pricing 页核实 Standard 档） | — | 待核实（官方页未单列 Terra 档位的订阅可用范围） | 10-26 发布、10-27 OpenRouter 上架；标准档 $1/$5（恰为 Sol $2/$10 的一半）；1.05M 上下文 / 128K 输出；AA Index 33.5（AA 10-26 收录）；10-27 按规则 A-2 / A-4 自动补录四方（§0.1） |
 | GPT-6 Luna / OpenAI（美） | 美国 | 闭源商业 | GPT-6 / 2026-09-22 | GPT-6 Luna（2026-09-22 发布） / Luna Pro 同价高性能档 | 1.05M / 输出 128K | 未公开 / MoE 闭源 | 文本+图像 / 闭源商业 | ¥0.68 / ¥3.36 / $0.10/$0.50（永久标准价；缓存读 $0.01≈¥0.07） | —（永久降价而非限时） | ChatGPT Free / Go 可用 | GPT-6 轻量高频档（摘要/抽取/直答）；输入 $0.10 为一线厂商最低档；较 GPT-5.6 Luna 输入 -50%/输出 -58%；1.05M 上下文；AA Index 37.3 |
 | Claude / Anthropic（美） | 美国 | 闭源商业 | Claude 1.0 / 2023-03-15 | Claude Opus 5（2026-07-24） / 半价旗舰（性能逼近 Fable 5） | 1M / 输出 128K | 未公开 / 闭源 | 文本+图像 / 闭源商业 | ¥33.68 / ¥168.38 / $5/$25（与 Opus 4.8 同价；缓存读¥3.36） | 无公开特惠 | 无（Opus 无免费层） | “半价旗舰”：性能逼近 Fable 5 顶级推理层，价格仅其一半；长上下文 Agent 与企业首选 |
 | Claude / Anthropic（美） | 美国 | 闭源商业 | Claude 1.0 / 2023-03-15 | Claude Opus 5.5（2026-09-22） / 5.5 家族首款；性能≈Fable 5.1，成本较 Opus 5 -40% | 1M / 输出 128K | 未公开 / 闭源 | 文本+图像 / 闭源商业 | ¥26.94 / ¥134.71 / $4/$20（较 Opus 5 降 20%；缓存读 $0.20≈¥1.34、缓存写 $5；Fast 模式 $8/$40） | 无公开特惠（永久定价，非限时） | 无（Opus 无免费层） | 长程智能体编码 / 知识工作旗舰；思考不可关闭、以 effort 控制深度；AA Index 57.6（超 Opus 5）；同日宣布 Sonnet 5.5 / Haiku 5.5 数周内推出 |
@@ -152,10 +153,10 @@
 
 | 维度 | 闭源前沿（美） | 开放权重 / 开源 | 国产主力 |
 | --- | --- | --- | --- |
-| 代表 | GPT-6.1 Sol·Astra / Claude Sonnet·Opus 5.5·Haiku 5.5·Fable 5.1（5.5 家族已齐） / Gemini 4 Argon（10-14 OR 上架，$2/$10 引导价至 11-30） / Grok 4.7 | Llama 5、Mistral Large 4（10-06 发布，1.05T/49B MoE）、Meta Muse Spark Open（10-15 发布，816B/42B MoE）、Reflection Beam 1.0（10-16 权重上架，501B/23B MoE，Apache 2.0）、Command A+、DeepSeek V4.1 Flash、Qwen3.8-Max、GLM-5.3、Thinking Machines Inkling | 豆包 2.1 Pro、文心 5.1、混元 Hy4 preview、Kimi K3.1 Pro、MiniMax M3.1 Flash、星火 X2-VL、小米 MiMo-V2.6-Pro、LongCat-2.0 |
+| 代表 | GPT-6.1 Sol·Terra·Astra / Claude Sonnet·Opus 5.5·Haiku 5.5·Fable 5.1（5.5 家族已齐） / Gemini 4 Argon（10-14 OR 上架，$2/$10 引导价至 11-30） / Grok 4.7 | Llama 5、Mistral Large 4（10-06 发布，1.05T/49B MoE）、Meta Muse Spark Open（10-15 发布，816B/42B MoE）、Reflection Beam 1.0（10-16 权重上架，501B/23B MoE，Apache 2.0）、Command A+、DeepSeek V4.1 Flash、Qwen3.8-Max、GLM-5.3、Thinking Machines Inkling | 豆包 2.1 Pro、文心 5.1、混元 Hy4 preview、Kimi K3.1 Pro、MiniMax M3.1 Flash、星火 X2-VL、小米 MiMo-V2.6-Pro、LongCat-2.0 |
 | 授权 | 闭源、API 收费、不可自托管 | Apache 2.0 / MIT，可下载权重自部署 | 多数闭源 API + 部分开源（混元/DeepSeek/智谱/Qwen 开源） |
 | 多模态 | 原生全模态（文本/图/音/视频） | Mistral/Command/Llama 多模态；DeepSeek/Qwen 偏文本+MCP 工具 | 文心/豆包/混元原生全模态；Kimi 视觉；星火语音强 |
-| 上下文 | GPT/Claude/Gemini 1M；Grok 500K（4.7） | Llama 4 Scout 10M；其余 128K–1M | 普遍 128K–256K（混元/DeepSeek/Kimi 256K–1M） |
+| 上下文 | GPT 1.05M / Claude·Gemini 1M；Grok 500K（4.7） | Llama 4 Scout 10M；其余 128K–1M | 普遍 128K–256K（混元/DeepSeek/Kimi 256K–1M） |
 | 自主 Agent | 强（Codex/Claude Code/计算机使用） | 中–强（GLM/Kimi/DeepSeek 原生工具调用） | 强（Kimi Agent Swarm、MiniMax 自我进化、豆包/混元办公智能体） |
 | 价格策略 | 高端（按 token，含缓存折扣） | 低–中（DeepSeek/Qwen 极致性价比） | 低价（人民币计价，普遍 ¥1–8 / 百万 token） |
 | 中文 / 合规 | 英文优先，中文良好 | 多语言；中文良好 | 中文最优、本土合规、数据驻留可控 |
@@ -165,7 +166,7 @@
 
 | 家族 | 差异化定位（一句话） |
 | --- | --- |
-| GPT（OpenAI） | 综合能力最均衡、生态最成熟的闭源标杆，API 与 ChatGPT 双线驱动；GPT-6 世代全面铺开（Astra / Sol / Luna），Sol 以 $2/$10 永久价直接卡位 Sonnet 5 同档 |
+| GPT（OpenAI） | 综合能力最均衡、生态最成熟的闭源标杆，API 与 ChatGPT 双线驱动；GPT-6 / 6.1 世代全面铺开（Astra / Sol / Terra / Luna），Sol 以 $2/$10 永久价直接卡位 Sonnet 5 同档、Terra 以 $1/$5 卡位中档 agentic / 编码场景 |
 | Claude（Anthropic） | 编码 / 长程智能体 / 计算机使用的“事实标准”，安全分级最严；Opus 5.5 单价较 Opus 5 降 20%、典型负载成本降约 40%（5.5 家族首款） |
 | Gemini（Google） | 原生多模态 + 1M 上下文 + 免费开放分发，绑定谷歌云与安卓生态 |
 | Llama（Meta） | 开放权重生态地基；2026 前沿转闭源 Muse Spark（Wonder $4/$20），10-15 Spark Open 816B 开放权重回归（$1.25/$4.25），10-16 Reflection Beam 1.0 501B-A23B 开放权重上架（Apache 2.0，OR $1.0/$3.0） |
@@ -270,72 +271,73 @@
 | 52 | Meta Muse Spark 1.2 | muse-spark-1.2 | 美国 | ¥8.42 | ¥28.62 | ¥13.47 | ¥1.02 | 官方 Meta 首个智能体编码模型（08-05 公测）；1M 上下文；缓存读 ¥1.02；来源 官方/OpenRouter meta/muse-spark-1.2 |
 | 53 | Meta Muse Spark 1.3 | muse-spark-1.3 | 美国 | ¥8.42 | ¥28.62 | ¥13.47 | ¥1.01 | 官方 Meta 智能体编码模型（09-02 发布，Muse Code 默认引擎）；AA Index 61（发布日厂商口径）；TB2.1 88.8 / DeepSWE 75.4；价同 1.2；1.3 权重政策未定；来源 官方/OpenRouter meta/muse-spark-1.3 |
 | 54 | Meta Muse Spark Open | meta/muse-spark-open | 美国 | ¥8.42 | ¥28.62 | ¥13.47 | ¥1.01 | 官方 $1.25/$4.25（缓存 $0.15≈¥1.01，各托管同价；Meta Model API 是否直供待核实）；816B-A42B 开放权重 MoE；1M 上下文；2026-10-15 发布、10-16 OR 上架；AA Index 38.9；10-16 规则 A-2/A-4 自动补录 |
-| 55 | Mistral Large 4 | Mistral Large 4 | 欧洲 | ¥9.16 | ¥28.15 | ¥13.91 | ¥0.94 | 官方$ 官方 docs 价目表 list $1.36 / $4.18（缓存 $0.14；10-25 复核更正：mistral.ai/pricing/api 301 至 docs.mistral.ai/inference/pricing，该页仍逐模型公示 per-token 价（Large 4 列 list $1.36 / 缓存 $0.14 / $4.18、无促销标识）；原「已改订阅制、不再公示 API 模型价」判断作废）；OR 挂牌 $1.36/$4.18（A-2 / A-4 自动补录·OR 已上架 2026-10-06）；1M 上下文；1.05T 总 / 49B 激活 MoE + 1.6B 视觉编码器；public preview，权重 10 月底开放；⚠️ 首发五折（$0.68/$2.09）已于 10-21 结束（10-20 T 日 OR 仍挂五折、10-21 翻回 list；第三方曾预测 10-20 到期，兑现；官方无公告——待核实）；AA Index 38.4 |
-| 56 | 阿里通义千问 qwen3.8-max | qwen3.8-max | 中国 | ¥12.00 | ¥36.00 | ¥18.00 | ¥1.50 | 官方 官方人民币价（08-03 正式发布）；隐式缓存命中 ¥1.50；国际 $2/$6；qwen3.7-max 同价在售 |
-| 57 | xAI Grok 4.7 | Grok 4.7 | 美国 | ¥13.47 | ¥40.41 | ¥20.20 | ¥3.36 | 官方$ $2 / $6；>200K 长上下文 $4/$12；4.6 同价并行；09-21 发布；AA Index 46.4；缓存命中 $0.50（>200K $1） |
-| 58 | Sakana AI Fugu Max | Fugu-Max | 日本 | ¥13.47 | ¥40.41 | ¥20.20 | ¥1.68 | 官方 官方 Token Plan 价 $2.00 / $6.00（缓存读 $0.25≈¥1.68）；学习型多智能体编排模型（非单体权重）；1M 上下文；文本+图像+PDF 输入；与 fugu-ultra-v2 同日发布（2026-09-11）；固定费率不随上下文分档 |
-| 59 | Amazon Nova 2 Pro | Nova 2 Pro | 美国 | ¥8.43 | ¥67.35 | ¥23.16 | — | 官方$ $1.25 / $10.00；1M 上下文；Nova 2 推理旗舰 |
-| 60 | Writer Palmyra palmyra-x6 | palmyra-x6 | 美国 | ¥13.47 | ¥53.88 | ¥23.57 | — | 官方 Writer 官方定价 $2/$8（×6.7351；X6 未上 OpenRouter，非 OR 挂牌）；X4/X5 将于 2026-12-14 弃用；上下文 1.0M；来源 dev.writer.com/api-guides/models（10-23 核实） |
-| 61 | unbiased Pareto | unbiased/pareto | 美国 | ¥16.83 | ¥50.51 | ¥25.25 | — | 待核实 OpenRouter 挂牌价 $2.50 / $7.50（第三方托管）；2026-09-18 上架；上下文长度与参数量待核实；厂商所在地待核实 |
-| 62 | AionLabs Aion 3.5 | Aion 3.5 | 美国 | ¥20.21 | ¥40.41 | ¥25.26 | — | OR挂牌 OR 挂牌 $3/$6（×6.7351）；GLM 底座多模型叙事系统；2026-09-24 上架；上下文 262K；OpenRouter 挂牌价（第三方，待官网核实）；2026-09-24 上架 |
-| 63 | 月之暗面 Kimi K3.1 Pro | Kimi K3.1 Pro | 中国 | ¥13.00 | ¥68.00 | ¥26.75 | ¥1.30 | 官方 官方人民币价；缓存¥1.30；1M 上下文；2.8T 总 / 104B 激活（10-24 官方通稿；原「3T」口径无官方出处，已改按通稿）；高速版官方 ¥26.00/¥136.00 恰为 2 倍；10-24 00:00 正式发布（10-23 预告），权重 11-04 前开源 |
-| 64 | Anthropic Claude Sonnet 5 | Claude Sonnet 5 | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥1.34 | 官方 $2 / $10（永久标准价；09-14 官方确认原定 09-01 涨价取消）；缓存读 $0.20≈¥1.34；1M 上下文（06-30 发布） |
-| 65 | Anthropic Claude Sonnet 5.5 | Claude Sonnet 5.5 | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥0.67 | 官方$ $2 / $10（A-4 自动补录·OR 已上架 2026-09-29）；缓存读 $0.10≈¥0.67（10-07 随 Haiku 5.5 发布减半，原 $0.20）；1M 上下文；2026-09-28 发布；AA Index 56；5.5 系列首款（与 Haiku 5.5 同期预告） |
-| 66 | Google Gemini 4 Argon | gemini-4-argon | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥0.67 | OR挂牌 Google 引导价 $2/$10、缓存读 $0.10（至 2026-11-30，之后 $4/$20）；10-14 OR 新上架补录（09-30 发布，首发 Fairwind 受信开放）；1M 上下文 / 输出 1M；AA Index 52.6 |
-| 67 | OpenAI GPT-6.1 Sol | gpt-6.1-sol | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥0.68 | 官方$ $2 / $10（09-29 DevDay 发布，与 GPT-6 Sol 同价；缓存读 $0.10≈¥0.68；1.05M 上下文 / 输出 128K）；较 GPT-5.6 Sol 促销价再降 50%；Sol Pro 同价更高性能档（reason.pro）；AA Index 51.8（AA 09-29 收录） |
-| 68 | 智谱 GLM-5.3-Prime | GLM-5.3-Prime | 中国 | ¥18.86 | ¥59.26 | ¥28.96 | ¥3.76 | 待核实 OR 挂牌 $2.80/$8.80（×6.7351）；缓存读 $0.56；1M 上下文；GLM-5.3 同权重高速部署档，厂商未公开官方定价（待核实）；2026-09-24 上架 |
-| 69 | Meta Llama 5 (600B) | Llama 5 600B MoE | 美国 | ¥23.57 | ¥47.15 | ¥29.47 | — | 待核实 第三方托管价 $3.50/$7（如 Together）；权重免费自托管（仅算力成本）；第三方来源价格存分歧（待核实） |
-| 70 | Google Gemini 3.1 Pro Preview | gemini-3.1-pro-preview | 美国 | ¥13.47 | ¥80.82 | ¥30.31 | ¥1.35 | 官方$ $2/$12（≤200k 提示，缓存 $0.20）；1M 上下文；OR 在架名 gemini-3.1-pro-preview（原「3.5 Pro」名称有误，OR 无该 slug，10-12 修正）；AA Index 29.7 |
-| 71 | 月之暗面 Kimi K3 | Kimi K3 | 中国 | ¥20.00 | ¥100.00 | ¥40.00 | ¥2.00 | 官方 官方人民币价；缓存¥2.00；1M 上下文；2.8T/450B 激活（07-27 开源权重） |
-| 72 | Perplexity Sonar sonar-pro | perplexity/sonar-pro | 美国 | ¥20.21 | ¥101.03 | ¥40.41 | ¥0.00 | 官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 200K；来源 openrouter.ai/api/v1/models |
-| 73 | OpenAI GPT-5.6 (Sol) | gpt-5.6-sol | 美国 | ¥26.94 | ¥134.70 | ¥53.88 | ¥2.69 | 官方$ $4 / $20（08-21 促销 3 个月，输入 -20%/输出 -33%；缓存 $0.40）；Terra $2/$12、Luna $0.20/$1.20（07-30 降价）；Sol 新增 Fast 模式（2.5× 速、2× 价） |
-| 74 | Anthropic Claude Opus 5.5 | Claude Opus 5.5 | 美国 | ¥26.94 | ¥134.71 | ¥53.88 | ¥1.34 | 官方$ $4 / $20（永久定价；缓存读 $0.20≈¥1.34、缓存写 $5；Fast 模式 $8/$40）；5.5 家族首款，性能≈Fable 5.1、成本较 Opus 5 -40%（单价 -20%）；1M 上下文 / 输出 128K；AA Index 57.6 |
-| 75 | Meta Muse Wonder | meta/muse-wonder | 美国 | ¥26.94 | ¥134.70 | ¥53.88 | ¥1.35 | 官方 $4 / $20（缓存 $0.20≈¥1.35）；1M 上下文 / 多模态输入（文/图/音/视频/PDF）；2026-10-12 发布（Meta Model API + OR 同日上架）；AA Index 52.4；Wonder Full 无 API、仅 Muse Code $50/$200 订阅 |
-| 76 | Anthropic Claude Opus 5 | Claude Opus 5 | 美国 | ¥33.68 | ¥168.38 | ¥67.35 | ¥3.36 | 官方$ $5 / $25（半价旗舰，性能逼近 Fable 5；07-24 发布） |
-| 77 | Sakana AI fugu-ultra | sakana/fugu-ultra | 日本 | ¥33.68 | ¥202.05 | ¥75.77 | ¥3.36 | 官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥3.36；上下文 1.0M；来源 openrouter.ai/api/v1/models |
-| 78 | OpenAI GPT-6 Astra | gpt-6-astra | 美国 | ¥67.35 | ¥336.75 | ¥134.70 | ¥6.74 | 官方$ $10/$50（缓存 $1.00）；1.05M 上下文 / 输出 128K；2026-09-03 发布；AA Index 52.7（Max 档）；09-04 补录遗失已回补 |
-| 79 | Anthropic Claude Fable 5.1 | Claude Fable 5.1 | 美国 | ¥67.35 | ¥336.75 | ¥134.70 | ¥1.68 | 官方$ $10/$50（09-01 发布，Mythos 级）；缓存读 $0.25≈¥1.68（较 Fable 5 降 75%）；1M 上下文/128K 输出；Claude API/Bedrock/Vertex/Foundry 可用；同源 Mythos 5.1 仅授权计划 |
-| 80 | unbiased Pareto 26.10 Preview | unbiased/pareto-26.10-preview | 美国 | 待核实 | 待核实 | — | — | 待核实 原 OpenRouter 挂牌价 $0.80 / $3.20（第三方托管，2026-10-01 上架）；2026-10-16 OR 下架（原因未知，价格改待核实；同族 Pareto 26.9 10-14 起在架 $2.5/$7.5，见 unbiased Pareto 基名行）；上下文与参数量待核实；AA Index 未收录故性价比记为 0（规则 A-4 自动补录） |
+| 55 | GPT-6.1 Terra | openai/gpt-6.1-terra | 美国 | ¥6.74 | ¥33.68 | ¥13.47 | ¥0.34 | 官方$ $1 / $5（缓存读 $0.05≈¥0.34；>272K 输入 $2/$7.5；Batch 五折）；1.05M 上下文 / 128K 输出；GPT-6.1 系列中档（官方定价页 Standard 档，10-27 核实）；OR openai/gpt-6.1-terra 10-27 上架（$1/$5、ctx 1,050,000）；同底模 Terra Pro（reasoning.mode=pro）同价；AA Index 33.5（AA 10-26 收录）；10-27 规则 A-2 / A-4 自动补录 |
+| 56 | Mistral Large 4 | Mistral Large 4 | 欧洲 | ¥9.16 | ¥28.15 | ¥13.91 | ¥0.94 | 官方$ 官方 docs 价目表 list $1.36 / $4.18（缓存 $0.14；10-25 复核更正：mistral.ai/pricing/api 301 至 docs.mistral.ai/inference/pricing，该页仍逐模型公示 per-token 价（Large 4 列 list $1.36 / 缓存 $0.14 / $4.18、无促销标识）；原「已改订阅制、不再公示 API 模型价」判断作废）；OR 挂牌 $1.36/$4.18（A-2 / A-4 自动补录·OR 已上架 2026-10-06）；1M 上下文；1.05T 总 / 49B 激活 MoE + 1.6B 视觉编码器；public preview，权重 10 月底开放；⚠️ 首发五折（$0.68/$2.09）已于 10-21 结束（10-20 T 日 OR 仍挂五折、10-21 翻回 list；第三方曾预测 10-20 到期，兑现；官方无公告——待核实）；AA Index 38.4 |
+| 57 | 阿里通义千问 qwen3.8-max | qwen3.8-max | 中国 | ¥12.00 | ¥36.00 | ¥18.00 | ¥1.50 | 官方 官方人民币价（08-03 正式发布）；隐式缓存命中 ¥1.50；国际 $2/$6；qwen3.7-max 同价在售 |
+| 58 | xAI Grok 4.7 | Grok 4.7 | 美国 | ¥13.47 | ¥40.41 | ¥20.20 | ¥3.36 | 官方$ $2 / $6；>200K 长上下文 $4/$12；4.6 同价并行；09-21 发布；AA Index 46.4；缓存命中 $0.50（>200K $1） |
+| 59 | Sakana AI Fugu Max | Fugu-Max | 日本 | ¥13.47 | ¥40.41 | ¥20.20 | ¥1.68 | 官方 官方 Token Plan 价 $2.00 / $6.00（缓存读 $0.25≈¥1.68）；学习型多智能体编排模型（非单体权重）；1M 上下文；文本+图像+PDF 输入；与 fugu-ultra-v2 同日发布（2026-09-11）；固定费率不随上下文分档 |
+| 60 | Amazon Nova 2 Pro | Nova 2 Pro | 美国 | ¥8.43 | ¥67.35 | ¥23.16 | — | 官方$ $1.25 / $10.00；1M 上下文；Nova 2 推理旗舰 |
+| 61 | Writer Palmyra palmyra-x6 | palmyra-x6 | 美国 | ¥13.47 | ¥53.88 | ¥23.57 | — | 官方 Writer 官方定价 $2/$8（×6.7351；X6 未上 OpenRouter，非 OR 挂牌）；X4/X5 将于 2026-12-14 弃用；上下文 1.0M；来源 dev.writer.com/api-guides/models（10-23 核实） |
+| 62 | unbiased Pareto | unbiased/pareto | 美国 | ¥16.83 | ¥50.51 | ¥25.25 | — | 待核实 OpenRouter 挂牌价 $2.50 / $7.50（第三方托管）；2026-09-18 上架；上下文长度与参数量待核实；厂商所在地待核实 |
+| 63 | AionLabs Aion 3.5 | Aion 3.5 | 美国 | ¥20.21 | ¥40.41 | ¥25.26 | — | OR挂牌 OR 挂牌 $3/$6（×6.7351）；GLM 底座多模型叙事系统；2026-09-24 上架；上下文 262K；OpenRouter 挂牌价（第三方，待官网核实）；2026-09-24 上架 |
+| 64 | 月之暗面 Kimi K3.1 Pro | Kimi K3.1 Pro | 中国 | ¥13.00 | ¥68.00 | ¥26.75 | ¥1.30 | 官方 官方人民币价；缓存¥1.30；1M 上下文；2.8T 总 / 104B 激活（10-24 官方通稿；原「3T」口径无官方出处，已改按通稿）；高速版官方 ¥26.00/¥136.00 恰为 2 倍；10-24 00:00 正式发布（10-23 预告），权重 11-04 前开源 |
+| 65 | Anthropic Claude Sonnet 5 | Claude Sonnet 5 | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥1.34 | 官方 $2 / $10（永久标准价；09-14 官方确认原定 09-01 涨价取消）；缓存读 $0.20≈¥1.34；1M 上下文（06-30 发布） |
+| 66 | Anthropic Claude Sonnet 5.5 | Claude Sonnet 5.5 | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥0.67 | 官方$ $2 / $10（A-4 自动补录·OR 已上架 2026-09-29）；缓存读 $0.10≈¥0.67（10-07 随 Haiku 5.5 发布减半，原 $0.20）；1M 上下文；2026-09-28 发布；AA Index 56；5.5 系列首款（与 Haiku 5.5 同期预告） |
+| 67 | Google Gemini 4 Argon | gemini-4-argon | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥0.67 | OR挂牌 Google 引导价 $2/$10、缓存读 $0.10（至 2026-11-30，之后 $4/$20）；10-14 OR 新上架补录（09-30 发布，首发 Fairwind 受信开放）；1M 上下文 / 输出 1M；AA Index 52.6 |
+| 68 | OpenAI GPT-6.1 Sol | gpt-6.1-sol | 美国 | ¥13.47 | ¥67.35 | ¥26.94 | ¥0.68 | 官方$ $2 / $10（09-29 DevDay 发布，与 GPT-6 Sol 同价；缓存读 $0.10≈¥0.68；1.05M 上下文 / 输出 128K）；较 GPT-5.6 Sol 促销价再降 50%；Sol Pro 同价更高性能档（reason.pro）；AA Index 51.8（AA 09-29 收录） |
+| 69 | 智谱 GLM-5.3-Prime | GLM-5.3-Prime | 中国 | ¥18.86 | ¥59.26 | ¥28.96 | ¥3.76 | 待核实 OR 挂牌 $2.80/$8.80（×6.7351）；缓存读 $0.56；1M 上下文；GLM-5.3 同权重高速部署档，厂商未公开官方定价（待核实）；2026-09-24 上架 |
+| 70 | Meta Llama 5 (600B) | Llama 5 600B MoE | 美国 | ¥23.57 | ¥47.15 | ¥29.47 | — | 待核实 第三方托管价 $3.50/$7（如 Together）；权重免费自托管（仅算力成本）；第三方来源价格存分歧（待核实） |
+| 71 | Google Gemini 3.1 Pro Preview | gemini-3.1-pro-preview | 美国 | ¥13.47 | ¥80.82 | ¥30.31 | ¥1.35 | 官方$ $2/$12（≤200k 提示，缓存 $0.20）；1M 上下文；OR 在架名 gemini-3.1-pro-preview（原「3.5 Pro」名称有误，OR 无该 slug，10-12 修正）；AA Index 29.7 |
+| 72 | 月之暗面 Kimi K3 | Kimi K3 | 中国 | ¥20.00 | ¥100.00 | ¥40.00 | ¥2.00 | 官方 官方人民币价；缓存¥2.00；1M 上下文；2.8T/450B 激活（07-27 开源权重） |
+| 73 | Perplexity Sonar sonar-pro | perplexity/sonar-pro | 美国 | ¥20.21 | ¥101.03 | ¥40.41 | ¥0.00 | 官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 200K；来源 openrouter.ai/api/v1/models |
+| 74 | OpenAI GPT-5.6 (Sol) | gpt-5.6-sol | 美国 | ¥26.94 | ¥134.70 | ¥53.88 | ¥2.69 | 官方$ $4 / $20（08-21 促销 3 个月，输入 -20%/输出 -33%；缓存 $0.40）；Terra $2/$12、Luna $0.20/$1.20（07-30 降价）；Sol 新增 Fast 模式（2.5× 速、2× 价） |
+| 75 | Anthropic Claude Opus 5.5 | Claude Opus 5.5 | 美国 | ¥26.94 | ¥134.71 | ¥53.88 | ¥1.34 | 官方$ $4 / $20（永久定价；缓存读 $0.20≈¥1.34、缓存写 $5；Fast 模式 $8/$40）；5.5 家族首款，性能≈Fable 5.1、成本较 Opus 5 -40%（单价 -20%）；1M 上下文 / 输出 128K；AA Index 57.6 |
+| 76 | Meta Muse Wonder | meta/muse-wonder | 美国 | ¥26.94 | ¥134.70 | ¥53.88 | ¥1.35 | 官方 $4 / $20（缓存 $0.20≈¥1.35）；1M 上下文 / 多模态输入（文/图/音/视频/PDF）；2026-10-12 发布（Meta Model API + OR 同日上架）；AA Index 52.4；Wonder Full 无 API、仅 Muse Code $50/$200 订阅 |
+| 77 | Anthropic Claude Opus 5 | Claude Opus 5 | 美国 | ¥33.68 | ¥168.38 | ¥67.35 | ¥3.36 | 官方$ $5 / $25（半价旗舰，性能逼近 Fable 5；07-24 发布） |
+| 78 | Sakana AI fugu-ultra | sakana/fugu-ultra | 日本 | ¥33.68 | ¥202.05 | ¥75.77 | ¥3.36 | 官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥3.36；上下文 1.0M；来源 openrouter.ai/api/v1/models |
+| 79 | OpenAI GPT-6 Astra | gpt-6-astra | 美国 | ¥67.35 | ¥336.75 | ¥134.70 | ¥6.74 | 官方$ $10/$50（缓存 $1.00）；1.05M 上下文 / 输出 128K；2026-09-03 发布；AA Index 52.7（Max 档）；09-04 补录遗失已回补 |
+| 80 | Anthropic Claude Fable 5.1 | Claude Fable 5.1 | 美国 | ¥67.35 | ¥336.75 | ¥134.70 | ¥1.68 | 官方$ $10/$50（09-01 发布，Mythos 级）；缓存读 $0.25≈¥1.68（较 Fable 5 降 75%）；1M 上下文/128K 输出；Claude API/Bedrock/Vertex/Foundry 可用；同源 Mythos 5.1 仅授权计划 |
+| 81 | unbiased Pareto 26.10 Preview | unbiased/pareto-26.10-preview | 美国 | 待核实 | 待核实 | — | — | 待核实 原 OpenRouter 挂牌价 $0.80 / $3.20（第三方托管，2026-10-01 上架）；2026-10-16 OR 下架（原因未知，价格改待核实；同族 Pareto 26.9 10-14 起在架 $2.5/$7.5，见 unbiased Pareto 基名行）；上下文与参数量待核实；AA Index 未收录故性价比记为 0（规则 A-4 自动补录） |
 
 ## 表 11：十三、🧪 能力评测——综合能力 Top20 谁最聪明AA 免费 API
 
 | # | 模型 | 厂商 | AA Index | 编码 Index | 混合价 ¥/1M | 性价比 value | 吞吐 tok/s | TTFT s |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Claude Opus 5.5 (Max, Default Fallback) | Anthropic | 57.6 | — | 54.24 | 1.06 | 97.61 | 706.02 |
-| 2 | Claude Sonnet 5.5 (Max, Default Fallback) | Anthropic | 56.0 | — | 27.12 | 2.07 | 140.93 | 444.25 |
-| 3 | Claude Opus 5.5 (Xhigh, Default Fallback) | Anthropic | 56.0 | — | 54.24 | 1.03 | 82.03 | 109.62 |
+| 1 | Claude Opus 5.5 (Max, Default Fallback) | Anthropic | 57.6 | — | 54.24 | 1.06 | 98.19 | 712.32 |
+| 2 | Claude Sonnet 5.5 (Max, Default Fallback) | Anthropic | 56.0 | — | 27.12 | 2.07 | 141.18 | 461.94 |
+| 3 | Claude Opus 5.5 (Xhigh, Default Fallback) | Anthropic | 56.0 | — | 54.24 | 1.03 | 81.91 | 121.67 |
 | 4 | Muse Wonder Full (Max) | Meta | 55.8 | — | — | — | — | — |
-| 5 | Kimi K3.1 Pro | Kimi | 55.1 | — | 27.12 | 2.03 | 50.73 | 3.01 |
-| 6 | Claude Opus 5.5 (High, Default Fallback) | Anthropic | 53.6 | — | 54.24 | 0.99 | 80.04 | 33.08 |
-| 7 | Claude Fable 5.1 (Max, Default Fallback) | Anthropic | 53.4 | 81.6 | 135.59 | 0.39 | 70.05 | 217.13 |
-| 8 | Claude Fable 5.1 (Xhigh, Default Fallback) | Anthropic | 53.2 | 80.7 | 135.59 | 0.39 | 62.73 | 100.72 |
-| 9 | GPT-6 Astra (Max) | OpenAI | 52.7 | 76.9 | 135.59 | 0.39 | 66.67 | 321.43 |
-| 10 | Gemini 4 Argon (High) | Google | 52.6 | — | 27.12 | 1.94 | 80.91 | 48.23 |
-| 11 | GPT-6 Astra (Xhigh) | OpenAI | 52.4 | 75.9 | 135.59 | 0.39 | 67.52 | 169.18 |
-| 12 | Muse Wonder (Max) | Meta | 52.4 | — | 54.24 | 0.97 | 190.16 | 34.08 |
-| 13 | Claude Sonnet 5.5 (Xhigh, Default Fallback) | Anthropic | 51.9 | — | 27.12 | 1.91 | 109.9 | 29.36 |
-| 14 | GPT-6.1 Sol (Max) | OpenAI | 51.8 | — | 27.12 | 1.91 | 65.9 | 312.87 |
-| 15 | Claude Fable 5.1 (High, Default Fallback) | Anthropic | 51.2 | 79.1 | 135.59 | 0.38 | 58.3 | 19.84 |
-| 16 | Claude Opus 5.5 (Medium, Default Fallback) | Anthropic | 51.2 | — | 54.24 | 0.94 | 82.2 | 19.26 |
-| 17 | GPT-6.1 Sol (Xhigh) | OpenAI | 51.0 | — | 27.12 | 1.88 | 61.15 | 135.57 |
-| 18 | GPT-6 Astra (High) | OpenAI | 50.9 | 77.1 | 135.59 | 0.38 | 60.42 | 62.43 |
-| 19 | Claude Opus 5 (Max) | Anthropic | 50.8 | 78 | 67.80 | 0.75 | 52.28 | 73.02 |
-| 20 | GPT-6.1 Sol (High) | OpenAI | 50.2 | — | 27.12 | 1.85 | 57.21 | 69.02 |
+| 5 | Kimi K3.1 Pro | Kimi | 55.1 | — | 27.12 | 2.03 | 46.34 | 2.98 |
+| 6 | Claude Opus 5.5 (High, Default Fallback) | Anthropic | 53.6 | — | 54.24 | 0.99 | 80.04 | 34.76 |
+| 7 | Claude Fable 5.1 (Max, Default Fallback) | Anthropic | 53.4 | 81.6 | 135.59 | 0.39 | 69.84 | 239.84 |
+| 8 | Claude Fable 5.1 (Xhigh, Default Fallback) | Anthropic | 53.2 | 80.7 | 135.59 | 0.39 | 62.48 | 96.1 |
+| 9 | GPT-6 Astra (Max) | OpenAI | 52.7 | 76.9 | 135.59 | 0.39 | 67.78 | 353.16 |
+| 10 | Gemini 4 Argon (High) | Google | 52.6 | — | 27.12 | 1.94 | 79.69 | 48.23 |
+| 11 | GPT-6 Astra (Xhigh) | OpenAI | 52.4 | 75.9 | 135.59 | 0.39 | 68.13 | 175.2 |
+| 12 | Muse Wonder (Max) | Meta | 52.4 | — | 54.24 | 0.97 | 202.28 | 31.29 |
+| 13 | Claude Sonnet 5.5 (Xhigh, Default Fallback) | Anthropic | 51.9 | — | 27.12 | 1.91 | 109.9 | 30.41 |
+| 14 | GPT-6.1 Sol (Max) | OpenAI | 51.8 | — | 27.12 | 1.91 | 69.37 | 284.31 |
+| 15 | Claude Fable 5.1 (High, Default Fallback) | Anthropic | 51.2 | 79.1 | 135.59 | 0.38 | 58.3 | 18.07 |
+| 16 | Claude Opus 5.5 (Medium, Default Fallback) | Anthropic | 51.2 | — | 54.24 | 0.94 | 81.92 | 18.59 |
+| 17 | GPT-6.1 Sol (Xhigh) | OpenAI | 51.0 | — | 27.12 | 1.88 | 64.3 | 161.87 |
+| 18 | GPT-6 Astra (High) | OpenAI | 50.9 | 77.1 | 135.59 | 0.38 | 63.71 | 62.43 |
+| 19 | Claude Opus 5 (Max) | Anthropic | 50.8 | 78 | 67.80 | 0.75 | 52.28 | 76.3 |
+| 20 | GPT-6.1 Sol (High) | OpenAI | 50.2 | — | 27.12 | 1.85 | 58.08 | 69.02 |
 
 ## 表 12：十四、🌐 开源生态——下载量与 Star 数说话HF 镜像 + GitHub
 
 | # | 家族/厂商 | HF 代表模型 | 下载量 | 周增量 | 点赞 | 衍生 | License | GitHub 主仓 | Star | 周增量 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Qwen 通义千问 | Qwen/Qwen3-0.6B | 23,729,057 | -104,669 | 1,851 | 100+ | apache-2.0 | QwenLM/Qwen3 | 27,683 | +1 |
+| 1 | Qwen 通义千问 | Qwen/Qwen3-0.6B | 23,729,057 | -104,669 | 1,852 | 100+ | apache-2.0 | QwenLM/Qwen3 | 27,687 | +5 |
 | 2 | GLM 智谱 | zai-org/GLM-5.3-Flash | 6,350,666 | -1,606 | 2,952 | 100+ | mit | zai-org/GLM-4.5 | 4,424 | +0 |
 | 3 | IBM Granite | ibm-granite/granite-embedding-small-english-r2 | 6,246,072 | +90,156 | 111 | 16 | apache-2.0 | ibm-granite/granite-code-models | 1,249 | +0 |
-| 4 | DeepSeek | deepseek-ai/DeepSeek-V3.2 | 5,694,614 | +102,314 | 1,587 | 62 | mit | deepseek-ai/DeepSeek-V3 | 104,614 | +16 |
+| 4 | DeepSeek | deepseek-ai/DeepSeek-V3.2 | 5,694,614 | +102,314 | 1,587 | 62 | mit | deepseek-ai/DeepSeek-V3 | 104,619 | +21 |
 | 5 | Microsoft Phi | microsoft/mdeberta-v3-base | 5,398,623 | -79,740 | 260 | 100+ | mit | microsoft/PhiCookBook | 3,903 | +0 |
 | 6 | MiniMax | MiniMaxAI/MiniMax-H3 | 5,285,319 | +112,049 | 6,371 | 100+ | other | MiniMax-AI/MiniMax-M1 | 3,185 | +2 |
-| 7 | Llama | meta-llama/Llama-3.1-8B-Instruct | 4,845,085 | +11,571 | 8,617 | 100+ | llama3.1 | meta-llama/llama | 59,629 | -3 |
-| 8 | Mistral | mistralai/Voxtral-Mini-4B-Realtime-2602 | 2,031,713 | -9,657 | 1,046 | 67 | apache-2.0 | mistralai/mistral-inference | 10,821 | +0 |
-| 9 | Kimi 月之暗面 | moonshotai/Kimi-K3 | 856,232 | -18,280 | 11,832 | 100+ | other | MoonshotAI/Kimi-K3 | 8,991 | +5 |
-| 10 | MiMo 小米 | XiaomiMiMo/MiMo-V2.5 | 128,044 | -8,866 | 430 | 30 | mit | XiaomiMiMo/MiMo-Code | 13,727 | +4 |
+| 7 | Llama | meta-llama/Llama-3.1-8B-Instruct | 4,845,085 | +11,571 | 8,617 | 100+ | llama3.1 | meta-llama/llama | 59,630 | -2 |
+| 8 | Mistral | mistralai/Voxtral-Mini-4B-Realtime-2602 | 2,031,713 | -9,657 | 1,046 | 67 | apache-2.0 | mistralai/mistral-inference | 10,822 | +1 |
+| 9 | Kimi 月之暗面 | moonshotai/Kimi-K3 | 856,232 | -18,280 | 11,832 | 100+ | other | MoonshotAI/Kimi-K3 | 8,996 | +10 |
+| 10 | MiMo 小米 | XiaomiMiMo/MiMo-V2.5 | 128,044 | -8,866 | 430 | 30 | mit | XiaomiMiMo/MiMo-Code | 13,735 | +12 |
 | 11 | InclusionAI | inclusionAI/LLaDA2.0-mini | 108,604 | -7,658 | 71 | 10 | apache-2.0 | inclusionAI/Ling | 272 | +0 |
 | 12 | ByteDance Seed | ByteDance-Seed/UI-TARS-1.5-7B | 87,395 | -15,891 | 615 | 28 | apache-2.0 | — | — | 首日快照 |
 | 13 | LongCat 美团 | meituan-longcat/LongCat-Image-Edit-Turbo | 22,776 | +73 | 72 | 4 | apache-2.0 | — | — | 首日快照 |
@@ -355,8 +357,8 @@
 | 阿里 Qwen3.7-Max / 百炼按量 / Qoder Night Plan | ① 百炼按量付费全计费项限时 5 折（API 单价）；② Qoder / 秒悟 Meoo 客户端错峰 22:00–08:00 Credits 2 折（0.1x） | 5 折（按量） / 2 折（错峰 Credits） | 按量 5 折 ¥6.00/¥18.00 / 错峰等效 ¥2.40/¥7.20 | 进行中 / 结束日待定 | 基准标准价 ¥12/¥36（覆盖输入/输出/缓存等 6 个计费项）。⚠️ 两种折扣口径不同：按量 5 折属 API 单价折扣；错峰 2 折属 Qoder 订阅 Credits 倍率折扣（非 API 单价）。覆盖 Qoder CN 全系（Desktop / JetBrains 插件 / CLI / QoderWork / Mobile / Wake / Cloud Agents）+ 秒悟 Meoo，Pro Trial / Pro / Teams 自动生效、无需报名（官方页 alibabacloud.com/help/tc/lingma/qwen-3-7-series-model-staggering-discount）；10-26 轮询复核：官方 OPC 权益页（aliyun.com/benefit/ai/opc）仍列 Night Qoder 2 折（Qwen 3.7-Max 2 折 / Plus 4 折，22:00–08:00 自动生效），百炼按量 5 折无终止公告，均延续 |
 | 阿里百炼 Token Plan / 个人版 / 团队版订阅 | 订阅限时活动价；另设「全模型通用节省计划」低至 4.5 折（150+ 款模型通兑，支持 Qwen3.8 / Wan3.0 / DeepSeek / Kimi / GLM 等） | 6.5–8.3 折（个人四档） / 7.6 折（团队） / 4.5 折起（节省计划） | Lite ¥39/月（原 ¥60） / Essential ¥79/月（原 ¥120） / Standard ¥139/月（原 ¥180） / Pro ¥499/月（原 ¥600） / 团队 ¥150/席位/月（原 ¥198） | 进行中 / 订阅制（结束日待定） | 150+ 款通用 Credits，无单一模型价；09-22 起取消周限额、改按订阅月（30 天）额度：Lite 11,500 / Essential 25,500 / Standard 45,000 / Pro 180,000 Credits，用量包 ¥100/个=20,000 Credits（最多持 5 个），Standard/Pro 另赠 Harness 权益；团队版限时优惠仅适用包月，包年不参与。另：AI 焕新季满减券（满 20 减 10 / 99 减 15 / 199 减 35）至 2026-09-30（已结束：09-30 为活动截止日、领取后 14 天有效 → 最晚 10-14 全部失效；10-23 复核无延续公告）（09-28 官方页 help.aliyun.com/zh/model-studio/token-plan-personal-overview 复核） |
 | 阿里百炼 Token Plan / 个人版 · 夜间限时权益 | 每晚 22:00–08:00 调用指定 DeepSeek 模型享 Credits 消耗 5 折；09-22 起模型池调整：qwen 系已全部移出 | 5 折（夜间） | 按 Credits 折算： / deepseek-v4.1-flash 谷时等效 ¥0.50/¥2.00 / （基准 ¥1.00/¥4.00 × 5 折） | 进行中 / 结束日待定 | ⚠️ 官方页（09-28 更新）列明适用模型仅 3 款：deepseek-v4-pro-0813、deepseek-v4-flash-0731、deepseek-v4.1-flash；qwen3.8-max / qwen3.7 系列均已不享夜间 5 折（较 09-22 前清单缩窄，07-08 月 qwen 系曾享 4 折）；限 Token Plan 个人版订阅用户、仅限交互式工具内使用，按量计费与非交互批量调用不适用（help.aliyun.com/zh/model-studio/token-plan-personal-overview） |
-| OpenAI GPT-5.6 Sol | 08-21 起 API 促销：输入 $5→$4、输出 $30→$20、缓存读 $0.50→$0.40 | 输入 -20% / 输出 -33% | ¥26.94/¥134.70 / （缓存 ¥2.69） | 进行中 / 促销至 2026-11-21 | 基准 $4/$20（促销价）；官方定价页 09-17 复核仍标注「available at least through November 21, 2026」；覆盖 API 与 ChatGPT Work / Codex credits；Pro/Plus/Business 订阅价不变 |
-| Google Gemini 3.6 / 3.8 Flash / 首次体验价（introductory pricing） | 两款 Flash 同价限时五折（原 $1.50/$7.50 → $0.75/$3.75）；Batch / Flex 档再减半；10-25 更正：gemini-3.7-flash 已从官方定价页下架、请求并入 3.8-flash 路由，故不再单列 | 5 折 | ¥5.05/¥25.26 / （缓存 ¥0.51） | 进行中 / 至 2026-12-31 / 2027-01-01 起恢复标准价 | 基准标准价 $1.50/$7.50（¥10.10/¥50.51）；Batch / Flex 档 $0.375/$1.875；非全球区域端点 +10% 溢价；本期新增（原表缺失该活动）。Google 官方定价页确认（2026-09-17 复核） |
+| OpenAI GPT-5.6 Sol | 08-21 起 API 促销：输入 $5→$4、输出 $30→$20、缓存读 $0.50→$0.40 | 输入 -20% / 输出 -33% | ¥26.94/¥134.70 / （缓存 ¥2.69） | 进行中 / 促销至 2026-11-21 | 基准 $4/$20（促销价）；官方定价页 09-17 复核仍标注「available at least through November 21, 2026」；覆盖 API 与 ChatGPT Work / Codex credits；Pro/Plus/Business 订阅价不变；10-27 复核：官方定价页仍标注促销价 $4/$20（＝¥26.94/¥134.70、缓存 ¥2.69），「available at least through November 21, 2026」措辞未变，活动仍生效 |
+| Google Gemini 3.6 / 3.8 Flash / 首次体验价（introductory pricing） | 两款 Flash 同价限时五折（原 $1.50/$7.50 → $0.75/$3.75）；Batch / Flex 档再减半；10-25 更正：gemini-3.7-flash 已从官方定价页下架、请求并入 3.8-flash 路由，故不再单列 | 5 折 | ¥5.05/¥25.26 / （缓存 ¥0.51） | 进行中 / 至 2026-12-31 / 2027-01-01 起恢复标准价 | 基准标准价 $1.50/$7.50（¥10.10/¥50.51）；Batch / Flex 档 $0.375/$1.875；非全球区域端点 +10% 溢价；本期新增（原表缺失该活动）。Google 官方定价页确认（2026-09-17 复核）；10-27 复核：官方定价页仍列 3.6 / 3.8 Flash 五折 $0.75/$3.75（＝¥5.05/¥25.26），活动至 2026-12-31、2027-01-01 起恢复 $1.50/$7.50，活动仍生效 |
 | DeepSeek V4.1 Flash / 峰谷计费（原 V4 全系） | 峰谷计费：高峰（工作日 9–12、14–18 点）价格 ×2；其余时段为谷（基准价）；周末全天按低谷价 | 高峰 ×2 / 谷 = 基准 | 谷 ¥1.00/¥4.00（缓存 ¥0.02） / 峰 ¥2.00/¥8.00（缓存 ¥0.04） | 已生效 / 2026-09-10 12:00 / 周末低谷价自 08-23 起 | 官方峰谷双档（api-docs.deepseek.com）。⚠️ 价格已于 2026-09-10 全系下调（谷档由 ¥1.50/¥4.50 → ¥1.00/¥4.00）；V4 Pro 独立档位仍生效（10-25 复核更正：原「已于 2026-09-14 停用并透明路由至 V4.1 Flash」不成立——退役公告 09-09 发布、09-10 推迟、09-11 撤回且明确「计费不变」；官方页 10-25 仍列 V4 Pro 空闲 ¥4.50/¥13.50、高峰 ¥9.00/¥27.00）；仅旧模型名 deepseek-v4-flash 已下线、由 V4.1-Flash-1017 承接 |
 | Mistral Large 4 / 首发促销（launch sale）· public preview | 官方 API 首发五折：$1.36/$4.18 → $0.68/$2.09（缓存 $0.14→$0.07）；Batch 再5 折 | 5 折（首发促销） | ¥9.16/¥28.15（缓存 ¥0.94） / 已结束：首发五折 $0.68/$2.09 → 恢复 list $1.36/$4.18 | 已结束 / 10-21 T+1 复核确认结束（OR 翻回 list 价）；10-22 T+2 官方实证（docs.mistral.ai 列 list 价、无促销标识） | ⚠️ 口径：Mistral 官方定价页仅标 sale price、未公布截止日；到期日 2026-10-20 取自 Vercel AI Gateway 同型号条目（第三方渠道口径，待厂商官网确认）。恢复 list 价后输入翻倍至 $1.36、出 $4.18（10-16 复核：mistral.ai/pricing 仍列 sale price；changelog 10-06 明示「50% off for 2 weeks」+ Vercel「ends October 20」+ AA「first two weeks」多源印证 10-20 到期，官方页仍未标确切日期，待厂商官网确认）；权重定于 10-31 前开放（10-17 复核：VentureBeat 称 10-27、HF 载 10-31）；10-17 T-3 复核多源仍指向 10-20 到期（changelog「2 weeks」+ Vercel「ends October 20」+ mxchat），官方页仍未标确切日期；10-18 T-2 复核：五折延续（官方页仍列 sale price 无截止日；tokencost/quidproquo 多源维持 10-20）；10-19 T-1 复核：五折延续（aipricetable 10-19 实测仍列 $0.68/$2.09；官方页无截止日，明日 T 日复核是否翻回 list 价）；10-20 T 日复核：五折延续，未翻回（price_watch 按第三方预测到期日机械翻回 list 价后，T 日实测裁定回滚：OR 实时挂牌仍 $0.68/$2.09/$0.07、mistral.ai/pricing 已改版为订阅制页面不再展示 API 模型价且无翻回公告 → 按「厂商一手源优先」判延续；s-sort 恢复 ¥4.58/¥14.08，混合价维持 ¥6.96；权重 HF ETA 10-31 前）；10-21 T+1 复核：五折结束已兑现（OR 挂牌翻回 list $1.36/$4.18/$0.14＝¥9.16/¥28.15/¥0.94，第三方「ends October 20」预测兑现；mistral.ai/pricing 改版为订阅制页面、不再公示 API 模型价且无翻回公告；s-sort 混合价 ¥6.96→¥13.91 重排、柱状图 v/val 守恒重算、事件行 revised→confirmed） |
 | MiniMax M3 / ≤512k 上下文 | ≤512k 上下文永久五折 | 5 折 | ¥2.10/¥8.40 / （标准 ¥4.20/¥16.80） | 已并入标准价 | 开放平台文档标注（08-02 官宣）；>512k 上下文价格翻倍（¥4.20/¥16.80）；主表已按折后价列示 |
