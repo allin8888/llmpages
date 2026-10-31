@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LLM 生态周报 · 2026-10-31</title>
+<style>
+:root{--bg:#e7edf5;--ink:#1f2733;--muted:#6b7686;--line:#e2e8f0;--blue:#1d4ed8;--blue2:#3b82f6;--up:#ef4444;--down:#22c55e;--th-bg1:#2f5fd0;--th-bg2:#1e40af;--th-ink:#ffffff;--th-sub:#e8effc;--th-line:#1b3a94--fs-table:12.5px;--fs-th:11.5px;--fs-note:11.5px;--fs-sub:10.5px;--tap-min:44px;--mob-cell-pad:8px 9px;--mob-line:rgba(148,163,184,.28);}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 64px}
+h1{font-size:26px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}h1::after{content:"";display:block;width:72px;height:4px;background:linear-gradient(90deg,#2563eb,#60a5fa);border-radius:2px;margin-top:10px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:18px}
+.card{background:#fff;border:1px solid #dfe7f1;border-radius:14px;padding:18px 20px;margin-bottom:18px;box-shadow:0 2px 8px rgba(16,24,40,.05)}
+.card h2{font-size:19px;font-weight:700;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.card h2 .tag{font-size:12px;font-weight:500;color:#fff;background:var(--blue);padding:2px 8px;border-radius:20px}
+.note{font-size:12.5px;color:#526079;background:#f4f7fb;border-left:3px solid var(--blue2);padding:9px 12px;border-radius:6px;margin:8px 0 14px}
+.note-warn{font-size:12.5px;color:#8a6400;background:#fff7e8;border:1px solid #f3dca0;border-left:3px solid #f59e0b;padding:9px 12px;border-radius:6px;margin:8px 0 14px}
+.note code{background:#eef2f7;padding:0 4px;border-radius:4px;font-size:11px;color:#334155}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:11px;color:#fff;white-space:nowrap}
+.b-official{background:linear-gradient(180deg,#34d399,#059669)}.b-risk{background:linear-gradient(180deg,#fbbf24,#d97706)}
+.badge b-official,.b-risk{}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th,.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.tbl th{background:linear-gradient(180deg,var(--th-bg1),var(--th-bg2));color:var(--th-ink);border-bottom:1px solid var(--th-line);font-weight:700;position:sticky;top:0;z-index:2}
+.tbl th:first-child{color:var(--th-sub)}
+.tbl tbody tr:nth-child(even) td{background:#f8fafd}.tbl tbody tr:hover td{background:#eef4ff}
+.tbl td:first-child,.tbl th:first-child{text-align:left;font-weight:600}
+/* 2026-10-08：独立序号列（s-bench / s-eco），序号居中、字重正常、弱化 */
+.tbl td.rank{text-align:center;font-weight:400;color:#6b7686;width:38px}
+.tbl th.rank,.tbl thead th[style*="width:38px"]{text-align:center;width:38px}
+.mono{font-variant-numeric:tabular-nums}.b{font-weight:700}
+.muted{color:#8a95a8;font-size:11.5px}
+.chg{font-weight:700}.chg.up{color:var(--up)}.chg.down{color:var(--down)}
+footer{font-size:12px;color:var(--muted);margin-top:24px;line-height:1.8}
+/* === RESPONSIVE-ENHANCE-2026-09-10 === */
+/* ------------------------------------------------------------------
+   响应式与交互增强层（2026-09-10 新增）· 与主报告同源
+   纯 CSS 追加，不改结构。变量对齐 :root。
+   ------------------------------------------------------------------ */
+:root{
+  --ui-scroll-thumb:rgba(59,130,246,.55);
+  --ui-scroll-track:rgba(148,163,184,.16);
+}
+
+/* --- 表格横向滚动容器 --- */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+  margin:12px 0 10px;background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 1px 3px rgba(16,24,40,.06);
+  scrollbar-width:thin;scrollbar-color:var(--ui-scroll-thumb) var(--ui-scroll-track)}
+.tbl-scroll .tbl{border:0;margin:0}
+.tbl-scroll .tbl th:first-child,.tbl-scroll .tbl td:first-child{border-top-left-radius:12px}
+.tbl-scroll::-webkit-scrollbar{height:9px;display:block}
+.tbl-scroll::-webkit-scrollbar-track{background:var(--ui-scroll-track);border-radius:99px}
+.tbl-scroll::-webkit-scrollbar-thumb{background:var(--ui-scroll-thumb);border-radius:99px}
+.tbl-scroll::-webkit-scrollbar-thumb:hover{background:var(--blue)}
+
+/* --- 键盘可达性与触控 --- */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--blue2);outline-offset:2px;border-radius:6px}
+a{-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:24px}
+
+/* ================================================================
+   平板 / 窄桌面（≤1080px）
+   ================================================================ */
+@media (max-width:1080px){
+  .wrap{max-width:100%;padding-left:16px;padding-right:16px}
+  .card{padding:16px 16px}
+}
+
+/* ================================================================
+   手机（≤768px）
+   ================================================================ */
+@media (max-width:768px){
+  h1{font-size:21px;line-height:1.3}
+  h1::after{width:56px;height:3px;margin-top:8px}
+  .card h2{font-size:16px}
+  .card h2 .tag{font-size:11px}
+  .wrap{padding:16px 12px 44px}
+  .card{padding:13px 12px;border-radius:12px}
+  .meta{font-size:12px}
+  .note,.note-warn{font-size:12px;padding:8px 10px}
+  .tbl{font-size:12.5px}
+  .tbl th,.tbl td{padding:8px 9px}
+  .tbl-scroll{margin:10px 0}
+  footer{font-size:11.5px}
+}
+
+/* ================================================================
+   小屏手机（≤480px）
+   ================================================================ */
+@media (max-width:480px){
+  h1{font-size:19px}
+  .card h2{font-size:15px}
+  .wrap{padding:12px 10px 36px}
+  .card{padding:12px 10px}
+  .tbl{font-size:12px}
+  .tbl-scroll{margin:10px 0}
+}
+
+/* ================================================================
+   触摸设备：禁用粘滞 hover
+   ================================================================ */
+@media (hover:none){
+  .tbl tbody tr:hover td{background:transparent}
+}
+
+/* ================================================================
+   无障碍：减少动效
+   ================================================================ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+
+/* ================================================================
+   打印
+   ================================================================ */
+@media print{
+  html,body{background:#fff}
+  .wrap{max-width:100%;padding:0}
+  .card{box-shadow:none;border-color:#cbd5e1;break-inside:avoid}
+  .tbl-scroll{overflow:visible;border:0;border-radius:0;box-shadow:none}
+  .tbl th{position:static}
+}
+
+/* === A11Y-CONTRAST-2026-09-10 === */
+/* ------------------------------------------------------------------
+   可读性修复（周报）：.muted #8a95a8 (3.02:1) → var(--muted) (4.60:1)
+   徽章白字对比度同步提升。仅改颜色值，结构不变。
+   ------------------------------------------------------------------ */
+.muted{color:var(--muted)}
+.note code{color:#1e293b}
+.b-official{background:linear-gradient(180deg,#059669,#065f46);text-shadow:0 1px 1px rgba(16,24,40,.22)}
+.b-risk{background:linear-gradient(180deg,#d97706,#92400e);text-shadow:0 1px 1px rgba(16,24,40,.22)}
+
+/* === TABLE-OVERFLOW-FIX-2026-09-10 === */
+/* 表格溢出修复：超宽表格触发横滚而非撑破 */
+/* 桌面维持 100%；窄屏由 WIDTH-GUARD 的 max-content 接管 */
+.tbl-scroll > .tbl{width:100%}
+@media (max-width:768px){
+  .tbl-scroll::-webkit-scrollbar{height:9px;display:block}
+  .tbl-scroll{scrollbar-width:thin;scrollbar-color:var(--ui-scroll-thumb) var(--ui-scroll-track)}
+}
+
+/* === WIDTH-GUARD-2026-09-10 === */
+/* 容器宽度护栏：窄屏防内容撑破卡片 */
+@media (max-width:1080px){
+  .wrap{width:100%;box-sizing:border-box}
+  .card{overflow:hidden;max-width:100%;box-sizing:border-box}
+  .tbl-scroll{width:100%;max-width:100%;box-sizing:border-box}
+  .tbl-scroll > .tbl{width:max-content;min-width:100%;max-width:none}
+}
+
+/* === MOBILE-TABLE-OPTIM-2026-10-03 · 周报窄屏（360–430px）表格适配 ===
+   表1(8列 AA评测) / 表2(7列 TB榜) / 表3(10列 生态) → S1 横滚 + 粘性表头 + 粘性首列
+   表4(3列 License 红榜)                            → S2 卡片式行布局 */
+@media (max-width:768px){
+  :root{
+    --fs-table:12.5px;
+    --fs-th:11.5px;
+    --fs-note:11.5px;
+    --fs-sub:10.5px;
+    --tap-min:44px;
+    --mob-cell-pad:8px 9px;
+    --mob-line:rgba(148,163,184,.28);
+  }
+  .tbl th,.tbl td{padding:var(--mob-cell-pad);line-height:1.5;}
+  .tbl tbody tr{border-bottom:1px solid var(--mob-line);}
+  .tbl tbody tr:nth-child(even){background:rgba(148,163,184,.055);}
+  .tbl td.num,.tbl .num{font-variant-numeric:tabular-nums;-webkit-font-feature-settings:"tnum";}
+  .badge{min-height:22px;display:inline-flex;align-items:center;padding:4px 9px;font-size:var(--fs-sub);line-height:1.2;}
+  .tbl-scroll{position:relative;}
+  .tbl-scroll thead th{
+    position:sticky;top:0;z-index:6;
+    background:var(--th-bg2);color:var(--th-ink);
+    box-shadow:0 1px 0 var(--th-line),0 2px 6px rgba(16,24,40,.12);
+  }
+  .tbl-scroll thead th .th-sub{display:block;margin-top:2px;font-size:var(--fs-sub);line-height:1.25;color:var(--th-sub);}
+  .tbl-scroll thead th:first-child{z-index:7;background:var(--th-bg2);box-shadow:1px 0 0 var(--th-line),0 2px 6px rgba(16,24,40,.12);}
+  .tbl-scroll tbody td:first-child{position:sticky;left:0;z-index:5;background:#fff;box-shadow:1px 0 0 var(--mob-line);}
+  .tbl-scroll tbody tr:nth-child(even) td:first-child{background:rgba(244,246,251,.96);}
+  .tbl td{overflow-wrap:anywhere;}
+  .tbl td:nth-child(2){white-space:normal;min-width:104px;}
+  .tbl-scroll{
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 10px,#000 calc(100% - 14px),transparent 100%);
+            mask-image:linear-gradient(to bottom,transparent 0,#000 10px,#000 calc(100% - 14px),transparent 100%);
+  }
+  .tbl-scroll::-webkit-scrollbar{height:10px;display:block;}
+  .tbl-scroll::-webkit-scrollbar-thumb{background:var(--ui-scroll-thumb);border-radius:99px;min-width:44px;}
+}
+@media (max-width:430px){
+  :root{--fs-table:12px;--fs-th:11px;--fs-note:11px;--fs-sub:10px;--mob-cell-pad:7px 8px;}
+  .tbl-scroll tbody td:first-child{position:static;box-shadow:none;}
+  .tbl-scroll tbody tr:nth-child(even) td:first-child{background:inherit;}
+  .tbl td:nth-child(2){min-width:0;}
+  .badge{min-height:24px;padding:5px 10px;}
+}
+@media (max-width:768px){
+  .card-tbl thead{display:none;}
+  .card-tbl,.card-tbl tbody,.card-tbl tr,.card-tbl td{display:block;width:auto;}
+  .card-tbl tr{margin:0 0 10px;padding:10px 12px;border:1px solid var(--mob-line);border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.05);}
+  .card-tbl td{display:flex;align-items:flex-start;gap:10px;padding:5px 0;border:0;border-bottom:1px dotted var(--mob-line);text-align:left !important;white-space:normal;min-width:0;}
+  .card-tbl tr td:last-child{border-bottom:0;}
+  .card-tbl td::before{content:attr(data-th) "：";flex:0 0 5.2em;max-width:5.2em;min-width:5.2em;word-break:keep-all;overflow-wrap:normal;font-size:var(--fs-sub);font-weight:700;color:#64748b;line-height:1.5;}
+  .card-tbl td:not([data-th]){display:block;font-size:var(--fs-table);color:#1e293b;}
+  .card-tbl tbody tr:nth-child(even){background:#fff;}
+}
+@media (max-width:430px){
+  .card-tbl td::before{flex:0 0 4.8em;max-width:4.8em;min-width:4.8em;}
+  .card-tbl tr{padding:9px 10px;}
+}
+/* F16/F18：S2 卡片表脱离 WIDTH-GUARD 的 max-content，否则卡片被压成 ~40px */
+@media (max-width:768px){
+  .tbl-scroll > .tbl.card-tbl{width:100% !important;max-width:100% !important;min-width:0 !important;}
+  .card-tbl td{display:grid !important;grid-template-columns:5.2em minmax(0,1fr);column-gap:10px;align-items:start;}
+  .card-tbl td::before{grid-column:1;}
+  .card-tbl td:not([data-th]){display:block !important;grid-column:1 / -1;}
+}
+@media (max-width:430px){
+  .card-tbl td{grid-template-columns:4.8em minmax(0,1fr);column-gap:8px;}
+}
+@media (prefers-reduced-motion:reduce){ .tbl-scroll{scroll-behavior:auto;} }
+@media print{
+  .tbl-scroll thead th,.tbl-scroll tbody td:first-child{position:static !important;box-shadow:none !important;}
+  .tbl-scroll{-webkit-mask-image:none !important;mask-image:none !important;overflow:visible !important;}
+  .card-tbl td{display:table-cell !important;}
+  .card-tbl td::before{content:none !important;}
+  .card-tbl thead{display:table-header-group !important;}
+}
+
+</style></head><body><div class="wrap">
+<h1>📊 LLM 生态周报（能力评测 + 开源脉搏）</h1>
+<div class="meta">数据截至 <b>2026-10-31</b>（每日 11:00 随主报告刷新；周频数据允许陈旧——超 14 天未更新的字段将灰显并标注日期）·
+快照数：生态 15 家族 / 能力 2 条 · <span class="badge b-official">AA 署名要求</span> 数据来源见页脚</div>
+
+<div class="card"><h2>🧭 一、能力评测<span class="tag">AA 免费 API</span></h2><div class="tbl-scroll"><table class="tbl"><thead><tr><th style="text-align:center;width:38px">#</th><th style="text-align:left;">模型</th><th style="text-align:left;">厂商</th><th style="text-align:left;">AA Index</th><th style="text-align:left;">编码 Index</th><th style="text-align:left;">混合价 ¥/1M</th><th style="text-align:left;">性价比 value</th><th style="text-align:left;">吞吐 tok/s</th><th style="text-align:left;">TTFT s</th></tr></thead><tbody><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">1</td><td style="text-align:left;font-weight:600">Gemini 4 Carbon (High)</td><td class="mono">Google</td><td class="mono b">59.4</td><td class="mono">—</td><td class="mono">54.24</td><td class="mono">1.10</td><td class="mono">84.63</td><td class="mono">118.58</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">2</td><td style="text-align:left;font-weight:600">Claude Opus 5.5 (Max, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">58.4</td><td class="mono">—</td><td class="mono">54.24</td><td class="mono">1.08</td><td class="mono">96.63</td><td class="mono">729.62</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">3</td><td style="text-align:left;font-weight:600">Claude Opus 5.5 (Xhigh, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">57.0</td><td class="mono">—</td><td class="mono">54.24</td><td class="mono">1.05</td><td class="mono">85.42</td><td class="mono">127.23</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">4</td><td style="text-align:left;font-weight:600">GPT-6 Astra (Max)</td><td class="mono">OpenAI</td><td class="mono b">56.9</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.42</td><td class="mono">78.2</td><td class="mono">270.03</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">5</td><td style="text-align:left;font-weight:600">GPT-6 Astra (Xhigh)</td><td class="mono">OpenAI</td><td class="mono b">55.3</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.41</td><td class="mono">65.99</td><td class="mono">149.41</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">6</td><td style="text-align:left;font-weight:600">GPT-6 Astra (High)</td><td class="mono">OpenAI</td><td class="mono b">54.8</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.40</td><td class="mono">62.86</td><td class="mono">48.12</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">7</td><td style="text-align:left;font-weight:600">GPT-6.1 Sol (Max)</td><td class="mono">OpenAI</td><td class="mono b">54.5</td><td class="mono">—</td><td class="mono">27.12</td><td class="mono">2.01</td><td class="mono">79.3</td><td class="mono">315.06</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">8</td><td style="text-align:left;font-weight:600">Claude Sonnet 5.5 (Max, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">54.2</td><td class="mono">—</td><td class="mono">27.12</td><td class="mono">2.00</td><td class="mono">139.3</td><td class="mono">463.03</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">9</td><td style="text-align:left;font-weight:600">GPT-6.1 Sol (Xhigh)</td><td class="mono">OpenAI</td><td class="mono b">52.3</td><td class="mono">—</td><td class="mono">27.12</td><td class="mono">1.93</td><td class="mono">71.04</td><td class="mono">126.08</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">10</td><td style="text-align:left;font-weight:600">Claude Opus 5.5 (High, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">51.7</td><td class="mono">—</td><td class="mono">54.24</td><td class="mono">0.95</td><td class="mono">79.56</td><td class="mono">34.52</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">11</td><td style="text-align:left;font-weight:600">GPT-6 Astra (Medium)</td><td class="mono">OpenAI</td><td class="mono b">51.5</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.38</td><td class="mono">56.92</td><td class="mono">5.07</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">12</td><td style="text-align:left;font-weight:600">GPT-6.1 Terra (Max)</td><td class="mono">OpenAI</td><td class="mono b">51.0</td><td class="mono">—</td><td class="mono">13.56</td><td class="mono">3.76</td><td class="mono">97.24</td><td class="mono">274.62</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">13</td><td style="text-align:left;font-weight:600">Gemini 4 Argon (High)</td><td class="mono">Google</td><td class="mono b">50.4</td><td class="mono">—</td><td class="mono">54.24</td><td class="mono">0.93</td><td class="mono">82.93</td><td class="mono">49.13</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">14</td><td style="text-align:left;font-weight:600">GPT-6.1 Sol (High)</td><td class="mono">OpenAI</td><td class="mono b">50.2</td><td class="mono">—</td><td class="mono">27.12</td><td class="mono">1.85</td><td class="mono">59.92</td><td class="mono">44.36</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">15</td><td style="text-align:left;font-weight:600">Claude Fable 5.1 (Xhigh, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">49.7</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.37</td><td class="mono">62.17</td><td class="mono">73.47</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">16</td><td style="text-align:left;font-weight:600">Muse Wonder Full (Max)</td><td class="mono">Meta</td><td class="mono b">49.7</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">17</td><td style="text-align:left;font-weight:600">Claude Sonnet 5.5 (Xhigh, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">49.6</td><td class="mono">—</td><td class="mono">27.12</td><td class="mono">1.83</td><td class="mono">107.35</td><td class="mono">29.68</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">18</td><td style="text-align:left;font-weight:600">Claude Fable 5.1 (Max, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">49.0</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.36</td><td class="mono">68.67</td><td class="mono">238.66</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">19</td><td style="text-align:left;font-weight:600">Claude Opus 5.5 (Medium, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">48.1</td><td class="mono">—</td><td class="mono">54.24</td><td class="mono">0.89</td><td class="mono">79.64</td><td class="mono">16.41</td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">20</td><td style="text-align:left;font-weight:600">Claude Fable 5.1 (High, Default Fallback)</td><td class="mono">Anthropic</td><td class="mono b">47.0</td><td class="mono">—</td><td class="mono">135.59</td><td class="mono">0.35</td><td class="mono">57.12</td><td class="mono">14.62</td></tr></tbody></table></div></div>
+
+<div class="card"><h2>🏆 二、Terminal-Bench 排行榜<span class="tag">Snorkel 官方榜</span></h2><div class="note">数据源 <b>Snorkel</b> Terminal-Bench 2.1 官方审计榜（tbench.ai 同源）；列：Rank / Agent / 模型 / 模型厂商 / Agent 厂商 / 准确率 / 提交日期。「—」= 暂缺。</div><div class="tbl-scroll"><table class="tbl"><thead><tr><th style="text-align:left;">Rank</th><th style="text-align:left;">Agent</th><th style="text-align:left;">模型</th><th style="text-align:left;">模型厂商</th><th style="text-align:left;">Agent 厂商</th><th style="text-align:left;">准确率</th><th style="text-align:left;">日期</th></tr></thead><tbody><tr><td class="mono b">1</td><td style="text-align:left;font-weight:600">Codex CLI</td><td style="text-align:left">GPT-6 Astra</td><td class="mono">OpenAI</td><td class="mono">OpenAI</td><td class="mono b">87.4%</td><td class="mono">2026-09-03</td></tr><tr><td class="mono b">2</td><td style="text-align:left;font-weight:600">Claude Code</td><td style="text-align:left">Claude Fable 5</td><td class="mono">Anthropic</td><td class="mono">Anthropic</td><td class="mono b">83.8%</td><td class="mono">2026-06-09</td></tr><tr><td class="mono b">3</td><td style="text-align:left;font-weight:600">Codex CLI</td><td style="text-align:left">GPT-5.5</td><td class="mono">OpenAI</td><td class="mono">OpenAI</td><td class="mono b">83.1%</td><td class="mono">2026-04-23</td></tr><tr><td class="mono b">4</td><td style="text-align:left;font-weight:600">Terminus 2</td><td style="text-align:left">Claude Fable 5</td><td class="mono">Anthropic</td><td class="mono">Terminal-Bench</td><td class="mono b">80.4%</td><td class="mono">2026-06-09</td></tr><tr><td class="mono b">5</td><td style="text-align:left;font-weight:600">Cursor CLI</td><td style="text-align:left">Grok 4.5</td><td class="mono">xAI</td><td class="mono">Cursor</td><td class="mono b">79.3%</td><td class="mono">2026-07-08</td></tr><tr><td class="mono b">6</td><td style="text-align:left;font-weight:600">Claude Code</td><td style="text-align:left">Claude Opus 4.8</td><td class="mono">Anthropic</td><td class="mono">Anthropic</td><td class="mono b">78.9%</td><td class="mono">2026-05-28</td></tr><tr><td class="mono b">7</td><td style="text-align:left;font-weight:600">Codex CLI</td><td style="text-align:left">GPT-5.6 Terra</td><td class="mono">OpenAI</td><td class="mono">OpenAI</td><td class="mono b">78.4%</td><td class="mono">2026-06-26</td></tr><tr><td class="mono b">8</td><td style="text-align:left;font-weight:600">Terminus 2</td><td style="text-align:left">GPT-5.5</td><td class="mono">OpenAI</td><td class="mono">Terminal-Bench</td><td class="mono b">78.0%</td><td class="mono">2026-04-23</td></tr><tr><td class="mono b">9</td><td style="text-align:left;font-weight:600">mini-SWE-agent</td><td style="text-align:left">Muse Spark 1.1</td><td class="mono">Meta</td><td class="mono">Princeton</td><td class="mono b">76.2%</td><td class="mono">2026-07-09</td></tr><tr><td class="mono b">10</td><td style="text-align:left;font-weight:600">Codex CLI</td><td style="text-align:left">GPT-5.6 Luna</td><td class="mono">OpenAI</td><td class="mono">OpenAI</td><td class="mono b">75.7%</td><td class="mono">2026-06-26</td></tr><tr><td class="mono b">11</td><td style="text-align:left;font-weight:600">Claude Code</td><td style="text-align:left">Claude Sonnet 5</td><td class="mono">Anthropic</td><td class="mono">Anthropic</td><td class="mono b">74.6%</td><td class="mono">2026-06-30</td></tr><tr><td class="mono b">12</td><td style="text-align:left;font-weight:600">Terminus 2</td><td style="text-align:left">Gemini 3 Pro</td><td class="mono">Google</td><td class="mono">Terminal-Bench</td><td class="mono b">73.9%</td><td class="mono">2025-11-18</td></tr><tr><td class="mono b">13</td><td style="text-align:left;font-weight:600">Claude Code</td><td style="text-align:left">Claude Opus 4.7</td><td class="mono">Anthropic</td><td class="mono">Anthropic</td><td class="mono b">68.9%</td><td class="mono">2026-04-16</td></tr><tr><td class="mono b">14</td><td style="text-align:left;font-weight:600">Terminus 2</td><td style="text-align:left">Claude Opus 4.7</td><td class="mono">Anthropic</td><td class="mono">Terminal-Bench</td><td class="mono b">66.1%</td><td class="mono">2026-04-16</td></tr><tr><td class="mono b">15</td><td style="text-align:left;font-weight:600">Gemini CLI</td><td style="text-align:left">Gemini 3 Pro</td><td class="mono">Google</td><td class="mono">Google</td><td class="mono b">65.8%</td><td class="mono">2025-11-18</td></tr><tr><td class="mono b">16</td><td style="text-align:left;font-weight:600">Gemini CLI</td><td style="text-align:left">Gemini 3.1 Pro</td><td class="mono">Google</td><td class="mono">Google</td><td class="mono b">65.8%</td><td class="mono">2026-02-19</td></tr><tr><td class="mono b">17</td><td style="text-align:left;font-weight:600">Terminus 2</td><td style="text-align:left">Gemini 3.1 Pro</td><td class="mono">Google</td><td class="mono">Terminal-Bench</td><td class="mono b">65.6%</td><td class="mono">2026-02-19</td></tr><tr><td class="mono b">18</td><td style="text-align:left;font-weight:600">Claude Code</td><td style="text-align:left">GLM-5.1</td><td class="mono">Z-AI</td><td class="mono">Anthropic</td><td class="mono b">58.7%</td><td class="mono">2026-03-27</td></tr></tbody></table></div></div>
+
+<div class="card"><h2>🌐 三、开源生态脉搏<span class="tag">HF 镜像 + GitHub 免费档</span></h2>
+<div class="note">HF 主源（api.huggingface.co）当前网络不可达，采集走 <b>hf-mirror.com</b> 镜像（数据与官方同步）；
+GitHub 免费档 60 次/时（每日一次够用）。下载量/star 增量为<b>与上期快照（2026-10-30）之差</b>；「—」= 数据源未匹配/待核实。</div>
+<div class="note-warn" style="margin-top:0">⚠️ <b>许可证变更 = 合规事故级风险</b>（MiniMax 非商业授权类事件）：license 字段变化将触发高级告警直推，不等待周报发布。</div>
+<div class="tbl-scroll"><table class="tbl"><thead><tr>
+<th style="text-align:center;width:38px">#</th><th style="text-align:left;">家族/厂商</th><th style="text-align:left;">HF 代表模型</th><th style="text-align:left;">下载量</th><th style="text-align:left;">周增量</th><th style="text-align:left;">点赞</th><th style="text-align:left;">衍生</th><th style="text-align:left;">License</th><th style="text-align:left;">GitHub 主仓</th><th style="text-align:left;">Star</th><th style="text-align:left;">周增量</th>
+</tr></thead><tbody><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">1</td><td style="text-align:left;font-weight:600">Qwen 通义千问</td><td class="mono">Qwen/Qwen3-0.6B</td><td class="mono b">23,941,880</td><td><span class="chg down">-88,732</span></td><td class="mono">1,862</td><td class="mono">100+</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">QwenLM/Qwen3</td><td class="mono b">27,694</td><td><span class="chg down">-1</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">2</td><td style="text-align:left;font-weight:600">IBM Granite</td><td class="mono">ibm-granite/granite-embedding-small-english-r2</td><td class="mono b">6,583,684</td><td><span class="chg up">+168,022</span></td><td class="mono">113</td><td class="mono">16</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">ibm-granite/granite-code-models</td><td class="mono b">1,250</td><td><span class="chg up">+1</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">3</td><td style="text-align:left;font-weight:600">GLM 智谱</td><td class="mono">zai-org/GLM-5.3-Flash</td><td class="mono b">6,374,655</td><td><span class="chg down">-22,726</span></td><td class="mono">2,989</td><td class="mono">100+</td><td><span class="badge b-official">mit</span></td><td class="mono">zai-org/GLM-4.5</td><td class="mono b">4,425</td><td><span class="chg up">+0</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">4</td><td style="text-align:left;font-weight:600">DeepSeek</td><td class="mono">deepseek-ai/DeepSeek-V3.2</td><td class="mono b">6,295,973</td><td><span class="chg up">+193,468</span></td><td class="mono">1,592</td><td class="mono">63</td><td><span class="badge b-official">mit</span></td><td class="mono">deepseek-ai/DeepSeek-V3</td><td class="mono b">104,689</td><td><span class="chg up">+18</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">5</td><td style="text-align:left;font-weight:600">MiniMax</td><td class="mono">MiniMaxAI/MiniMax-H3</td><td class="mono b">5,692,510</td><td><span class="chg up">+116,827</span></td><td class="mono">6,449</td><td class="mono">100+</td><td><span class="badge b-official">other</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">6</td><td style="text-align:left;font-weight:600">Microsoft Phi</td><td class="mono">microsoft/mdeberta-v3-base</td><td class="mono b">5,464,952</td><td><span class="chg down">-60,821</span></td><td class="mono">261</td><td class="mono">100+</td><td><span class="badge b-official">mit</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">7</td><td style="text-align:left;font-weight:600">Llama</td><td class="mono">meta-llama/Llama-3.1-8B-Instruct</td><td class="mono b">4,704,398</td><td><span class="chg down">-83,411</span></td><td class="mono">8,699</td><td class="mono">100+</td><td><span class="badge b-official">llama3.1</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">8</td><td style="text-align:left;font-weight:600">Mistral</td><td class="mono">mistralai/Voxtral-Mini-4B-Realtime-2602</td><td class="mono b">1,879,081</td><td><span class="chg down">-57,007</span></td><td class="mono">1,053</td><td class="mono">68</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">mistralai/mistral-inference</td><td class="mono b">10,825</td><td><span class="chg up">+0</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">9</td><td style="text-align:left;font-weight:600">Kimi 月之暗面</td><td class="mono">moonshotai/Kimi-K3</td><td class="mono b">861,499</td><td><span class="chg down">-612</span></td><td class="mono">11,886</td><td class="mono">100+</td><td><span class="badge b-official">other</span></td><td class="mono">MoonshotAI/Kimi-K3</td><td class="mono b">9,022</td><td><span class="chg up">+8</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">10</td><td style="text-align:left;font-weight:600">MiMo 小米</td><td class="mono">XiaomiMiMo/MiMo-V2.5</td><td class="mono b">108,020</td><td><span class="chg down">-5,998</span></td><td class="mono">433</td><td class="mono">30</td><td><span class="badge b-official">mit</span></td><td class="mono">XiaomiMiMo/MiMo-Code</td><td class="mono b">13,737</td><td><span class="chg up">+11,335</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">11</td><td style="text-align:left;font-weight:600">InclusionAI</td><td class="mono">inclusionAI/LLaDA2.0-mini</td><td class="mono b">73,310</td><td><span class="chg down">-12,190</span></td><td class="mono">71</td><td class="mono">10</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">inclusionAI/Ling</td><td class="mono b">273</td><td><span class="chg up">+0</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">12</td><td style="text-align:left;font-weight:600">ByteDance Seed</td><td class="mono">ByteDance-Seed/SeedVR2-7B</td><td class="mono b">45,153</td><td><span class="chg up">+2,329</span></td><td class="mono">165</td><td class="mono">10</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">13</td><td style="text-align:left;font-weight:600">LongCat 美团</td><td class="mono">meituan-longcat/LongCat-Image-Edit-Turbo</td><td class="mono b">23,235</td><td><span class="chg up">+89</span></td><td class="mono">72</td><td class="mono">4</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">14</td><td style="text-align:left;font-weight:600">Nex AGI</td><td class="mono">nex-agi/Nex-N2.5-mini</td><td class="mono b">3,288</td><td><span class="chg up">+88</span></td><td class="mono">879</td><td class="mono">46</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr><tr><td class="rank" style="text-align:center;width:38px;color:#6b7686">15</td><td style="text-align:left;font-weight:600">Agnes Sapiens</td><td class="mono">Agnes-AI/Agnes-3.0-Flash</td><td class="mono b">661</td><td><span class="chg down">-11</span></td><td class="mono">252</td><td class="mono">21</td><td><span class="badge b-official">apache-2.0</span></td><td class="mono">—</td><td class="mono b">—</td><td><span class="muted">首日快照</span></td></tr></tbody></table></div>
+<h2 style="font-size:16px;margin:18px 0 8px">🔒 License 变更红榜（本周）</h2>
+<div class="tbl-scroll"><table class="tbl card-tbl"><thead><tr><th style="text-align:left;">家族</th><th style="text-align:left;">模型</th><th style="text-align:left;">现 License</th></tr></thead><tbody><tr><td colspan="3" class="muted" data-th="状态">本周无许可证变更</td></tr></tbody></table></div>
+</div>
+
+<div class="card"><h2>📌 覆盖口径与待核实</h2>
+<ul style="margin:8px 0;padding-left:20px;font-size:13px">
+<li>HF org 未匹配（待核实 org 名/镜像同步）：QwenLM、MiniMax-AI、ByteDance、LongCatAI、SapiensAI、NexAGI —— 周报显示「—」不报错。</li>
+<li>GitHub 主仓候选未命中（待核实 repo 名）：Mistral、MiMo、Microsoft Phi、IBM Granite、Seed、InclusionAI、LongCat、Agnes、NexAGI。</li>
+<li>能力评测：AA key 配置后自动启用；Arena Elo 接入待后续（数据源 <b>lmarena-ai/leaderboard-dataset</b> 已确认）。</li>
+<li><b>2026-10-07 起 AA 数据接口已迁移</b>：旧端点 <code>/api/v2/data/llms/models</code> 于 <b>2026-11-04 23:59 UTC 退役</b>（返回 410 Gone），
+改用 <code>/api/v2/language/models/free</code>（<b>分页 page_size=200、须翻页取满 691</b>；旧端点单次即全量）。
+数据覆盖与迁移前一致（<b>691/691 模型、Index 与价格 100% 对齐</b>）；
+<b>吞吐 / 延迟两列为 Free 档新口径</b>（TTFT 中位约为旧端点的 1.67 倍、TPS 约 1.01 倍，
+经同端点重复测量比值恒为 1.000 排除测量噪声 ⇒ 属端点级口径差异），排名与性价比不受影响。</li>
+<li>主报告家族总览按周报快照只读「能力档位」压缩列，AA/Arena 细分分留在本页，避免稀释主表。</li>
+</ul></div>
+
+<footer>数据来源：<b>Artificial Analysis</b>（免费 API v2 <code>/api/v2/language/models/free</code>，Intelligence Index 含 9 项评估加权；按许可要求署名 artificialanalysis.ai）·
+<b>Hugging Face</b>（hf-mirror.com 镜像：下载量/点赞/衍生模型/license）·
+<b>GitHub</b>（star/license，免费档 60 次/时）·
+<b>LMArena</b>（leaderboard-dataset，接入待后续）。本页为每日 11:00 随主报告自动刷新产物；数据仅供研究参考，不构成选型承诺。</footer>
+</div></body></html>
