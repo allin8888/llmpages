@@ -1066,8 +1066,6 @@ a,button,.toc a{-webkit-tap-highlight-color:transparent}
 @media (max-width:768px){}@media (max-width:768px){}@media (max-width:768px){}@media (max-width:768px){}
 /* HF 实测复核副行：s-local 位于 doc-pricing 作用域（无 --sub），故取 --muted；强调用 --eu。 */
 /* 列数 = 10（含新增「英伟达显存档位」）；窄屏依次隐藏 use/hw/vram，再窄加隐 q，轨道数须与可见格数一致 */
-@media (max-width:1180px){}
-@media (max-width:760px){}
 
 
 .img-track{display:grid;gap:2px;margin-top:6px}.img-row{display:grid;grid-template-columns:34px minmax(0,1fr) 86px 92px 92px 100px 64px 68px;gap:8px;align-items:center;padding:6px 10px;border-bottom:1px solid var(--line,#eef2f7);font-size:12.5px}.img-head{font-weight:700;color:var(--muted,#64748b);border-bottom:1px solid var(--line,#d8e0ec)}.img-rk{font-weight:700;color:var(--muted,#64748b)}.img-nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.img-cr{color:var(--muted,#64748b)}.img-in,.img-out,.img-img,.img-ctx,.img-rel{font-variant-numeric:tabular-nums;text-align:right}.img-img{color:#7c3aed}.img-calc{margin-top:12px;padding:10px 12px;border:1px solid var(--line,#e5eaf2);border-radius:10px;background:var(--soft,#f8fafc)}.img-calc-h{font-weight:700;font-size:13px;margin-bottom:8px}.img-calc-grid{display:flex;flex-wrap:wrap;gap:10px}.ic-f{display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:var(--muted,#64748b)}.ic-f select,.ic-f input{height:28px;padding:0 6px;border:1px solid var(--line,#d8e0ec);border-radius:6px;background:#fff;color:var(--fg,#0f172a);font-size:12.5px;min-width:120px}.ic-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}.ic-chip{cursor:pointer;padding:3px 9px;border:1px solid var(--line,#d8e0ec);border-radius:999px;font-size:11.5px;background:#fff;color:var(--fg,#0f172a);user-select:none}.ic-chip.ic-on{background:#2f5fd0;color:#fff;border-color:#2f5fd0;font-weight:600}.ic-hint{font-size:11px;color:var(--muted,#64748b)}.ic-out{margin-top:8px;font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}.ic-note{margin-top:6px;font-size:11px;color:var(--muted,#64748b);line-height:1.65}@media (max-width:768px){.img-row{grid-template-columns:28px minmax(0,1fr) 78px 78px;font-size:11.5px}.img-cr,.img-img,.img-ctx,.img-rel{display:none}}
@@ -1168,6 +1166,17 @@ body.js-on .note-toggle{display:inline-block}
   .ov-glance .ov-tip{display:none}
   .opt-disc-sum{break-inside:avoid}
 }
+
+/* 家族表分页页条：仅 JS 初始化后出现，静态文件里没有 */
+.fam-pager{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 4px;padding:7px 10px;border:1px solid #dbe4f0;background:#f8fafc;border-radius:8px;font-size:12.5px;color:#475569}
+.fam-pager-main{display:contents}
+.fam-pager button,.fam-pager select{font-size:12.5px;padding:3px 10px;border:1px solid #cfdae8;border-radius:999px;background:#fff;color:#1e40af;cursor:pointer}
+.fam-pager button:hover:not(:disabled){background:#eff6ff;border-color:#93b4f0}
+.fam-pager button:disabled{opacity:.45;cursor:default}
+.fam-pager select{border-radius:8px;padding:3px 8px;max-width:210px}
+.fam-pager-hint{margin-left:auto;color:#94a3b8;font-size:11.5px}
+@media(max-width:600px){.fam-pager{gap:6px;padding:6px 8px;margin:6px 0 2px;font-size:12px}.fam-pager button,.fam-pager select{padding:2px 8px;font-size:12px}.fam-pager select{max-width:150px}.fam-pager-hint{display:none}}
+@media print{.fam-pager{display:none!important}}
 
 </style>
 </head><body>
@@ -4031,6 +4040,100 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
     });
   }
   buildNotes();
+
+var FAM_CAP=28,fs=null;
+function fsl(s){return ((s||'').toLowerCase().replace(/[（(][^）)]*[）)]/g,'').replace(/[^a-z0-9\u4e00-\u9fff]+/g,'-').replace(/^-+|-+$/g,''))||'row';}
+function fky(c){
+var b=c.querySelector&&c.querySelector('b'),t;
+if(b&&norm(b.textContent))return norm(b.textContent);
+t=norm(c.textContent);return t.split(/[（(]/)[0]||t;
+}
+function fb(){
+var t=familyTable();
+if(!t||!t.tBodies||!t.tBodies[0])return;
+var b=t.tBodies[0],R=[].slice.call(b.rows),G=[],L=[],u=null,i,j,k,r,d,c,n=0,bad=0;
+if(R.length<5)return;
+if(window.__NEWMODEL__&&window.__NEWMODEL__.run){try{window.__NEWMODEL__.run();}catch(e){}}
+for(i=0;i<R.length;i++){
+r=R[i];d=r.cells;
+if(i>0)for(j=0;j<L.length;j++)if(L[j]>0)L[j]--;
+c=0;while(L[c]>0)c++;
+if(c===0&&d.length){u={key:fky(d[0]),start:i,rows:(d[0].rowSpan||1),nodes:[r]};G.push(u);}
+else if(u)u.nodes.push(r);
+for(k=0;k<d.length;k++){while(L[c]>0)c++;L[c]=(d[k].rowSpan||1);c++;}
+}
+G.forEach(function(g){n+=g.rows;if(g.nodes.length!==g.rows)bad=1;});
+if(bad||n!==R.length||G.length<2)return;
+var U={};
+G.forEach(function(g){
+var x=fsl(g.key),s=x,q=2;
+while(U[s]){s=x+'-'+q;q++;}
+U[s]=1;g.slug=s;g.nodes[0].id='fam-'+s;
+});
+var P=[],p=null;
+G.forEach(function(g){
+if(!p)p={groups:[],rows:0,frag:doc.createDocumentFragment()};
+if(p.rows&&p.rows+g.rows>FAM_CAP){P.push(p);p={groups:[],rows:0,frag:doc.createDocumentFragment()};}
+p.groups.push(g);p.rows+=g.rows;
+g.nodes.forEach(function(x){p.frag.appendChild(x);});
+});
+if(p)P.push(p);
+P.forEach(function(p,i){p.groups.forEach(function(g){g.page=i;});});
+var S={tbody:b,groups:G,pages:P,page:0};fs=S;
+var bar=doc.createElement('div'),opts='';
+bar.className='fam-pager';
+G.forEach(function(g){opts+='<option value="#fam-'+g.slug+'">'+g.key.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</option>';});
+bar.innerHTML='<div class="fam-pager-main"><span class="fam-pager-status" aria-live="polite">第 <b>1</b> / '+P.length+' 页</span><button type="button" class="fam-prev">上一页</button><button type="button" class="fam-next">下一页</button></div><select class="fam-jump" aria-label="跳转家族"><option value="">跳转家族 ▾</option>'+opts+'</select><span class="fam-pager-hint">Ctrl+F 只搜当前页；跨页查找请用「跳转家族」</span>';
+var J=bar.querySelector('.fam-jump');
+J.onchange=function(){if(this.value)location.hash=this.value;this.selectedIndex=0;};
+var an=t.parentNode;
+if(an&&an.parentNode)an.parentNode.insertBefore(bar,an);else an.insertBefore(bar,t);
+S.status=bar.querySelector('.fam-pager-status b');S.prev=bar.querySelector('.fam-prev');S.next=bar.querySelector('.fam-next');S.hint=bar.querySelector('.fam-pager-hint');
+S.prev.onclick=function(){fg(S.page-1);};S.next.onclick=function(){fg(S.page+1);};
+function fg(i){
+if(!fs)return;
+var s=fs;
+if(i<0||i>=s.pages.length)return;
+if(i===s.page&&s.tbody.rows.length===s.pages[i].rows)return;
+while(s.tbody.firstChild)s.pages[s.page].frag.appendChild(s.tbody.firstChild);
+s.tbody.appendChild(s.pages[i].frag);s.page=i;
+if(s.status)s.status.textContent=String(i+1);
+s.prev.disabled=(i===0);s.next.disabled=(i===s.pages.length-1);
+}
+function fh(){
+var h=location.hash||'',hit=null,i;
+if(!h)return;
+if(h==='#s-family'){fg(0);return;}
+if(h.indexOf('#fam-')!==0)return;
+try{h=decodeURIComponent(h.slice(5));}catch(e){h=h.slice(5);}
+for(i=0;i<G.length;i++)if(G[i].slug===h){hit=G[i];break;}
+if(!hit)return;
+fg(hit.page);
+setTimeout(function(){var y=hit.nodes[0].getBoundingClientRect().top+(window.pageYOffset||doc.documentElement.scrollTop||0)-80;window.scrollTo(0,Math.max(0,y));},0);
+}
+window.addEventListener('hashchange',fh);
+var pp=null;
+window.addEventListener('beforeprint',function(){
+if(!fs||pp!==null)return;
+pp=fs.page;
+while(fs.tbody.firstChild)fs.pages[fs.page].frag.appendChild(fs.tbody.firstChild);
+for(var i=0;i<fs.pages.length;i++)fs.tbody.appendChild(fs.pages[i].frag);
+});
+window.addEventListener('afterprint',function(){
+if(!fs||pp===null)return;
+var target=pp;pp=null;
+fs.pages.forEach(function(p){p.groups.forEach(function(g){g.nodes.forEach(function(x){p.frag.appendChild(x);});});});
+fg(target);
+});
+fg(0);
+if(location.hash)setTimeout(fh,80);
+window.__famStateRef=function(){return fs;};
+window.__famGo=fg;
+window.__famHash=fh;
+}
+function fboot(){try{fb();}catch(e){window.__famError=e&&e.message;}}
+if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventListener('load',fboot);
+
 
   /* ================= 状态：快照 / 应用 / 同步 ================= */
   function snapshot() {
