@@ -210,7 +210,7 @@
 | 类别 | 事件 | 生效日 | 距今日 | 状态 | 复核机制 / 备注 |
 | --- | --- | --- | --- | --- | --- |
 | 促销到期 | 腾讯混元 Hy4 TokenHub 刊例价 5 折到期11-04 Hy4 正式版发布：即日起至 2026-12-31 按刊例价 5 折（¥3.00/¥9.00，缓存 ¥0.15）；到期后恢复 ¥6.00/¥18.00 | 2026-12-31 | 44 天 | pending | 11-04 新增前瞻项（腾讯混元官方发布页一手源 + 央广网 / 新京报 11-04）：折扣仅适用腾讯云 TokenHub，属 API 刊例价折扣；主表标准费率不叠加，明细见价格特惠表。T-7 提醒（2026-12-24 起）；T 日复核是否延续。 |
-| 新模型预告 | 腾讯混元 Hy4 flash 发布11-04 官方通稿：「近期发布」，继承 Hy4 能力、大幅降低任务成本 | 待定 | — | pending | 11-05 新增前瞻项：官方 11-04 通稿预告 Hy4 flash，发布日未定，持续监控；发布后按 §0.1 判定是否补录 |
+| 已发布 | 腾讯混元 Hy4 flash 发布11-16 正式发布：224B/12B 激活、1M 上下文、¥0.5/¥2 缓存 ¥0.02 | 2026-11-16 | 已生效 | confirmed | 11-17 复核：官方 11-16 发布（环球网/澎湃/腾讯新闻多源），同日上架 OR tencent/hy4-flash；已按 §0.1 自动补录四方（s-sort/家族总览/柱状图/差异表）；计划开源、即将接入 OR；11-30 前 TokenHub 5 折、WorkBuddy 免费 |
 | 促销到期 | 腾讯云 TokenHub 新人免费体验包活动期截止活动截至 2026-12-31（之后延续或调整以平台公告为准）；语言模型 / 多模态理解模型各享 100 万 Tokens，自领取起有效期 1 年 | 2026-12-31 | 44 天 | pending | T-7 再提醒（2026-12-24 起）；09-17 联网核实（腾讯云官方文档）：额度覆盖「所有语言模型与多模态理解模型」（含 Hy4 preview、DeepSeek-V4 系列、GLM 系列、Kimi、MiniMax 等），非仅限个别型号；⚠️ 口径差异留档：产品计费 PDF（doc 130052）旧版列 90 天且清单未含 Hy4 preview / MiniMax-M3，以最新官方文档「1 年」口径为准；12-31 是活动期截止（最晚领取日），已领额度按领取日+1 年失效，二者不可混同。 |
 | 促销到期 | Gemini 3.6 / 3.8 Flash 限时五折到期两款恢复 $1.50/$7.50（¥10.10/¥50.51）；3.8 Flash 09-02 发布沿用同促销价；3.7 Flash 已于 10-25 复核时从官方定价页下架 | 2026-12-31 | 44 天 | pending | T-7 再提醒（2026-12-24 起）；09-17 复核：Google 官方定价页确认 introductory pricing 至 2026-12-31，2027-01-01 起标准价生效；gemini-3.7-flash 已从定价页与模型列表移除、请求并入 gemini-3.8-flash 路由，故本行与价格特惠均由「三款」改为「两款」。 |
 | 促销到期 | 阿里 Qwen3.7-Max 错峰 2 折（Qoder Night Plan）22:00–08:00 错峰时段 Credits 0.1x（2 折，原 0.5x）；属 Qoder CN 订阅产品的 Credits 倍率折扣，非 API 按量单价折扣 | 待定 | 持续监控 | pending | 结束日待定 → 每周轮询官方活动页；09-17 联网核实（阿里云活动页）：错峰折扣自 2026-06-23 生效，结束时间官方标注「暂未公布，将提前通知」；覆盖 Pro Trial / Pro / Teams 订阅用户的 Qoder CN 全系（Desktop / JetBrains 插件 / CLI / QoderWork / Mobile / Wake / Cloud Agents），更新版本即自动生效、无需报名；⚠️ 本期修正：原表述「Token Plan 夜间 5 折」已失效——qwen3.8-max 于 09 月上线后，Token Plan 个人版夜间 5 折仅适用于 qwen3.8-max，qwen3.7-max 等旧模型按标准 Credits 系数计费，故删除。 |
@@ -325,46 +325,46 @@
 
 | # | 模型 | 厂商 | AA Index | 编码 Index | 混合价 ¥/1M | 性价比 value | 吞吐 tok/s | TTFT s |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Claude Fable 5.2 (Max, Default Fallback) | Anthropic | 64.6 | — | 107.76 | 0.60 | 93.39 | 146.99 |
-| 2 | Claude Fable 5.2 (Xhigh, Default Fallback) | Anthropic | 62.2 | — | 107.76 | 0.58 | 83.7 | 74.3 |
-| 3 | Claude Fable 5.2 (High, Default Fallback) | Anthropic | 61.8 | — | 107.76 | 0.57 | 78.83 | 28.78 |
-| 4 | Gemini 4 Carbon (High) | Google | 60.0 | — | 26.94 | 2.23 | 93.36 | 112.53 |
-| 5 | Claude Opus 5.5 (Max, Default Fallback) | Anthropic | 59.1 | — | 53.88 | 1.10 | 96.71 | 596.09 |
-| 6 | Gemini 4 Carbon (Medium) | Google | 58.3 | — | 26.94 | 2.16 | 82.71 | 24.54 |
-| 7 | Claude Opus 5.5 (Xhigh, Default Fallback) | Anthropic | 57.4 | — | 53.88 | 1.07 | 80.74 | 105.5 |
-| 8 | GPT-6 Astra (Max) | OpenAI | 56.9 | — | 134.70 | 0.42 | 63.29 | 294.58 |
-| 9 | Claude Fable 5.2 (Medium, Default Fallback) | Anthropic | 56.4 | — | 107.76 | 0.52 | 78.38 | 15.14 |
-| 10 | GPT-6 Astra (Xhigh) | OpenAI | 55.3 | — | 134.70 | 0.41 | 54.79 | 164.44 |
-| 11 | GPT-6 Astra (High) | OpenAI | 54.8 | — | 134.70 | 0.41 | 49.36 | 58.43 |
-| 12 | GPT-6.1 Sol (Max) | OpenAI | 54.6 | — | 26.94 | 2.03 | 64.78 | 265.98 |
-| 13 | Claude Sonnet 5.5 (Max, Default Fallback) | Anthropic | 54.5 | — | 26.94 | 2.02 | 132.85 | 453.4 |
-| 14 | Gemini 4 Carbon (Low) | Google | 54.2 | — | 26.94 | 2.01 | 84.26 | 4.29 |
-| 15 | Claude Fable 5.2 (Low, Default Fallback) | Anthropic | 53.9 | — | 107.76 | 0.50 | 76.67 | 4.65 |
-| 16 | Gemini 4 Hydrogen (Xhigh) | Google | 53.9 | — | 20.21 | 2.67 | 234.78 | 68.74 |
-| 17 | GPT-6.1 Sol (Xhigh) | OpenAI | 52.5 | — | 26.94 | 1.95 | 63.56 | 105.21 |
-| 18 | Claude Opus 5.5 (High, Default Fallback) | Anthropic | 51.8 | — | 53.88 | 0.96 | 78.12 | 35.09 |
-| 19 | GPT-6 Astra (Medium) | OpenAI | 51.6 | — | 134.70 | 0.38 | 44.68 | 6.75 |
-| 20 | GPT-6.1 Terra (Max) | OpenAI | 51.3 | — | 13.47 | 3.81 | 94.25 | 301.73 |
+| 1 | Claude Fable 5.2 (Max, Default Fallback) | Anthropic | 64.6 | — | 107.76 | 0.60 | 92.72 | 138.06 |
+| 2 | Claude Fable 5.2 (Xhigh, Default Fallback) | Anthropic | 62.2 | — | 107.76 | 0.58 | 77.77 | 74.3 |
+| 3 | Claude Fable 5.2 (High, Default Fallback) | Anthropic | 61.8 | — | 107.76 | 0.57 | 76.41 | 27.16 |
+| 4 | Gemini 4 Carbon (High) | Google | 60.0 | — | 26.94 | 2.23 | 82.91 | 111.37 |
+| 5 | Claude Opus 5.5 (Max, Default Fallback) | Anthropic | 59.1 | — | 53.88 | 1.10 | 94.43 | 703.27 |
+| 6 | Gemini 4 Carbon (Medium) | Google | 58.3 | — | 26.94 | 2.16 | 82.45 | 19.88 |
+| 7 | Claude Opus 5.5 (Xhigh, Default Fallback) | Anthropic | 57.4 | — | 53.88 | 1.07 | 80.37 | 110.03 |
+| 8 | GPT-6 Astra (Max) | OpenAI | 56.9 | — | 134.70 | 0.42 | 55.46 | 373.36 |
+| 9 | Claude Fable 5.2 (Medium, Default Fallback) | Anthropic | 56.4 | — | 107.76 | 0.52 | 76.05 | 9.59 |
+| 10 | GPT-6 Astra (Xhigh) | OpenAI | 55.3 | — | 134.70 | 0.41 | 53.49 | 158.29 |
+| 11 | GPT-6 Astra (High) | OpenAI | 54.8 | — | 134.70 | 0.41 | 49.11 | 62.02 |
+| 12 | GPT-6.1 Sol (Max) | OpenAI | 54.6 | — | 26.94 | 2.03 | 67.93 | 283.78 |
+| 13 | Claude Sonnet 5.5 (Max, Default Fallback) | Anthropic | 54.5 | — | 26.94 | 2.02 | 132.25 | 453.4 |
+| 14 | Gemini 4 Carbon (Low) | Google | 54.2 | — | 26.94 | 2.01 | 76.63 | 5.19 |
+| 15 | Claude Fable 5.2 (Low, Default Fallback) | Anthropic | 53.9 | — | 107.76 | 0.50 | 74.57 | 2.98 |
+| 16 | Gemini 4 Hydrogen (Xhigh) | Google | 53.9 | — | 20.21 | 2.67 | 229.02 | 62.31 |
+| 17 | GPT-6.1 Sol (Xhigh) | OpenAI | 52.5 | — | 26.94 | 1.95 | 60.42 | 103.42 |
+| 18 | Claude Opus 5.5 (High, Default Fallback) | Anthropic | 51.8 | — | 53.88 | 0.96 | 77.05 | 32.1 |
+| 19 | GPT-6 Astra (Medium) | OpenAI | 51.6 | — | 134.70 | 0.38 | 45.5 | 6.54 |
+| 20 | GPT-6.1 Terra (Max) | OpenAI | 51.3 | — | 13.47 | 3.81 | 91.15 | 314.65 |
 
 ## 表 12：十四、🌐 开源生态——下载量与 Star 数说话HF 镜像 + GitHub
 
 | # | 家族/厂商 | HF 代表模型 | 下载量 | 周增量 | 点赞 | 衍生 | License | GitHub 主仓 | Star | 周增量 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Qwen 通义千问 | Qwen/Qwen3-0.6B | 17,792,207 | +0 | 1,902 | 100+ | apache-2.0 | QwenLM/Qwen3 | 27,733 | +2 |
-| 2 | Microsoft Phi | microsoft/Florence-2-base | 16,610,529 | +0 | 440 | 35 | mit | microsoft/PhiCookBook | 3,906 | +0 |
-| 3 | DeepSeek | deepseek-ai/DeepSeek-V3.2 | 8,865,855 | +0 | 1,601 | 65 | mit | deepseek-ai/DeepSeek-V3 | 104,842 | -3 |
-| 4 | IBM Granite | ibm-granite/granite-embedding-small-english-r2 | 6,762,569 | +0 | 114 | 19 | apache-2.0 | ibm-granite/granite-code-models | 1,248 | +0 |
-| 5 | GLM 智谱 | zai-org/GLM-5.3-Flash | 6,363,073 | +0 | 3,183 | 100+ | mit | zai-org/GLM-4.5 | 4,426 | +0 |
-| 6 | MiniMax | MiniMaxAI/MiniMax-H3 | 6,057,372 | +0 | 6,939 | 100+ | other | MiniMax-AI/MiniMax-M1 | 3,184 | +0 |
-| 7 | Llama | meta-llama/Llama-3.1-8B-Instruct | 4,238,569 | +0 | 8,942 | 100+ | llama3.1 | meta-llama/llama | 59,626 | +3 |
-| 8 | Mistral | mistralai/Mistral-7B-Instruct-v0.3 | 1,806,444 | +0 | 3,840 | 100+ | apache-2.0 | mistralai/mistral-inference | 10,814 | +0 |
-| 9 | Kimi 月之暗面 | moonshotai/Kimi-K3 | 783,375 | +0 | 11,994 | 100+ | other | MoonshotAI/Kimi-K3 | 9,087 | +1 |
-| 10 | ByteDance Seed | ByteDance-Seed/UI-TARS-1.5-7B | 228,652 | +0 | 623 | 28 | apache-2.0 | — | — | 首日快照 |
-| 11 | MiMo 小米 | XiaomiMiMo/MiMo-V2.5 | 79,600 | +0 | 434 | 30 | mit | XiaomiMiMo/MiMo-Code | 13,787 | +0 |
-| 12 | InclusionAI | inclusionAI/LLaDA2.1-mini | 28,198 | +0 | 128 | 5 | apache-2.0 | inclusionAI/Ling | 275 | +0 |
-| 13 | LongCat 美团 | meituan-longcat/LongCat-Image-Edit-Turbo | 23,725 | +0 | 72 | 4 | apache-2.0 | — | — | 首日快照 |
-| 14 | Nex AGI | nex-agi/Nex-N2.5-mini | 2,842 | +0 | 883 | 46 | apache-2.0 | — | — | 首日快照 |
-| 15 | Agnes Sapiens | Agnes-AI/Agnes-3.0-Qwen | 604 | +0 | 20 | 2 | other | — | — | 首日快照 |
+| 1 | Microsoft Phi | microsoft/Florence-2-base | 17,420,559 | +810,030 | 439 | 35 | mit | microsoft/PhiCookBook | 3,907 | +1 |
+| 2 | Qwen 通义千问 | Qwen/Qwen3-0.6B | 17,069,063 | -723,144 | 1,905 | 100+ | apache-2.0 | QwenLM/Qwen3 | 27,744 | +11 |
+| 3 | DeepSeek | deepseek-ai/DeepSeek-V3.2 | 9,203,313 | +337,458 | 1,602 | 65 | mit | deepseek-ai/DeepSeek-V3 | 104,852 | +10 |
+| 4 | IBM Granite | ibm-granite/granite-embedding-small-english-r2 | 6,737,413 | -25,156 | 115 | 19 | apache-2.0 | ibm-granite/granite-code-models | 1,248 | +0 |
+| 5 | GLM 智谱 | zai-org/GLM-5.3-Flash | 6,373,257 | +10,184 | 3,239 | 100+ | mit | zai-org/GLM-4.5 | 4,428 | +2 |
+| 6 | MiniMax | MiniMaxAI/MiniMax-H3 | 5,897,198 | -160,174 | 7,026 | 100+ | other | MiniMax-AI/MiniMax-M1 | 3,184 | +0 |
+| 7 | Llama | meta-llama/Llama-3.1-8B-Instruct | 4,208,415 | -30,154 | 8,964 | 100+ | llama3.1 | meta-llama/llama | 59,631 | +5 |
+| 8 | Mistral | mistralai/Mistral-7B-Instruct-v0.3 | 1,815,007 | +8,563 | 3,843 | 100+ | apache-2.0 | mistralai/mistral-inference | 10,814 | +0 |
+| 9 | Kimi 月之暗面 | moonshotai/Kimi-K3 | 767,314 | -16,061 | 11,998 | 100+ | other | MoonshotAI/Kimi-K3 | 9,092 | +5 |
+| 10 | ByteDance Seed | ByteDance-Seed/UI-TARS-1.5-7B | 229,212 | +560 | 623 | 28 | apache-2.0 | — | — | 首日快照 |
+| 11 | MiMo 小米 | XiaomiMiMo/MiMo-V2.5 | 78,796 | -804 | 434 | 30 | mit | XiaomiMiMo/MiMo-Code | 13,787 | +0 |
+| 12 | InclusionAI | inclusionAI/LLaDA2.1-mini | 27,642 | -556 | 128 | 5 | apache-2.0 | inclusionAI/Ling | 275 | +0 |
+| 13 | LongCat 美团 | meituan-longcat/LongCat-Image-Edit-Turbo | 23,731 | +6 | 72 | 4 | apache-2.0 | — | — | 首日快照 |
+| 14 | Nex AGI | nex-agi/Nex-N2.5-mini | 2,796 | -46 | 883 | 46 | apache-2.0 | — | — | 首日快照 |
+| 15 | Agnes Sapiens | Agnes-AI/Agnes-3.0-Qwen | 611 | +7 | 21 | 2 | other | — | — | 首日快照 |
 
 ## 表 13：十四、🌐 开源生态——下载量与 Star 数说话HF 镜像 + GitHub
 
