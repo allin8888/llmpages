@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-25T09:52:51+08:00",
+ "generated": "2026-11-18T10:38:19+08:00",
  "fx_rate": 6.7351,
  "source": "llm-landscape-and-pricing-2026.html",
- "count": 80,
+ "count": 93,
  "models": [
   {
    "rank": 1,
@@ -13,7 +13,7 @@
    "price_out": 0.43,
    "price_mix": 0.21,
    "price_cache": 0.03,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方）；缓存读 ¥0.03；上下文 262K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方）；缓存读 ¥0.03；上下文 262K；来源 openrouter.ai"
   },
   {
    "rank": 2,
@@ -24,7 +24,7 @@
    "price_out": 1.01,
    "price_mix": 0.46,
    "price_cache": 0.03,
-   "note": "OR挂牌 OpenRouter 挂牌价 $0.04 / $0.15；缓存读 ¥0.03；上下文 260K；来源 openrouter.ai/api/v1/models"
+   "note": "OR挂牌 OpenRouter 挂牌价 $0.04 / $0.15；缓存读 ¥0.03；上下文 260K；来源 openrouter.ai"
   },
   {
    "rank": 3,
@@ -39,6 +39,17 @@
   },
   {
    "rank": 4,
+   "name": "IBM Granite granite-4.2-8b",
+   "product": "ibm-granite/granite-4.2-8b",
+   "region": "美国",
+   "price_in": 0.4,
+   "price_out": 1.01,
+   "price_mix": 0.55,
+   "price_cache": 0.1,
+   "note": "OR OpenRouter 挂牌价（第三方，非官方）；缓存读 ¥0.10；上下文 131K；来源 openrouter.ai"
+  },
+  {
+   "rank": 5,
    "name": "Upstage Solar Mini 4",
    "product": "solar-mini4",
    "region": "美国",
@@ -49,7 +60,7 @@
    "note": "OR挂牌 OR 挂牌 $0.05/$0.2（×6.7351）；35B MoE/3B 激活；2026-09-24 上架；上下文 524K；OpenRouter 挂牌价（第三方，待官网核实）；2026-09-24 上架"
   },
   {
-   "rank": 5,
+   "rank": 6,
    "name": "Microsoft Phi phi-4",
    "product": "microsoft/phi-4",
    "region": "美国",
@@ -57,10 +68,10 @@
    "price_out": 0.95,
    "price_mix": 0.59,
    "price_cache": 0.0,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 16K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 16K；来源 openrouter.ai"
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Reka AI reka-edge",
    "product": "rekaai/reka-edge",
    "region": "美国",
@@ -68,18 +79,7 @@
    "price_out": 0.69,
    "price_mix": 0.69,
    "price_cache": 0.0,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 16K；来源 openrouter.ai/api/v1/models"
-  },
-  {
-   "rank": 7,
-   "name": "IBM Granite granite-4.2-8b",
-   "product": "ibm-granite/granite-4.2-8b",
-   "region": "美国",
-   "price_in": 0.41,
-   "price_out": 1.68,
-   "price_mix": 0.73,
-   "price_cache": 0.1,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方）；缓存读 ¥0.10；上下文 131K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 16K；来源 openrouter.ai"
   },
   {
    "rank": 8,
@@ -90,21 +90,32 @@
    "price_out": 1.52,
    "price_mix": 0.76,
    "price_cache": 0.1,
-   "note": "OR挂牌 10-14 价格回归：Vercel 促销 10-13 届满（官方 changelog：标准 ID 转计费、-free 变体停服）→ OR 挂牌 $0.075/$0.225、缓存读 $0.015≈¥0.10；262K 上下文；AA Index 41.1；2026-10-02 发布；官方常规定价未公布（待核实）"
+   "note": "OR挂牌 10-14 价格回归：Vercel 促销 10-13 届满（官方 changelog：标准 ID 转计费、-free 变体停服）→ OR 挂牌 $0.075/$0.225、缓存读 $0.015≈¥0.10；262K 上下文；AA Index 41.1；2026-10-02 发布；官方常规定价未公布"
   },
   {
    "rank": 9,
-   "name": "Poolside laguna-s-2.1",
-   "product": "poolside/laguna-s-2.1",
-   "region": "美国",
-   "price_in": 0.61,
-   "price_out": 1.21,
-   "price_mix": 0.76,
-   "price_cache": 0.06,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.06；上下文 1.0M；来源 openrouter.ai/api/v1/models"
+   "name": "百度文心 ERNIE 5.5 Flash Preview",
+   "product": "ernie-5.5-flash-preview",
+   "region": "中国",
+   "price_in": 0.5,
+   "price_out": 2.0,
+   "price_mix": 0.88,
+   "price_cache": 0.05,
+   "note": "官方 官方人民币价 · 峰谷活动价（谷 = 空闲 22–8 时；高峰 8–22 时 ¥1.00/¥4.00 · 缓存 ¥0.10；原价 ¥2/¥8 截止未公布；国际版 $0.28/$1.13 · 缓存 $0.028）1M 上下文 / 输出上限 921.6K · 280B/14B MoE 开源权重 · 200+ tok/s · 强制推理（单档 high）"
   },
   {
    "rank": 10,
+   "name": "腾讯混元 Hy4 flash",
+   "product": "tencent/hy4-flash",
+   "region": "中国",
+   "price_in": 0.5,
+   "price_out": 2.0,
+   "price_mix": 0.88,
+   "price_cache": 0.02,
+   "note": "官方 官方人民币价 ¥0.50/¥2.00（缓存命中 ¥0.02；11-16 发布：224B 总/12B 激活 MoE、1M 上下文、多模态、解码 150+tps；单任务成本 Hy4 的 1/20；来源 腾讯混元官网/环球网/澎湃 11-16）；腾讯云 TokenHub 刊例 5 折至 11-30、WorkBuddy 11-30 前限时免费（订阅/渠道折扣，不入特惠表）；计划开源、即将接入 OpenRouter；OR tencent/hy4-flash 挂牌 $0.035/$0.1405 不作官方价。（id: tencent/hy4-flash）"
+  },
+  {
+   "rank": 11,
    "name": "Inception Labs Mercury 3",
    "product": "inception/mercury-3",
    "region": "美国",
@@ -115,7 +126,7 @@
    "note": "OR挂牌 OpenRouter 挂牌价 $0.10 / $0.35；缓存读 $0.01；首发五折（list $0.20 / $0.70，无截止日）；1M 上下文 / 128K 最大输出；dLLM 扩散式 1068 tok/s（厂商实测）；专有未开源；10-16 发布（10-19 通稿）；A-4 命中 · §0.1 自动补录"
   },
   {
-   "rank": 11,
+   "rank": 12,
    "name": "Xiaomi MiMo V2.6",
    "product": "xiaomi/mimo-v2.6 系（Pro / Flash / Pro-UltraSpeed）",
    "region": "中国",
@@ -123,10 +134,10 @@
    "price_out": 1.89,
    "price_mix": 1.18,
    "price_cache": 0.02,
-   "note": "官方 官方价：Flash $0.14/¥0.95 入 / $0.28/¥1.89 出；Pro $0.435/¥2.92 入 / $0.87/¥5.85 出；UltraSpeed $4.35/¥29.30 入 / $8.7/¥58.59 出（缓存未命中价；缓存命中 Pro $0.0036 / Flash $0.0028 / UltraSpeed $0.036）；本行按最便宜档 Flash 排序；前代 V2.5 OR 挂牌价（¥0.95/¥1.89/缓存¥0.02）；09-21 发布，1M 全模态，MIT 开源；上下文 1M；基础价沿用 V2.5 不涨价；来源 mimo.mi.com 官方 API / openrouter.ai/api/v1/models"
+   "note": "官方 官方价：Flash $0.14/¥0.95 入 / $0.28/¥1.89 出；Pro $0.435/¥2.92 入 / $0.87/¥5.85 出；UltraSpeed $4.35/¥29.30 入 / $8.7/¥58.59 出（缓存未命中价；缓存命中 Pro $0.0036 / Flash $0.0028 / UltraSpeed $0.036）；本行按最便宜档 Flash 排序；前代 V2.5 OR 挂牌价（¥0.95/¥1.89/缓存¥0.02）；09-21 发布，1M 全模态，MIT 开源；上下文 1M；基础价沿用 V2.5 不涨价；来源 官方文档 官方 API / openrouter.ai"
   },
   {
-   "rank": 12,
+   "rank": 13,
    "name": "PrismML Ternary Bonsai 2 27B",
    "product": "Ternary-Bonsai-2-27B",
    "region": "美国",
@@ -137,7 +148,7 @@
    "note": "OR挂牌 基于 Qwen3.8 27B 的三元量化模型（权重 {−1,0,+1}，1.76 bit/权重）；OpenRouter 第三方托管价 $0.075 / $0.50；模型体积 5.9GB（原版 54GB 的约 1/9）保留 98.2% 基准性能；262K 上下文；Apache 2.0 可本地部署（2026-09-17）"
   },
   {
-   "rank": 13,
+   "rank": 14,
    "name": "阿里通义千问 Qwen3.8 Flash",
    "product": "qwen3.8-flash",
    "region": "中国",
@@ -148,7 +159,7 @@
    "note": "官方 官方人民币价（输入¥0.80 / 输出¥2.70 / 缓存命中¥0.10；08-27 12:00 官方降价，原 ¥1.00/¥3.00，阿里云公告）；混合价 ¥1.28；QwenCloud 生产 API（qwen3.8-flash），国际 $0.16/$0.47；125B+51B N-gram Embedding、激活 6B；原生 262K / YaRN 1M；Qwen4 架构预览、Qwen Community 1.0 开源（08-26 开源并上线 OR）"
   },
   {
-   "rank": 14,
+   "rank": 15,
    "name": "智谱 GLM-5.3-Flash",
    "product": "GLM-5.3-Flash",
    "region": "中国",
@@ -159,7 +170,7 @@
    "note": "官方 官方人民币价（输入¥0.80 / 输出¥2.80 / 缓存¥0.23）；前两周半价已于 2026-09-10 结束（恢复 ¥0.80/¥2.80）；320B-A18B 原生多模态；1M 上下文；MIT 开源（08-27 发布）"
   },
   {
-   "rank": 15,
+   "rank": 16,
    "name": "OpenAI GPT-6 Luna",
    "product": "gpt-6-luna",
    "region": "美国",
@@ -170,7 +181,7 @@
    "note": "官方$ $0.10 / $0.50（永久标准价，非促销；缓存读 $0.01≈¥0.07；1.05M 上下文 / 输出 128K）；较 GPT-5.6 Luna 输入 -50% / 输出 -58%；Luna Pro 同价更高性能档；AA Index 37.3；1M 上下文"
   },
   {
-   "rank": 16,
+   "rank": 17,
    "name": "Anthropic Claude Haiku 5.5",
    "product": "Claude Haiku 5.5",
    "region": "美国",
@@ -181,7 +192,18 @@
    "note": "官方$ $0.10 / $0.50（prompt ≤100K 档；A-2/A-4 自动补录·2026-10-07 发布、10-08 OR 上架）；缓存读 $0.01≈¥0.07；prompt &gt;100K 整单 $0.50/$2.50；1M 上下文 / 输出 128K；AA Index 37.8；对标 GPT-6 Luna 同价"
   },
   {
-   "rank": 17,
+   "rank": 18,
+   "name": "Meta Muse Ember",
+   "product": "meta/muse-ember",
+   "region": "美国",
+   "price_in": 0.67,
+   "price_out": 3.37,
+   "price_mix": 1.35,
+   "price_cache": 0.03,
+   "note": "官方$ $0.10/$0.50（11-09 发布；缓存读 $0.004≈¥0.03）；1M 上下文/输出 512K；多模态输入（文/图/音/视频/PDF）；Muse 最小最省档（agent 高频任务）；AA Index 34.1；11-10 规则 A-2/A-4 自动补录"
+  },
+  {
+   "rank": 19,
    "name": "Qwen3.8 Omni Flash",
    "product": "qwen3.8-omni-flash",
    "region": "中国",
@@ -189,10 +211,10 @@
    "price_out": 3.18,
    "price_mix": 1.56,
    "price_cache": null,
-   "note": "官方 OpenRouter 挂牌价（第三方 $0.15 / $0.47，官方人民币价待官网核实）；全模态（文/图/音/视频）；音视频理解定价较前代降 93–98%；上下文与参数量官方未公布"
+   "note": "OR OpenRouter 挂牌价（第三方 $0.15 / $0.47，官方人民币价待官网核实）；全模态（文/图/音/视频）；音视频理解定价较前代降 93–98%；上下文与参数量官方未公布"
   },
   {
-   "rank": 18,
+   "rank": 20,
    "name": "讯飞 星火 X2.6",
    "product": "spark-x2.6",
    "region": "中国",
@@ -203,7 +225,7 @@
    "note": "官方 官方人民币价（限时 6 折，原价 ¥1.50/¥6.00；缓存 ¥0.08）；2026-10-22 发布；全国产算力训练 293B-A30B MoE 旗舰；OR 无 iflytek 上架（官方渠道价）"
   },
   {
-   "rank": 19,
+   "rank": 21,
    "name": "NVIDIA Nemotron nemotron-3.5-super-vl",
    "product": "nvidia/nemotron-3.5-super-vl",
    "region": "美国",
@@ -211,10 +233,10 @@
    "price_out": 3.37,
    "price_mix": 1.6,
    "price_cache": 0.13,
-   "note": "官方 OpenRouter 挂牌价 $0.15/$0.50（缓存 $0.02≈¥0.13；第三方，官网未发布计费、AA 记录 $0.25/$0.65 待核实；10-20 OR 挂牌价自 $0.10/$0.40 回升，见差异表「OR 改价」行）；120B-A12B 多模态 MoE；1M 上下文；2026-10-15 发布；AA Index 26.5；10-16 规则 A-4 自动补录"
+   "note": "OR OpenRouter 挂牌价 $0.15/$0.50（缓存 $0.02≈¥0.13；第三方，官网未发布计费、AA 记录 $0.25/$0.65（口径差异，11-07 复核）；10-20 OR 挂牌价自 $0.10/$0.40 回升，见差异表「OR 改价」行）；120B-A12B 多模态 MoE；1M 上下文；2026-10-15 发布；AA Index 26.5；10-16 规则 A-4 自动补录"
   },
   {
-   "rank": 20,
+   "rank": 22,
    "name": "腾讯混元 Hy3",
    "product": "Tencent Hunyuan Hy3",
    "region": "中国",
@@ -225,7 +247,7 @@
    "note": "官方 官方人民币价 ¥1.00/¥4.00、缓存读 ¥0.25（腾讯云 PU 折算；10-14 规则 B 修正：原 ¥0.99/¥3.98 系国际档 USD 折算，与家族总览官方口径对齐）；295B 总 / 21B 激活 MoE；256K 上下文；Apache 2.0 开源；性价比标杆"
   },
   {
-   "rank": 21,
+   "rank": 23,
    "name": "DeepSeek V4.1 Flash 1017",
    "product": "DeepSeek-V4.1-Flash-1017",
    "region": "中国",
@@ -236,7 +258,7 @@
    "note": "官方 峰谷双档（2026-09-10 生效）：高峰（9–12、14–18 点）×2 → 峰 入¥2.00/出¥8.00/缓存¥0.04；谷（空闲基准）入¥1.00/出¥4.00/缓存¥0.02（官方人民币价）；09-10 发布 GA，承接已下线的旧名 deepseek-v4-flash（10-25 复核：V4 Pro 独立档位未切流、计费不变）；550B 总参 / 8B 激活（输入）/ 16B 激活（输出），原生多模态、1M 上下文；10-17 升级 1017 版（同价，DeepSWE v1.1 77.0%/TB4.0 42.3%，权重开源；AA Index 待更新沿用 39.5 口径）"
   },
   {
-   "rank": 22,
+   "rank": 24,
    "name": "MiniMax M3.1 Flash",
    "product": "MiniMax-M3.1-Flash",
    "region": "中国",
@@ -247,18 +269,18 @@
    "note": "官方 官方人民币价：输入 ¥1.00 / 输出 ¥4.00 / 缓存读 ¥0.10（10-19 发布即下调，较 M3 ≤512k 再降 50%+；为标准价非限时促销）；1M 上下文；200+ TPS（P50 170+）；AA Index 42.7；OR 仅 :free 变体上架（日榜 #7）；A-4 命中 · §0.1 自动补录"
   },
   {
-   "rank": 23,
-   "name": "Upstage Solar solar-pro-3",
-   "product": "upstage/solar-pro-3",
+   "rank": 25,
+   "name": "Upstage Solar Pro 4",
+   "product": "upstage/solar-pro4",
    "region": "韩国",
    "price_in": 1.01,
    "price_out": 4.04,
    "price_mix": 1.77,
-   "price_cache": 0.1,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.10；上下文 128K；来源 openrouter.ai/api/v1/models"
+   "price_cache": 0.2,
+   "note": "OR挂牌 OpenRouter 挂牌 $0.15/$0.60（×6.7351，第三方，待官网核实）；缓存读 ¥0.20；上下文 524K；2026-08-10 上架；原 solar-pro-3 已于 2026-10-30 核查从 OR 下架（C-3 换代，厂商未停服，mini4 在售）"
   },
   {
-   "rank": 24,
+   "rank": 26,
    "name": "讯飞星火 Spark X2",
    "product": "iFlytek Spark X2",
    "region": "中国",
@@ -269,7 +291,7 @@
    "note": "官方 官方统一单价（输入=输出）"
   },
   {
-   "rank": 25,
+   "rank": 27,
    "name": "Liquid AI LFM2.5-24B-A2B",
    "product": "LFM2.5-24B-A2B",
    "region": "美国",
@@ -280,18 +302,7 @@
    "note": "官方 Liquid 官方 Console 价 $0.10/$1.00（缓存读 $0.05≈¥0.34；OR 第三方 $0.05/$0.70 更低）；24B-A2B MoE（2B 激活）、128K 上下文、纯文本 reasoning-only；LFM Open License v1.0（商用有条件）；GPQA Diamond 74.4 / IFEval 96.8 / MATH-500 96.0（第三方观测）；设备端向；2026-10-13 发布；10-17 规则 A-4 自动补录"
   },
   {
-   "rank": 26,
-   "name": "Arcee AI trinity-large-thinking",
-   "product": "arcee-ai/trinity-large-thinking",
-   "region": "美国",
-   "price_in": 1.68,
-   "price_out": 5.39,
-   "price_mix": 2.61,
-   "price_cache": 0.41,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.41；上下文 262K；来源 openrouter.ai/api/v1/models"
-  },
-  {
-   "rank": 27,
+   "rank": 28,
    "name": "StepFun 阶跃星辰 step-3.7-flash",
    "product": "stepfun/step-3.7-flash",
    "region": "中国",
@@ -299,21 +310,43 @@
    "price_out": 7.75,
    "price_mix": 2.95,
    "price_cache": 0.27,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.27；上下文 262K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.27；上下文 262K；来源 openrouter.ai"
   },
   {
-   "rank": 28,
-   "name": "Reflection Beam 1.0",
-   "product": "reflection/beam-1.0-501b-a23b",
+   "rank": 29,
+   "name": "Particle-1",
+   "product": "Particle-1",
    "region": "美国",
    "price_in": 1.68,
    "price_out": 6.74,
    "price_mix": 2.95,
-   "price_cache": 0.27,
-   "note": "OR挂牌 OpenRouter 挂牌价 $0.25/$1.00（缓存读 $0.04≈¥0.27；第三方，Reflection 官方 API beta 价未独立核实、AA 记录 $0.7/$2.1 待核实；10-20 自 $1.00/$3.00 下调至 $0.30/$1.00、10-22 输入再降至 $0.25（输出不变），见差异表「OR 改价」行）；501B-A23B 稀疏 MoE（23B 激活）、1M 上下文（API beta 限 262K）、纯文本；Apache 2.0 开放权重（10-16 HF 上架）；厂商自报 SWE-bench Verified 81.6 / TB2.1 80.1 / GPQA Diamond 90.6；AA Index 30.3；2026-10-05 发布；10-17 规则 A-4 自动补录"
+   "price_cache": 0.2,
+   "note": "官方$ 官方 $0.25/$1.00（缓存读 $0.03≈¥0.20）；OR 挂牌 10-31 降至 ¥0.34/¥3.37（-80%/-50%，双源核验官方价未变，路由级/补贴端点波动；2026-10-29 上架，10-30 规则 A-4 自动补录）；1M 上下文 / 131K 输出；DeepSeek V4.1 Flash 后训练（RL token 效率：软件工程任务输出 token 省 28.4%–52.2%、单任务成本降 34.4%–51.6%，厂商口径）；AA 未收录"
   },
   {
-   "rank": 29,
+   "rank": 30,
+   "name": "Reflection Beam 1.0",
+   "product": "reflection/beam-1.0-501b-a23b",
+   "region": "美国",
+   "price_in": 2.02,
+   "price_out": 6.74,
+   "price_mix": 3.2,
+   "price_cache": 0.27,
+   "note": "OR挂牌 OpenRouter 挂牌价 $0.25/$1.00（缓存读 $0.04≈¥0.27；第三方，Reflection 官方 API beta 价未独立核实、AA 记录 $0.7/$2.1（口径差异，11-07 复核）；10-20 自 $1.00/$3.00 下调至 $0.30/$1.00、10-22 输入再降至 $0.25（输出不变），见差异表「OR 改价」行）；501B-A23B 稀疏 MoE（23B 激活）、1M 上下文（API beta 限 262K）、纯文本；Apache 2.0 开放权重（10-16 HF 上架）；厂商自报 SWE-bench Verified 81.6 / TB2.1 80.1 / GPQA Diamond 90.6；AA Index 30.3；2026-10-05 发布；10-17 规则 A-4 自动补录"
+  },
+  {
+   "rank": 31,
+   "name": "Thinking Machines Inkling 2 Small",
+   "product": "Inkling 2 Small",
+   "region": "美国",
+   "price_in": 2.02,
+   "price_out": 6.74,
+   "price_mix": 3.2,
+   "price_cache": 0.2,
+   "note": "官方$ Tinker $0.30/$1.00（缓存读 $0.03）；594B 总/17B 激活 MoE、文本+图像输入、64K/256K 上下文；11-05 发布，权重暂闭源（Apache 2.0 计划下周）；AA Index 31（厂商口径）；来源 官方博客/Tinker 文档（11-06 核实）"
+  },
+  {
+   "rank": 32,
    "name": "智谱 GLM-5.3-FlashX",
    "product": "GLM-5.3-FlashX",
    "region": "中国",
@@ -324,7 +357,18 @@
    "note": "官方 官方人民币价 ¥2.00/¥7.00、缓存读 ¥0.57；GLM-5.3-Flash 同档高速版（最高 200 tokens/s）；1M 上下文；2026-09-18 上线（09-18 已文档化，10-14 补录入价格表）"
   },
   {
-   "rank": 30,
+   "rank": 33,
+   "name": "美团 LongCat-2.5",
+   "product": "LongCat-2.5",
+   "region": "中国",
+   "price_in": 2.0,
+   "price_out": 8.0,
+   "price_mix": 3.5,
+   "price_cache": 0.04,
+   "note": "官方 官方人民币价 · 限时折扣 ¥2.00/¥8.00（缓存 ¥0.04，≈$0.30/$1.20）；折扣结束日与标准价均未公布（官方定价页 11-09 核实）；1.6T/48B MoE 原生多模态；1M 上下文 / 输出 128K；权重 GitHub/HF coming soon（2.0 系 MIT，许可证待公布）；11-09 换代补录（替 LongCat-2.0 行）"
+  },
+  {
+   "rank": 34,
    "name": "MiniMax M3",
    "product": "MiniMax-M3",
    "region": "中国",
@@ -335,7 +379,7 @@
    "note": "官方 官方人民币价：标准 ¥4.20/¥16.80，≤512k 上下文永久五折后 ¥2.10/¥8.40；&gt;512k 翻倍；1M 上下文；本期完整性修正补入"
   },
   {
-   "rank": 31,
+   "rank": 35,
    "name": "Agnes 2.5 Pro Alpha",
    "product": "Agnes-2.5-Pro-Alpha",
    "region": "新加坡",
@@ -346,7 +390,18 @@
    "note": "官方$ $0.45 / $0.90（08-03 Alpha 收费档）；缓存 $0.0038≈¥0.03；1M 上下文（本期新增）"
   },
   {
-   "rank": 32,
+   "rank": 36,
+   "name": "阿里通义千问 Qwen3.8-27B",
+   "product": "qwen3.8-27b",
+   "region": "中国",
+   "price_in": 0.4,
+   "price_out": 14.82,
+   "price_mix": 4.0,
+   "price_cache": 0.25,
+   "note": "OR OpenRouter 挂牌价（第三方；10-31 复核：OR 现挂牌 $0.15/$1.875、缓存 $0.0375（≈¥1.01/¥12.63/¥0.25；Alibaba Cloud Int. 端点竞价波动——10-25 复核为 $0.425/$2.55，10-30 基线曾见 ¥0.26/¥8.42）；dense 27.8B 原生多模态、Apache 2.0（08-14 开源）；262K 原生 / YaRN 1M；来源 openrouter.ai（id: qwen/qwen3.8-27b）"
+  },
+  {
+   "rank": 37,
    "name": "Cohere Command A+",
    "product": "Command A+",
    "region": "加拿大",
@@ -354,10 +409,10 @@
    "price_out": 10.1,
    "price_mix": 4.04,
    "price_cache": null,
-   "note": "官方 OR 挂牌 $0.30/$1.50（第三方路由）；Cohere 官方 API 限速内免费（docs.cohere.com 10-12 一手核实）；上下文 128K / 输出 64K 官方确认（OR 目录 192K 系第三方口径）；企业 RAG / Agents"
+   "note": "OR OR 挂牌 $0.30/$1.50（第三方路由）；Cohere 官方 API 限速内免费（官方文档 10-12 一手核实）；上下文 128K / 输出 64K 官方确认（OR 目录 192K 系第三方口径）；企业 RAG / Agents"
   },
   {
-   "rank": 33,
+   "rank": 38,
    "name": "ByteDance Seed seed-2.0-lite",
    "product": "bytedance-seed/seed-2.0-lite",
    "region": "中国",
@@ -365,10 +420,10 @@
    "price_out": 13.47,
    "price_mix": 4.63,
    "price_cache": 0.0,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 262K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 262K；来源 openrouter.ai"
   },
   {
-   "rank": 34,
+   "rank": 39,
    "name": "Mistral Large 3",
    "product": "Mistral Large 3",
    "region": "欧洲",
@@ -379,18 +434,7 @@
    "note": "官方$ $0.50 / $1.50；开放权重"
   },
   {
-   "rank": 35,
-   "name": "阿里通义千问 Qwen3.8-27B",
-   "product": "qwen3.8-27b",
-   "region": "中国",
-   "price_in": 1.35,
-   "price_out": 16.84,
-   "price_mix": 5.22,
-   "price_cache": 1.01,
-   "note": "官方 OpenRouter 挂牌价（第三方；10-25 复核：OR 已出现 Alibaba Cloud Int. 官方端点 $0.425/$2.55（缓存 $0.085），原「QwenCloud 托管价未公布」已过时，统一官方人民币价仍待核实）；dense 27.8B 原生多模态、Apache 2.0（08-14 开源）；262K 原生 / YaRN 1M；缓存读 ¥1.01；来源 openrouter.ai/api/v1/models"
-  },
-  {
-   "rank": 36,
+   "rank": 40,
    "name": "Amazon Nova 2 Lite",
    "product": "Nova 2 Lite",
    "region": "美国",
@@ -401,7 +445,7 @@
    "note": "官方$ $0.30 / $2.50；1M 上下文"
   },
   {
-   "rank": 37,
+   "rank": 41,
    "name": "AionLabs Aion 3.5 Mini",
    "product": "Aion 3.5 Mini",
    "region": "美国",
@@ -412,29 +456,40 @@
    "note": "OR挂牌 OR 挂牌 $0.7/$1.4（×6.7351）；Aion 3.5 低价档；2026-09-24 上架；上下文 262K；OpenRouter 挂牌价（第三方，待官网核实）；2026-09-24 上架"
   },
   {
-   "rank": 38,
-   "name": "DeepSeek V4 Pro",
-   "product": "deepseek-v4-pro",
-   "region": "中国",
-   "price_in": 4.45,
-   "price_out": 13.34,
-   "price_mix": 6.67,
-   "price_cache": 0.15,
-   "note": "官方$ off-peak $0.66/$1.98（峰谷 ×2 = $1.32/$3.96）；缓存 off-peak $0.022；V4-Pro-0813；AA Index 36.0（Max 档）；峰谷规则见事件日历"
-  },
-  {
-   "rank": 39,
+   "rank": 42,
    "name": "NVIDIA Nemotron nemotron-3-ultra-550b-a55b",
    "product": "nvidia/nemotron-3-ultra-550b-a55b",
    "region": "美国",
-   "price_in": 4.04,
-   "price_out": 16.16,
-   "price_mix": 7.07,
+   "price_in": 3.37,
+   "price_out": 14.82,
+   "price_mix": 6.23,
    "price_cache": 1.26,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥1.26；上下文 512K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥1.26；上下文 512K；来源 openrouter.ai"
   },
   {
-   "rank": 40,
+   "rank": 43,
+   "name": "DeepSeek V4 Pro",
+   "product": "deepseek-v4-pro",
+   "region": "中国",
+   "price_in": 4.5,
+   "price_out": 13.5,
+   "price_mix": 6.75,
+   "price_cache": 0.15,
+   "note": "官方 官方人民币价（谷/空闲基准）：入 ¥4.50 / 出 ¥13.50 / 缓存命中 ¥0.15；高峰（工作日 9–12、14–18 点）×2：入 ¥9.00 / 出 ¥27.00 / 缓存 ¥0.30；V4-Pro-0813；AA Index 36.0（Max 档）；峰谷规则见事件日历；2026-10-31 官方页直抓核实（原 ¥4.45/¥13.34 系 OR off-peak 美元价折算，已按官方 CNY 口径修正，与 #21 Flash 同口径）"
+  },
+  {
+   "rank": 44,
+   "name": "Mistral Large 4",
+   "product": "Mistral Large 4",
+   "region": "欧洲",
+   "price_in": 4.71,
+   "price_out": 14.14,
+   "price_mix": 7.07,
+   "price_cache": 0.47,
+   "note": "官方$ 官方 docs 价 $0.70 / $2.10（缓存读 $0.07；10-30 WebFetch 实测、无促销标识——10-29 前后官方由 list $1.36/$4.18 永久降价约 -49%，AA 10-29 定价快照同价、OR 挂牌同步吻合；历史：首发五折 $0.68/$2.09 于 10-21 翻回 list，随后官方直接降价）；OR 挂牌 $0.70/$2.10（同官方）；1M 上下文；1.05T 总 / 49B 激活 MoE + 1.6B 视觉编码器；（复核结论见后）；AA Index 38.4"
+  },
+  {
+   "rank": 45,
    "name": "百度文心 ERNIE 5.1",
    "product": "ERNIE 5.1",
    "region": "中国",
@@ -445,7 +500,7 @@
    "note": "官方 官方人民币价：≤32k 档 ¥4.00/¥18.00（32k–128k ¥6.00/¥22.00；10-14 规则 B 修正：原 ¥3.98/¥17.91 系第三方折算，改按官方口径；缓存价官方未单列标「—」）；128K 上下文"
   },
   {
-   "rank": 41,
+   "rank": 46,
    "name": "Elorian Glimpse",
    "product": "elorian/glimpse",
    "region": "美国",
@@ -456,40 +511,18 @@
    "note": "OR挂牌 OpenRouter 挂牌价 $0.60 / $3.00（缓存读 $0.06≈¥0.40；第三方）；256K 上下文；10-16 发布研究预览（API 已开放、聊天界面候补）；「视觉草稿空间」视觉推理专用（推理中回查原图）；AA Index 未收录故性价比记为 0；10-18 已按规则 A-2/A-4 自动补录（§0.1）"
   },
   {
-   "rank": 42,
-   "name": "Kwaipilot KAT-Coder-Pro V2.5",
-   "product": "kwaipilot/kat-coder-pro-v2.5",
-   "region": "中国",
-   "price_in": 4.98,
-   "price_out": 19.94,
-   "price_mix": 8.72,
-   "price_cache": 1.02,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥1.02；上下文 256K；Air V2.5 档 ¥1.02/¥4.09；本期市场覆盖扫描新增；来源 openrouter.ai/api/v1/models"
-  },
-  {
-   "rank": 43,
-   "name": "美团 LongCat-2.0",
-   "product": "LongCat-2.0",
-   "region": "中国",
-   "price_in": 5.05,
-   "price_out": 19.87,
-   "price_mix": 8.75,
-   "price_cache": 0.04,
-   "note": "官方 官方 $0.75/$2.95；初上线限时折扣 ¥2.04/¥8.18（缓存 ¥0.04）；1M 上下文；MIT 开源可自托管；本期完整性修正补入"
-  },
-  {
-   "rank": 44,
-   "name": "腾讯混元 Hy4 preview",
-   "product": "tencent/hy4-preview",
+   "rank": 47,
+   "name": "腾讯混元 Hy4",
+   "product": "tencent/hy4",
    "region": "中国",
    "price_in": 6.0,
    "price_out": 18.0,
    "price_mix": 9.0,
    "price_cache": 0.3,
-   "note": "官方 官方人民币价（输入¥6.00 / 输出¥18.00 / 缓存¥0.30）；770B-A49B MoE；1M+ 上下文；开源（08-28 发布）；WorkBuddy/CodeBuddy 两周限免"
+   "note": "官方 官方人民币价 ¥6.00/¥18.00（缓存 ¥0.30，与 Hy4 preview 同价）；11-04 Hy4 正式版发布（770B-A49B MoE、1M 上下文、首次视觉理解 + Computer Use；来源 hy.tencent.com/research/hy4、央广网 11-04）；同档换代、价格列不动；腾讯云 TokenHub 刊例价 5 折至 2026-12-31（折后 ¥3.00/¥9.00，见价格特惠表）；WorkBuddy / CodeBuddy 11-04–11-15 免费额度；权重与系统卡片待放出；OR 第三方挂牌 $0.417/$1.2505 不作官方价。（id: tencent/hy4）"
   },
   {
-   "rank": 45,
+   "rank": 48,
    "name": "StepFun 阶跃星辰 Step 5 Preview",
    "product": "Step-5-Preview",
    "region": "中国",
@@ -500,7 +533,7 @@
    "note": "官方 官方 API 价 $1.00 / $2.70（缓存命中 $0.05≈¥0.34）；600B 总 / 27B 激活稀疏 MoE（92 层）；1M 上下文；文本+图像+视频输入；AA Intelligence Index 44；2026-09-20 API 上线，开放权重定于 10-15"
   },
   {
-   "rank": 46,
+   "rank": 49,
    "name": "Google Gemini 3.6 Flash",
    "product": "Gemini 3.6 Flash",
    "region": "美国",
@@ -511,7 +544,7 @@
    "note": "官方$ $0.75/$3.75 限时五折（08-13 起，至 2026-12-31，之后恢复 $1.50/$7.50）；3.1 Pro Preview 在架（$2/$12，≤200k 档）"
   },
   {
-   "rank": 47,
+   "rank": 50,
    "name": "Google Gemini 3.8 Flash",
    "product": "Gemini 3.8 Flash",
    "region": "美国",
@@ -522,7 +555,7 @@
    "note": "官方$ $0.75/$3.75 限时五折（09-02 GA，至 2026-12-31，之后恢复 $1.50/$7.50）；1M 上下文/输出 64K；TB2.1 90.8%（厂商口径）；同日发布 3.8 Flash Cyber（Fairwind 限定）"
   },
   {
-   "rank": 48,
+   "rank": 51,
    "name": "Thinking Machines Inkling",
    "product": "Inkling",
    "region": "美国",
@@ -533,18 +566,29 @@
    "note": "OR挂牌 无第一方 API，OpenRouter 托管 $1.00/$4.05（缓存读 $0.17≈¥1.15）；975B/41B MoE、Apache 2.0（07-15）"
   },
   {
-   "rank": 49,
-   "name": "字节豆包 2.1 Pro",
-   "product": "Doubao-Seed-2.1-pro",
+   "rank": 52,
+   "name": "字节豆包 Seed Evolving",
+   "product": "Doubao-Seed-Evolving",
    "region": "中国",
    "price_in": 6.0,
    "price_out": 30.0,
    "price_mix": 12.0,
    "price_cache": 1.2,
-   "note": "官方 官方人民币价（火山方舟 2026-10-03 核实：输入 ¥6.00 / 输出 ¥30.00 / 缓存命中 ¥1.20；1M 上下文无长上下文加价段；Turbo 版半价 ¥3.00/¥15.00）"
+   "note": "官方 官方人民币价（火山引擎 2026-11-08 核实：doubao-seed-evolving 输入 ¥6.00 / 输出 ¥30.00 / 缓存命中 ¥1.20，与 2.1-pro 同价；1M 上下文无长上下文加价段；2.1-turbo 半价 ¥3.00/¥15.00；官网首页 11.11 档主推「Seed Evolving 模型上线，高频迭代」）"
   },
   {
-   "rank": 50,
+   "rank": 53,
+   "name": "百度文心 ERNIE-Light-DT-1.0",
+   "product": "ernie-light-dt-1.0-intl",
+   "region": "中国",
+   "price_in": 7.61,
+   "price_out": 26.54,
+   "price_mix": 12.34,
+   "price_cache": 0.76,
+   "note": "OR挂牌 OpenRouter 挂牌价（国际端点，中文千帆未上架；$1.13/$3.94 · 缓存 $0.113）1M 上下文 / 输出 131K · 基于开源 GLM 后训练 + 百度 BSA 稀疏注意力 · 参数未公布"
+  },
+  {
+   "rank": 54,
    "name": "智谱 GLM-5.3",
    "product": "GLM-5.3",
    "region": "中国",
@@ -555,7 +599,7 @@
    "note": "官方 官方人民币价（输入¥8.00 / 输出¥28.00 / 缓存¥2.00）；1M 上下文；国际档 .40/.40"
   },
   {
-   "rank": 51,
+   "rank": 55,
    "name": "Anthropic Claude Haiku 4.5",
    "product": "Claude Haiku 4.5",
    "region": "美国",
@@ -566,7 +610,7 @@
    "note": "官方$ $1 / $5（轻量快档，低延迟/高吞吐简单任务）；缓存读 $0.10≈¥0.69；200K 上下文（稳定价，无促销）"
   },
   {
-   "rank": 52,
+   "rank": 56,
    "name": "Meta Muse Spark 1.2",
    "product": "muse-spark-1.2",
    "region": "美国",
@@ -577,7 +621,7 @@
    "note": "官方 Meta 首个智能体编码模型（08-05 公测）；1M 上下文；缓存读 ¥1.02；来源 官方/OpenRouter meta/muse-spark-1.2"
   },
   {
-   "rank": 53,
+   "rank": 57,
    "name": "Meta Muse Spark 1.3",
    "product": "muse-spark-1.3",
    "region": "美国",
@@ -588,7 +632,7 @@
    "note": "官方 Meta 智能体编码模型（09-02 发布，Muse Code 默认引擎）；AA Index 61（发布日厂商口径）；TB2.1 88.8 / DeepSWE 75.4；价同 1.2；1.3 权重政策未定；来源 官方/OpenRouter meta/muse-spark-1.3"
   },
   {
-   "rank": 54,
+   "rank": 58,
    "name": "Meta Muse Spark Open",
    "product": "meta/muse-spark-open",
    "region": "美国",
@@ -596,21 +640,32 @@
    "price_out": 28.62,
    "price_mix": 13.47,
    "price_cache": 1.01,
-   "note": "官方 $1.25/$4.25（缓存 $0.15≈¥1.01，各托管同价；Meta Model API 是否直供待核实）；816B-A42B 开放权重 MoE；1M 上下文；2026-10-15 发布、10-16 OR 上架；AA Index 38.9；10-16 规则 A-2/A-4 自动补录"
+   "note": "第三方 $1.25/$4.25（缓存 $0.15≈¥1.01，各托管同价；Meta 无第一方付费 API（仅第三方托管））；816B-A42B 开放权重 MoE；1M 上下文；2026-10-15 发布、10-16 OR 上架；AA Index 38.9；10-16 规则 A-2/A-4 自动补录"
   },
   {
-   "rank": 55,
-   "name": "Mistral Large 4",
-   "product": "Mistral Large 4",
-   "region": "欧洲",
-   "price_in": 9.16,
-   "price_out": 28.15,
-   "price_mix": 13.91,
-   "price_cache": 0.94,
-   "note": "官方$ 官方 docs 价目表 list $1.36 / $4.18（缓存 $0.14；10-25 复核更正：mistral.ai/pricing/api 301 至 docs.mistral.ai/inference/pricing，该页仍逐模型公示 per-token 价（Large 4 列 list $1.36 / 缓存 $0.14 / $4.18、无促销标识）；原「已改订阅制、不再公示 API 模型价」判断作废）；OR 挂牌 $1.36/$4.18（A-2 / A-4 自动补录·OR 已上架 2026-10-06）；1M 上下文；1.05T 总 / 49B 激活 MoE + 1.6B 视觉编码器；public preview，权重 10 月底开放；⚠️ 首发五折（$0.68/$2.09）已于 10-21 结束（10-20 T 日 OR 仍挂五折、10-21 翻回 list；第三方曾预测 10-20 到期，兑现；官方无公告——待核实）；AA Index 38.4"
+   "rank": 59,
+   "name": "GPT-6.1 Terra",
+   "product": "openai/gpt-6.1-terra",
+   "region": "美国",
+   "price_in": 6.74,
+   "price_out": 33.68,
+   "price_mix": 13.47,
+   "price_cache": 0.34,
+   "note": "官方$ $1 / $5（缓存读 $0.05≈¥0.34；>272K 输入 $2/$7.5；Batch 五折）；1.05M 上下文 / 128K 输出；GPT-6.1 系列中档（官方定价页 Standard 档，10-27 核实）；OR openai/gpt-6.1-terra 10-27 上架（$1/$5、ctx 1,050,000）；同底模 Terra Pro（reasoning.mode=pro）同价；AA Index 33.5（AA 10-26 收录）；10-27 规则 A-2 / A-4 自动补录"
   },
   {
-   "rank": 56,
+   "rank": 60,
+   "name": "阿里通义千问 Qwen4-Max",
+   "product": "qwen4-max",
+   "region": "中国",
+   "price_in": 10.0,
+   "price_out": 30.0,
+   "price_mix": 15.0,
+   "price_cache": 0.5,
+   "note": "官方 官方人民币价（11-16 正式发布：2.4T MoE、原生视觉、1M ctx、384K 最大输出；隐式缓存命中 ¥0.50；国际 $1.5/$4.5）；OR qwen/qwen4-max 同日上架（¥10.10/¥30.31 与国际价一致）；Token Plan 可调用；Qwen4 中小尺寸将陆续开源；Qwen3.8-Max ¥12/¥36 继续在售"
+  },
+  {
+   "rank": 61,
    "name": "阿里通义千问 qwen3.8-max",
    "product": "qwen3.8-max",
    "region": "中国",
@@ -621,7 +676,7 @@
    "note": "官方 官方人民币价（08-03 正式发布）；隐式缓存命中 ¥1.50；国际 $2/$6；qwen3.7-max 同价在售"
   },
   {
-   "rank": 57,
+   "rank": 62,
    "name": "xAI Grok 4.7",
    "product": "Grok 4.7",
    "region": "美国",
@@ -632,7 +687,7 @@
    "note": "官方$ $2 / $6；&gt;200K 长上下文 $4/$12；4.6 同价并行；09-21 发布；AA Index 46.4；缓存命中 $0.50（&gt;200K $1）"
   },
   {
-   "rank": 58,
+   "rank": 63,
    "name": "Sakana AI Fugu Max",
    "product": "Fugu-Max",
    "region": "日本",
@@ -643,7 +698,29 @@
    "note": "官方 官方 Token Plan 价 $2.00 / $6.00（缓存读 $0.25≈¥1.68）；学习型多智能体编排模型（非单体权重）；1M 上下文；文本+图像+PDF 输入；与 fugu-ultra-v2 同日发布（2026-09-11）；固定费率不随上下文分档"
   },
   {
-   "rank": 59,
+   "rank": 64,
+   "name": "Google Gemini 4 Hydrogen",
+   "product": "gemini-4-hydrogen",
+   "region": "美国",
+   "price_in": 10.1,
+   "price_out": 50.51,
+   "price_mix": 20.2,
+   "price_cache": 0.51,
+   "note": "官方$ $1.50/$7.50 标准价（11-12 发布；缓存读 $0.075≈¥0.51 仅隐式缓存；Batch / Flex $0.75/$3.75）；1M 上下文 / 输出 65,536（长解码 1M）；四档思考 low / medium / high / xhigh；11-14 规则 A-2 / A-4 双源自动补录；AA Index 26.9；来源 Google 定价页/OpenRouter（11-14 核实）"
+  },
+  {
+   "rank": 65,
+   "name": "Google Gemini Omni 1.2 Flash",
+   "product": "gemini-omni-1.2-flash",
+   "region": "美国",
+   "price_in": 10.1,
+   "price_out": 60.62,
+   "price_mix": 22.73,
+   "price_cache": null,
+   "note": "官方$ $1.50/$9.00（文本输出；视频输出 $12/MTok，OR 未列缓存价）；131K 上下文；11-05 GA 视频生成与编辑；Omni 1.1 Flash 同文本价、12-03 起并入 1.2 计费；无免费档；来源 Google 定价页/OpenRouter（11-06 核实）"
+  },
+  {
+   "rank": 66,
    "name": "Amazon Nova 2 Pro",
    "product": "Nova 2 Pro",
    "region": "美国",
@@ -654,7 +731,7 @@
    "note": "官方$ $1.25 / $10.00；1M 上下文；Nova 2 推理旗舰"
   },
   {
-   "rank": 60,
+   "rank": 67,
    "name": "Writer Palmyra palmyra-x6",
    "product": "palmyra-x6",
    "region": "美国",
@@ -662,10 +739,10 @@
    "price_out": 53.88,
    "price_mix": 23.57,
    "price_cache": null,
-   "note": "官方 Writer 官方定价 $2/$8（×6.7351；X6 未上 OpenRouter，非 OR 挂牌）；X4/X5 将于 2026-12-14 弃用；上下文 1.0M；来源 dev.writer.com/api-guides/models（10-23 核实）"
+   "note": "官方 Writer 官方定价 $2/$8（×6.7351；X6 未上 OpenRouter，非 OR 挂牌）；X4/X5 将于 2026-12-14 弃用；上下文 1.0M；来源 Writer 官方文档（10-23 核实）"
   },
   {
-   "rank": 61,
+   "rank": 68,
    "name": "unbiased Pareto",
    "product": "unbiased/pareto",
    "region": "美国",
@@ -673,10 +750,10 @@
    "price_out": 50.51,
    "price_mix": 25.25,
    "price_cache": null,
-   "note": "待核实 OpenRouter 挂牌价 $2.50 / $7.50（第三方托管）；2026-09-18 上架；上下文长度与参数量待核实；厂商所在地待核实"
+   "note": "官方未公开 OpenRouter 挂牌价 $2.50 / $7.50（第三方托管）；2026-09-18 上架；上下文长度 / 参数量 / 厂商所在地官方均未公开"
   },
   {
-   "rank": 62,
+   "rank": 69,
    "name": "AionLabs Aion 3.5",
    "product": "Aion 3.5",
    "region": "美国",
@@ -687,7 +764,7 @@
    "note": "OR挂牌 OR 挂牌 $3/$6（×6.7351）；GLM 底座多模型叙事系统；2026-09-24 上架；上下文 262K；OpenRouter 挂牌价（第三方，待官网核实）；2026-09-24 上架"
   },
   {
-   "rank": 63,
+   "rank": 70,
    "name": "月之暗面 Kimi K3.1 Pro",
    "product": "Kimi K3.1 Pro",
    "region": "中国",
@@ -695,10 +772,10 @@
    "price_out": 68.0,
    "price_mix": 26.75,
    "price_cache": 1.3,
-   "note": "官方 官方人民币价；缓存¥1.30；1M 上下文；2.8T 总 / 104B 激活（10-24 官方通稿；原「3T」口径无官方出处，已改按通稿）；高速版官方 ¥26.00/¥136.00 恰为 2 倍；10-24 00:00 正式发布（10-23 预告），权重 11-04 前开源"
+   "note": "官方 官方人民币价；缓存¥1.30；1M 上下文；2.8T 总 / 104B 激活（10-24 官方通稿；原「3T」口径无官方出处，已改按通稿）；高速版官方 ¥26.00/¥136.00 恰为 2 倍；10-24 00:00 正式发布（10-23 预告），权重 11-04 16:00 UTC 已开源（HF moonshotai/Kimi-K3.1-Pro，MXFP4 约 1.56TB；许可证定稿：MIT 主体 + MaaS/署名两限制）"
   },
   {
-   "rank": 64,
+   "rank": 71,
    "name": "Anthropic Claude Sonnet 5",
    "product": "Claude Sonnet 5",
    "region": "美国",
@@ -709,7 +786,7 @@
    "note": "官方 $2 / $10（永久标准价；09-14 官方确认原定 09-01 涨价取消）；缓存读 $0.20≈¥1.34；1M 上下文（06-30 发布）"
   },
   {
-   "rank": 65,
+   "rank": 72,
    "name": "Anthropic Claude Sonnet 5.5",
    "product": "Claude Sonnet 5.5",
    "region": "美国",
@@ -720,7 +797,7 @@
    "note": "官方$ $2 / $10（A-4 自动补录·OR 已上架 2026-09-29）；缓存读 $0.10≈¥0.67（10-07 随 Haiku 5.5 发布减半，原 $0.20）；1M 上下文；2026-09-28 发布；AA Index 56；5.5 系列首款（与 Haiku 5.5 同期预告）"
   },
   {
-   "rank": 66,
+   "rank": 73,
    "name": "Google Gemini 4 Argon",
    "product": "gemini-4-argon",
    "region": "美国",
@@ -731,7 +808,7 @@
    "note": "OR挂牌 Google 引导价 $2/$10、缓存读 $0.10（至 2026-11-30，之后 $4/$20）；10-14 OR 新上架补录（09-30 发布，首发 Fairwind 受信开放）；1M 上下文 / 输出 1M；AA Index 52.6"
   },
   {
-   "rank": 67,
+   "rank": 74,
    "name": "OpenAI GPT-6.1 Sol",
    "product": "gpt-6.1-sol",
    "region": "美国",
@@ -742,7 +819,29 @@
    "note": "官方$ $2 / $10（09-29 DevDay 发布，与 GPT-6 Sol 同价；缓存读 $0.10≈¥0.68；1.05M 上下文 / 输出 128K）；较 GPT-5.6 Sol 促销价再降 50%；Sol Pro 同价更高性能档（reason.pro）；AA Index 51.8（AA 09-29 收录）"
   },
   {
-   "rank": 68,
+   "rank": 75,
+   "name": "OpenAI GPT-6.2 Sol",
+   "product": "gpt-6.2-sol",
+   "region": "美国",
+   "price_in": 13.47,
+   "price_out": 67.35,
+   "price_mix": 26.94,
+   "price_cache": 0.67,
+   "note": "官方$ $2/$10（缓存 $0.10≈¥0.67；永久标准价，非促销）；1.05M 上下文 / 输出 128K；2026-11-17 发布；Sol Pro 同价更高性能档；FrontierCode 2.0 接近 Astra 而成本约 1/5；AA Index 55.7；A-2/A-4 自动补录·11-18"
+  },
+  {
+   "rank": 76,
+   "name": "Google Gemini 4 Carbon",
+   "product": "gemini-4-carbon",
+   "region": "美国",
+   "price_in": 13.47,
+   "price_out": 67.35,
+   "price_mix": 26.94,
+   "price_cache": 0.67,
+   "note": "官方$ $2/$10 引导价（官方 10-28 公告；缓存 95% 折 $0.10≈¥0.67；引导期结束日未公布，之后 $4/$20 → ¥26.94/¥134.71；11-07 四源核实）；10-29 规则 A-4 补录（10-28 发布，受限预览 · Fairwind 受信伙伴，公开 API 未开放，OR 未上架）；1M 上下文 / 输出 1M（二手源，待官方确认）；AA Index 59.4"
+  },
+  {
+   "rank": 77,
    "name": "智谱 GLM-5.3-Prime",
    "product": "GLM-5.3-Prime",
    "region": "中国",
@@ -750,10 +849,10 @@
    "price_out": 59.26,
    "price_mix": 28.96,
    "price_cache": 3.76,
-   "note": "待核实 OR 挂牌 $2.80/$8.80（×6.7351）；缓存读 $0.56；1M 上下文；GLM-5.3 同权重高速部署档，厂商未公开官方定价（待核实）；2026-09-24 上架"
+   "note": "厂商未定价 OR 挂牌 $2.80/$8.80（×6.7351）；缓存读 $0.56；1M 上下文；GLM-5.3 同权重高速部署档，厂商未公开官方定价；2026-09-24 上架"
   },
   {
-   "rank": 69,
+   "rank": 78,
    "name": "Meta Llama 5 (600B)",
    "product": "Llama 5 600B MoE",
    "region": "美国",
@@ -761,10 +860,10 @@
    "price_out": 47.15,
    "price_mix": 29.47,
    "price_cache": null,
-   "note": "待核实 第三方托管价 $3.50/$7（如 Together）；权重免费自托管（仅算力成本）；第三方来源价格存分歧（待核实）"
+   "note": "无一方价 第三方托管价 $3.50/$7（如 Together）；权重免费自托管（仅算力成本）；第三方来源价格存分歧（无第一方价可校准）"
   },
   {
-   "rank": 70,
+   "rank": 79,
    "name": "Google Gemini 3.1 Pro Preview",
    "product": "gemini-3.1-pro-preview",
    "region": "美国",
@@ -775,7 +874,7 @@
    "note": "官方$ $2/$12（≤200k 提示，缓存 $0.20）；1M 上下文；OR 在架名 gemini-3.1-pro-preview（原「3.5 Pro」名称有误，OR 无该 slug，10-12 修正）；AA Index 29.7"
   },
   {
-   "rank": 71,
+   "rank": 80,
    "name": "月之暗面 Kimi K3",
    "product": "Kimi K3",
    "region": "中国",
@@ -786,7 +885,7 @@
    "note": "官方 官方人民币价；缓存¥2.00；1M 上下文；2.8T/450B 激活（07-27 开源权重）"
   },
   {
-   "rank": 72,
+   "rank": 81,
    "name": "Perplexity Sonar sonar-pro",
    "product": "perplexity/sonar-pro",
    "region": "美国",
@@ -794,10 +893,10 @@
    "price_out": 101.03,
    "price_mix": 40.41,
    "price_cache": 0.0,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 200K；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥0.00；上下文 200K；来源 openrouter.ai"
   },
   {
-   "rank": 73,
+   "rank": 82,
    "name": "OpenAI GPT-5.6 (Sol)",
    "product": "gpt-5.6-sol",
    "region": "美国",
@@ -805,10 +904,10 @@
    "price_out": 134.7,
    "price_mix": 53.88,
    "price_cache": 2.69,
-   "note": "官方$ $4 / $20（08-21 促销 3 个月，输入 -20%/输出 -33%；缓存 $0.40）；Terra $2/$12、Luna $0.20/$1.20（07-30 降价）；Sol 新增 Fast 模式（2.5× 速、2× 价）"
+   "note": "官方$ $4 / $20（08-21 促销 3 个月，输入 -20%/输出 -33%；缓存 $0.40）；11-01 核实：官方旗舰标准价目表已由 GPT-6.1 Sol（$2/$10）取代 5.6 系，5.6 Sol 促销价至少至 11-21、API 仍可调用（Cyber 分区仍列示）；Sol 新增 Fast 模式（2.5× 速、2× 价）"
   },
   {
-   "rank": 74,
+   "rank": 83,
    "name": "Anthropic Claude Opus 5.5",
    "product": "Claude Opus 5.5",
    "region": "美国",
@@ -819,7 +918,7 @@
    "note": "官方$ $4 / $20（永久定价；缓存读 $0.20≈¥1.34、缓存写 $5；Fast 模式 $8/$40）；5.5 家族首款，性能≈Fable 5.1、成本较 Opus 5 -40%（单价 -20%）；1M 上下文 / 输出 128K；AA Index 57.6"
   },
   {
-   "rank": 75,
+   "rank": 84,
    "name": "Meta Muse Wonder",
    "product": "meta/muse-wonder",
    "region": "美国",
@@ -830,7 +929,7 @@
    "note": "官方 $4 / $20（缓存 $0.20≈¥1.35）；1M 上下文 / 多模态输入（文/图/音/视频/PDF）；2026-10-12 发布（Meta Model API + OR 同日上架）；AA Index 52.4；Wonder Full 无 API、仅 Muse Code $50/$200 订阅"
   },
   {
-   "rank": 76,
+   "rank": 85,
    "name": "Anthropic Claude Opus 5",
    "product": "Claude Opus 5",
    "region": "美国",
@@ -841,7 +940,7 @@
    "note": "官方$ $5 / $25（半价旗舰，性能逼近 Fable 5；07-24 发布）"
   },
   {
-   "rank": 77,
+   "rank": 86,
    "name": "Sakana AI fugu-ultra",
    "product": "sakana/fugu-ultra",
    "region": "日本",
@@ -849,10 +948,32 @@
    "price_out": 202.05,
    "price_mix": 75.77,
    "price_cache": 3.36,
-   "note": "官方 OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥3.36；上下文 1.0M；来源 openrouter.ai/api/v1/models"
+   "note": "OR OpenRouter 挂牌价（第三方，非官方，待官网核实）；缓存读 ¥3.36；上下文 1.0M；来源 openrouter.ai"
   },
   {
-   "rank": 78,
+   "rank": 87,
+   "name": "OpenAI GPT-6.2 Astra",
+   "product": "gpt-6.2-astra",
+   "region": "美国",
+   "price_in": 53.88,
+   "price_out": 269.4,
+   "price_mix": 107.76,
+   "price_cache": 2.69,
+   "note": "官方$ $8/$40（缓存 $0.40≈¥2.69）；1.05M 上下文 / 输出 128K；2026-11-17 发布，较 GPT-6 Astra 输入/输出降 20%、缓存降 60%；Astra Pro 同价更高性能档；Astra for Law 6.2 法律专用配置同价（AA 独有 OR 未上架）；AA Index 61.6；A-2/A-4 自动补录·11-18"
+  },
+  {
+   "rank": 88,
+   "name": "Anthropic Claude Fable 5.2",
+   "product": "Claude Fable 5.2",
+   "region": "美国",
+   "price_in": 53.88,
+   "price_out": 269.4,
+   "price_mix": 107.76,
+   "price_cache": 1.35,
+   "note": "官方$ $8/$40（11-09 发布，较 Fable 5.1 -20%；缓存读 $0.20≈¥1.35；快速模式 $16/$80）；1M 上下文/128K 输出；同源 Mythos 5.2 仅审核机构；AA Index 56.4；11-10 规则 A-2/A-4 自动补录"
+  },
+  {
+   "rank": 89,
    "name": "OpenAI GPT-6 Astra",
    "product": "gpt-6-astra",
    "region": "美国",
@@ -863,7 +984,7 @@
    "note": "官方$ $10/$50（缓存 $1.00）；1.05M 上下文 / 输出 128K；2026-09-03 发布；AA Index 52.7（Max 档）；09-04 补录遗失已回补"
   },
   {
-   "rank": 79,
+   "rank": 90,
    "name": "Anthropic Claude Fable 5.1",
    "product": "Claude Fable 5.1",
    "region": "美国",
@@ -874,7 +995,7 @@
    "note": "官方$ $10/$50（09-01 发布，Mythos 级）；缓存读 $0.25≈¥1.68（较 Fable 5 降 75%）；1M 上下文/128K 输出；Claude API/Bedrock/Vertex/Foundry 可用；同源 Mythos 5.1 仅授权计划"
   },
   {
-   "rank": 80,
+   "rank": 91,
    "name": "unbiased Pareto 26.10 Preview",
    "product": "unbiased/pareto-26.10-preview",
    "region": "美国",
@@ -882,7 +1003,29 @@
    "price_out": null,
    "price_mix": null,
    "price_cache": null,
-   "note": "待核实 原 OpenRouter 挂牌价 $0.80 / $3.20（第三方托管，2026-10-01 上架）；2026-10-16 OR 下架（原因未知，价格改待核实；同族 Pareto 26.9 10-14 起在架 $2.5/$7.5，见 unbiased Pareto 基名行）；上下文与参数量待核实；AA Index 未收录故性价比记为 0（规则 A-4 自动补录）"
+   "note": "已下架 原 OpenRouter 挂牌价 $0.80 / $3.20（第三方托管，2026-10-01 上架）；2026-10-16 OR 下架（原因未知，价格未公开；同族 Pareto 26.9 10-14 起在架 $2.5/$7.5，见 unbiased Pareto 基名行）；上下文与参数量官方未公开；AA Index 未收录故性价比记为 0（规则 A-4 自动补录）"
+  },
+  {
+   "rank": 92,
+   "name": "Arcee AI trinity-large-thinking",
+   "product": "arcee-ai/trinity-large-thinking",
+   "region": "美国",
+   "price_in": null,
+   "price_out": null,
+   "price_mix": null,
+   "price_cache": null,
+   "note": "已撤牌 原 OpenRouter 挂牌价 ¥1.68 / ¥5.39（$0.25/$0.80，第三方托管）；2026-11-02 复核下架（arcee-ai 已整体不在 OpenRouter 目录 452 模型中，价格未公开）；上下文 262K；来源 openrouter.ai（历史）"
+  },
+  {
+   "rank": 93,
+   "name": "Kwaipilot KAT-Coder-Pro V2.5",
+   "product": "kwaipilot/kat-coder-pro-v2.5",
+   "region": "中国",
+   "price_in": null,
+   "price_out": null,
+   "price_mix": null,
+   "price_cache": null,
+   "note": "已撤牌 原 OpenRouter 挂牌价 ¥4.98 / ¥19.94（第三方托管）；2026-11-02 复核下架（kwaipilot 已整体不在 OpenRouter 目录 452 模型中，Pro/Air 双档均不可查，价格未公开）；上下文 256K；来源 openrouter.ai（历史）"
   }
  ]
 }
