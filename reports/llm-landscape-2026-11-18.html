@@ -1189,6 +1189,35 @@ body.js-on .note-toggle{display:inline-block}
 @media(max-width:600px){.fam-pager{gap:6px;padding:6px 8px;margin:6px 0 2px;font-size:12px}.fam-pager button,.fam-pager select{padding:2px 8px;font-size:12px}.fam-pager select{max-width:150px}.fam-pager-hint{display:none}}
 @media print{.fam-pager{display:none!important}}
 
+/* === 五组入口目录（第一版 2026-11-18）：组名跳首章，组内章节可展开；不改旧 #s-* 锚点 === */
+.toc-groups{display:flex;flex-wrap:wrap;align-items:center;gap:6px;flex:1 1 520px;min-width:0}
+.toc-group{position:relative;display:inline-flex;align-items:center;border:1px solid #e2e8f0;border-radius:999px;background:#f8fafc}
+.toc-group-link{font-weight:700!important;color:#1e3a8a!important;background:#eef2ff!important;border-radius:999px 0 0 999px!important;padding-right:8px!important}
+.toc-group-link.cur{background:var(--c-blue)!important;color:#fff!important}
+.toc-group-toggle{display:none;align-items:center;justify-content:center;width:24px;height:24px;margin:0 3px 0 0;border:0;border-left:1px solid #dbe4f0;border-radius:0 999px 999px 0;background:transparent;color:#475569;font-size:11px;line-height:1;cursor:pointer}
+.toc-group-toggle:hover{background:#e2e8f0;color:#1e3a8a}
+.toc-group-menu{display:flex;flex-wrap:wrap;align-items:center;gap:3px 5px;padding:4px 8px 4px 9px;border-left:1px solid #e2e8f0}
+.toc-group-menu a{font-size:11.5px!important;padding:2px 7px!important;background:#fff!important;border:1px solid #e2e8f0!important}
+.toc-group-menu a.cur{background:var(--c-blue)!important;color:#fff!important;border-color:var(--c-blue)!important}
+body.js-on .toc-group-toggle{display:inline-flex}
+body.js-on .toc-group-menu{display:none;position:absolute;left:0;top:calc(100% + 5px);z-index:80;min-width:220px;max-width:min(92vw,360px);flex-direction:column;align-items:stretch;gap:2px;padding:6px;border:1px solid #dbe4f0;border-radius:10px;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.14)}
+body.js-on .toc-group.is-open .toc-group-menu{display:flex}
+body.js-on .toc-group-menu a{background:#f8fafc!important;border-color:transparent!important;white-space:normal}
+body.js-on .toc-group:nth-last-child(-n+2) .toc-group-menu{left:auto;right:0}
+.nav-search{margin-left:auto}
+@media(max-width:760px){
+  .toc{position:static;padding:7px 10px;gap:4px;flex-direction:column;align-items:stretch}
+  .toc-title{display:none}
+  .toc-groups{flex:0 0 100%!important;width:100%!important;gap:3px;flex-wrap:wrap}
+  .toc-group-link{font-size:11px!important;padding:2px 4px!important}
+  .toc-group-toggle{width:16px;height:16px;margin-right:1px;font-size:9px}
+  .toc-group-menu{padding:4px 5px 4px 7px;gap:2px 4px}
+  .toc-group-menu a{font-size:11px!important;padding:2px 6px!important}
+  body.js-on .toc-group-menu{min-width:200px;max-width:88vw}
+  .nav-search{display:flex!important;flex:0 0 100%!important;width:100%!important;margin:3px 0 0;gap:0}
+  .nav-search input{width:100%;padding:3px 9px}
+}
+@media print{.toc{display:none!important}}
 </style>
 </head><body>
 <section class="ov-glance" id="ov-glance" data-opt="glance" aria-label="本期速览">
@@ -1197,7 +1226,47 @@ body.js-on .note-toggle{display:inline-block}
   <div class="ov-act"><a class="ov-btn" href="#s-sort">查模型价格</a><a class="ov-btn" href="#s-calc">算我的成本</a><a class="ov-btn" href="#s-bars">比价可视化</a><a class="ov-btn" href="#s-diff">看本期变化</a><button class="ov-btn ov-expand" type="button" data-opt="expand-all" aria-expanded="false">展开全文（查找与打印）</button></div>
   <div class="ov-tip"><span class="ov-tip-nojs">当前为完整报告：全部内容可直接阅读、查找与打印。</span><span class="ov-tip-js">默认已折叠低频章节与扩展注记；全部内容仍在页内，展开后可用浏览器查找与打印。搜索框在目录条右侧（Ctrl+K 聚焦）。</span></div>
 </section>
-<nav class="toc" aria-label="目录导航">  <span class="toc-title">目录</span>  <a href="#s-land">全景对比</a>  <a href="#s-diff">两期差异</a>  <a href="#s-or">OR 双榜</a>  <a href="#s-family">家族总览</a>  <a href="#s-gaps">覆盖查漏</a>  <a href="#s-timeline">发布时间线</a>  <a href="#s-landconcl">结论要点</a>  <a href="#s-events">事件日历</a>  <a href="#s-price">定价对比</a>  <a href="#s-method">口径方法</a>  <a href="#s-sort">排序总览</a>  <a href="#s-bars">混合价可视化</a>  <a href="#s-guide">场景选型</a>  <a href="#s-calc">选型计算器</a>  <a href="#s-trend">价格趋势</a>  <a href="#s-bench">能力评测</a>  <a href="#s-eco">开源生态</a>  <a href="#s-promo">价格特惠</a>  <a href="#s-trial">免费试用</a>  <a href="#s-image">图像生成</a>  <a href="#s-embed">Embedding</a>  <a href="#s-voice">语音</a>  <a href="#s-video">视频生成</a>  <a href="#s-local">本地部署甜点</a>                                                                            <div class="nav-search"><input id="mSearch" type="text" autocomplete="off" aria-label="搜索模型" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="mDrop" placeholder="搜索型号 / 厂商（如 GPT-6、GLM、K3），Ctrl+K 聚焦"><div id="mDrop" class="nav-drop"></div></div></nav><div class="dash-cards" id="dashCards"></div><main id="docMain"><div class="doc-landscape"><div class="wrap"><h1 id="s-land">📊 主流大模型全景对比（数据截至 2026-11-18）</h1><div class="meta">生成日期：2026-11-18（10:19 定稿）｜ 数据截至 2026-11-18 ｜ 数据口径：公开官方发布 / Release Notes / 权威媒体报道（<b>2026-11-12 联网核实刷新（10:05 轮，基线 11-11 快照）；第一梯队 14 家逐家核实：13 家官方价一致 / 1 家维持口径（Meta Llama 无第一方付费 API）/ 0 家官方标准价调价；本期 A-2/A-4 双源 0 个 T1 新型号命中（A-4 双源 21 基型中 9 个 T2 未收录、均维持非 notable：China Mobile JT-4.1 Flash 运营商无公开定价首轮，Nex-N2.6 / Agnes 2.5 Pro Theta / kt Mi:dm K 3.0 Pro / Motif 3 复检维持，LFM3-1.7B / Ripple 65B 复检 5，Auto Router / Auto Code 复检 6）；OR 挂牌漂移 8 处（minimax-m2.5 -10%、qwen3.5-9b 对齐官方人民币价、gpt-5.6-sol +10% 判路由侧——官方促销 $4/$20 仍挂、deepseek-v4.1-flash 两变体方向与峰谷规律不符如实留存待核）、上架 1（unbiased/pareto-26.10-preview 社区渠道）/ 下架 4（ernie-5.5-flash-preview——官方千帆端点仍在，主表官方价不受影响；bytedance-seed/seed-1.6 · seed-1.6-flash · seed-2.0-code），主表官方价 0 变更</b>（10:05 落 DeepSeek peak 窗口，明细见差异表）；汇率 CFETS 11-11 中间价 6.7191（11-12 上午新中间价截至发稿未见，偏差 +0.24% &lt; 0.5% 沿用 6.7351）；观察项：Inkling 2 Small 权重窗口 11-13 收尾（11-12 复核仍未放出）、ERNIE 5.5 Flash 权重 11-25 开源（新发现前瞻）、Hy4 权重 / Hy4 flash 仍「近期」、Gemini 4 Argon 11-30 引导价到期（T-18）、Gemini 2.5 Pro/Flash 12-01 弃用路由、Kimi K2 12 月底下线（T-19）。历史核实明细见差异表与刷新流水）</div><div class="diff-block" id="s-diff">  <div class="diff-bar">    <div class="diff-bar-l">      <span class="diff-ico">📊</span>      <div>        <div class="diff-t">两期对比差异表</div>        <div class="diff-s">2026-11-17（11:18 快照）<span class="diff-arrow">→</span>2026-11-18（10:19 刷新版）</div>      </div>    </div>    <div class="diff-legend">      <span class="lg"><i class="dot up"></i>数值上调</span>      <span class="lg"><i class="dot down"></i>数值下调</span>      <span class="lg"><i class="dot flat"></i>基本不变</span>      <span class="lg"><i class="dot evt"></i>状态变更</span>      <span class="lg"><i class="dot resh"></i>榜单重排</span>    </div>  </div>  <div class="tbl-scroll"><table class="diff-tbl">
+<nav class="toc" aria-label="目录导航">
+  <span class="toc-title">目录</span>
+  <div class="toc-groups" aria-label="五组目录">
+    <div class="toc-group" data-toc-group="overview">
+      <a class="toc-group-link" href="#s-land">总览</a>
+      <button class="toc-group-toggle" type="button" aria-expanded="false" aria-controls="toc-menu-overview" aria-label="展开总览组内章节">▾</button>
+      <div class="toc-group-menu" id="toc-menu-overview">
+        <a href="#s-land">全景对比</a><a href="#s-diff">两期差异</a><a href="#s-or">OR 双榜</a><a href="#s-family">家族总览</a><a href="#s-gaps">覆盖查漏</a><a href="#s-timeline">发布时间线</a><a href="#s-landconcl">结论要点</a><a href="#s-events">事件日历</a>
+      </div>
+    </div>
+    <div class="toc-group" data-toc-group="pricing">
+      <a class="toc-group-link" href="#s-price">定价与选型</a>
+      <button class="toc-group-toggle" type="button" aria-expanded="false" aria-controls="toc-menu-pricing" aria-label="展开定价与选型组内章节">▾</button>
+      <div class="toc-group-menu" id="toc-menu-pricing">
+        <a href="#s-price">定价对比</a><a href="#s-sort">排序总览</a><a href="#s-bars">混合价可视化</a><a href="#s-guide">场景选型</a><a href="#s-calc">选型计算器</a><a href="#s-trend">价格趋势</a><a href="#s-promo">价格特惠</a><a href="#s-trial">免费试用</a>
+      </div>
+    </div>
+    <div class="toc-group" data-toc-group="capability">
+      <a class="toc-group-link" href="#s-bench">能力与生态</a>
+      <button class="toc-group-toggle" type="button" aria-expanded="false" aria-controls="toc-menu-capability" aria-label="展开能力与生态组内章节">▾</button>
+      <div class="toc-group-menu" id="toc-menu-capability">
+        <a href="#s-bench">能力评测</a><a href="#s-eco">开源生态</a>
+      </div>
+    </div>
+    <div class="toc-group" data-toc-group="appendix">
+      <a class="toc-group-link" href="#s-local">部署与附录</a>
+      <button class="toc-group-toggle" type="button" aria-expanded="false" aria-controls="toc-menu-appendix" aria-label="展开部署与附录组内章节">▾</button>
+      <div class="toc-group-menu" id="toc-menu-appendix">
+        <a href="#s-local">本地部署甜点</a><a href="#s-method">口径方法</a>
+      </div>
+    </div>
+    <div class="toc-group" data-toc-group="multimodal">
+      <a class="toc-group-link" href="#s-image">多模态</a>
+      <button class="toc-group-toggle" type="button" aria-expanded="false" aria-controls="toc-menu-multimodal" aria-label="展开多模态组内章节">▾</button>
+      <div class="toc-group-menu" id="toc-menu-multimodal">
+        <a href="#s-image">图像生成</a><a href="#s-embed">Embedding</a><a href="#s-voice">语音</a><a href="#s-video">视频生成</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-search"><input id="mSearch" type="text" autocomplete="off" aria-label="搜索模型" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="mDrop" placeholder="搜索型号 / 厂商（如 GPT-6、GLM、K3），Ctrl+K 聚焦"><div id="mDrop" class="nav-drop"></div></div>
+</nav><div class="dash-cards" id="dashCards"></div><main id="docMain"><div class="doc-landscape"><div class="wrap"><h1 id="s-land">📊 主流大模型全景对比（数据截至 2026-11-18）</h1><div class="meta">生成日期：2026-11-18（10:19 定稿）｜ 数据截至 2026-11-18 ｜ 数据口径：公开官方发布 / Release Notes / 权威媒体报道（<b>2026-11-12 联网核实刷新（10:05 轮，基线 11-11 快照）；第一梯队 14 家逐家核实：13 家官方价一致 / 1 家维持口径（Meta Llama 无第一方付费 API）/ 0 家官方标准价调价；本期 A-2/A-4 双源 0 个 T1 新型号命中（A-4 双源 21 基型中 9 个 T2 未收录、均维持非 notable：China Mobile JT-4.1 Flash 运营商无公开定价首轮，Nex-N2.6 / Agnes 2.5 Pro Theta / kt Mi:dm K 3.0 Pro / Motif 3 复检维持，LFM3-1.7B / Ripple 65B 复检 5，Auto Router / Auto Code 复检 6）；OR 挂牌漂移 8 处（minimax-m2.5 -10%、qwen3.5-9b 对齐官方人民币价、gpt-5.6-sol +10% 判路由侧——官方促销 $4/$20 仍挂、deepseek-v4.1-flash 两变体方向与峰谷规律不符如实留存待核）、上架 1（unbiased/pareto-26.10-preview 社区渠道）/ 下架 4（ernie-5.5-flash-preview——官方千帆端点仍在，主表官方价不受影响；bytedance-seed/seed-1.6 · seed-1.6-flash · seed-2.0-code），主表官方价 0 变更</b>（10:05 落 DeepSeek peak 窗口，明细见差异表）；汇率 CFETS 11-11 中间价 6.7191（11-12 上午新中间价截至发稿未见，偏差 +0.24% &lt; 0.5% 沿用 6.7351）；观察项：Inkling 2 Small 权重窗口 11-13 收尾（11-12 复核仍未放出）、ERNIE 5.5 Flash 权重 11-25 开源（新发现前瞻）、Hy4 权重 / Hy4 flash 仍「近期」、Gemini 4 Argon 11-30 引导价到期（T-18）、Gemini 2.5 Pro/Flash 12-01 弃用路由、Kimi K2 12 月底下线（T-19）。历史核实明细见差异表与刷新流水）</div><div class="diff-block" id="s-diff">  <div class="diff-bar">    <div class="diff-bar-l">      <span class="diff-ico">📊</span>      <div>        <div class="diff-t">两期对比差异表</div>        <div class="diff-s">2026-11-17（11:18 快照）<span class="diff-arrow">→</span>2026-11-18（10:19 刷新版）</div>      </div>    </div>    <div class="diff-legend">      <span class="lg"><i class="dot up"></i>数值上调</span>      <span class="lg"><i class="dot down"></i>数值下调</span>      <span class="lg"><i class="dot flat"></i>基本不变</span>      <span class="lg"><i class="dot evt"></i>状态变更</span>      <span class="lg"><i class="dot resh"></i>榜单重排</span>    </div>  </div>  <div class="tbl-scroll"><table class="diff-tbl">
     <thead>
       <tr>
         <th class="c-type">变动类型</th>
@@ -1302,7 +1371,7 @@ body.js-on .note-toggle{display:inline-block}
   <td class="note-cell">输入 +15%；输出 -8%</td>
 </tr>
     </tbody>
-  </table></div></div><div class="or-cards" id="s-or"><div class="note" style="border-color:#b45309;background:#fffbeb">🔄 <b>2026-11-18 刷新要点（10:19）：</b>本期为<b>「OR 双榜刷新 + 事件倒计时重算 + 差异表真实快照对比」刷新</b>——① <b>OpenRouter 周榜</b>：Top3 <b>DeepSeek V4.1 Flash 1017 61.95T</b> / <b>Hy4 flash 22.81T</b> / <b>DeepSeek V4.1 Flash 15.91T</b>；② <b>OpenRouter 日榜</b>：Top3 <b>Hy4 flash 20.93T</b> / <b>DeepSeek V4.1 Flash 1017 9.43T</b> / <b>DeepSeek V4.1 Flash 2.73T</b>；③ <b>OpenRouter 挂牌价漂移（A-3b 自动发现）</b>：跨日期检测到 <b>12</b> 处 OR 挂牌价变动（详见差异表「OR 改价」行）；④ <b>事件日历</b>：倒计时重算（更新 10 行，基准 2026-11-18）；⑤ <b>汇率</b>：6.7351（当日 CFETS 中间价判定与偏差见变更摘要）；⑥ <b>价格核实</b>：第一梯队 14 家 WebSearch 全量核实由 LLM 步骤 2 执行，核实结论见差异表「官方定价」行与家族总览核实卡；⑦ <b>规则 A</b>：OpenRouter 全量扫描 478 模型完成（vendor/模型数见差异表「市场覆盖」行；A-2 发现见「待补录」行）。</div>  <div class="card">    <h2>（一）OpenRouter 调用量周榜（本周前十大 AI 模型，按总 tokens）</h2>    <div class="note" style="margin-bottom:10px">统计周期：本周（滚动 7 天）；数据抓取 2026-11-18（OR 按 UTC 日桶聚合，数据截止 2026-11-17；来源 OpenRouter Rankings）。⚠️ <b>Stealth ox-alpha</b>（GLM-5.3-Flash 发布前的匿名测试条目，08-26 揭盲）已从 OR 模型库下架并退出本期周榜；历史缓存页中其三档价格显示「—」属 OR 侧字段缺失，非查表失败——本表全部 ¥ 价单元格已通过 P0 硬校验。</div>    <div class="tbl-scroll"><table>      <thead><tr><th scope="col">排名</th><th scope="col" style="text-align:left">模型</th><th scope="col">调用量（总 tokens）</th><th scope="col">涨跌幅</th><th scope="col">输入价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">输出价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">缓存命中价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">上下文</th></tr></thead>                        <tbody>
+  </table></div></div><div class="or-cards" id="s-or"><div class="note" style="border-color:#b45309;background:#fffbeb">🔄 <b>2026-11-18 刷新要点（10:19）：</b>本期为<b>「OR 双榜刷新 + 事件倒计时重算 + 差异表真实快照对比」刷新</b>——① <b>OpenRouter 周榜</b>：Top3 <b>DeepSeek V4.1 Flash 1017 61.95T</b> / <b>Hy4 flash 22.81T</b> / <b>DeepSeek V4.1 Flash 15.91T</b>；② <b>OpenRouter 日榜</b>：Top3 <b>Hy4 flash 20.93T</b> / <b>DeepSeek V4.1 Flash 1017 9.43T</b> / <b>DeepSeek V4.1 Flash 2.73T</b>；③ <b>OpenRouter 挂牌价漂移（A-3b 自动发现）</b>：跨日期检测到 <b>12</b> 处 OR 挂牌价变动（详见差异表「OR 改价」行）；④ <b>事件日历</b>：倒计时重算（更新 10 行，基准 2026-11-18）；⑤ <b>汇率</b>：6.7351（当日 CFETS 中间价判定与偏差见变更摘要）；⑥ <b>价格核实</b>：第一梯队 14 家 WebSearch 全量核实由 LLM 步骤 2 执行，核实结论见差异表「官方定价」行与家族总览核实卡；⑦ <b>规则 A</b>：OpenRouter 全量扫描 478 模型完成（vendor/模型数见差异表「市场覆盖」行；A-2 发现见「待补录」行）。</div>  <div class="card">    <h2>（一）OpenRouter 调用量周榜（本周前十大 AI 模型，按总 tokens）</h2>    <div class="note" style="margin-bottom:10px" data-opt-keep="1">统计周期：本周（滚动 7 天）；数据抓取 2026-11-18（OR 按 UTC 日桶聚合，数据截止 2026-11-17；来源 OpenRouter Rankings）。⚠️ <b>Stealth ox-alpha</b>（GLM-5.3-Flash 发布前的匿名测试条目，08-26 揭盲）已从 OR 模型库下架并退出本期周榜；历史缓存页中其三档价格显示「—」属 OR 侧字段缺失，非查表失败——本表全部 ¥ 价单元格已通过 P0 硬校验。</div>    <div class="tbl-scroll"><table>      <thead><tr><th scope="col">排名</th><th scope="col" style="text-align:left">模型</th><th scope="col">调用量（总 tokens）</th><th scope="col">涨跌幅</th><th scope="col">输入价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">输出价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">缓存命中价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">上下文</th></tr></thead>                        <tbody>
 <tr><td>1</td><td class="name">DeepSeek V4.1 Flash 1017</td><td class="price"><span class="v-main">61.95 万亿</span><span class="v-sub">调用 9.86 亿次</span></td><td class="price up">15.26%</td><td class="price"><span class="v-main">¥0.24</span><span class="v-sub">官方 ¥1.00</span></td><td class="price"><span class="v-main">¥3.37</span><span class="v-sub">官方 ¥4.00</span></td><td class="price"><span class="v-main">¥0.07</span><span class="v-sub">官方 ¥0.02</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
 <tr><td>2</td><td class="name">Hy4 flash</td><td class="price"><span class="v-main">22.81 万亿</span><span class="v-sub">调用 1.88 亿次</span></td><td class="price ">—</td><td class="price"><span class="v-main">¥0.24</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.95</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.01</span><span class="v-sub">官方 —</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
 <tr><td>3</td><td class="name">DeepSeek V4.1 Flash</td><td class="price"><span class="v-main">15.91 万亿</span><span class="v-sub">调用 4.99 亿次</span></td><td class="price down">-5.90%</td><td class="price"><span class="v-main">¥0.34</span><span class="v-sub">官方 ¥1.00</span></td><td class="price"><span class="v-main">¥3.82</span><span class="v-sub">官方 ¥4.00</span></td><td class="price"><span class="v-main">¥0.12</span><span class="v-sub">官方 ¥0.02</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
@@ -1313,7 +1382,7 @@ body.js-on .note-toggle{display:inline-block}
 <tr><td>8</td><td class="name">Step 5 Preview</td><td class="price"><span class="v-main">6.57 万亿</span><span class="v-sub">调用 2572.1 万次</span></td><td class="price down">-5.31%</td><td class="price"><span class="v-main">¥6.74</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥18.18</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.67</span><span class="v-sub">官方 —</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
 <tr><td>9</td><td class="name">MiMo-V2.6-Flash</td><td class="price"><span class="v-main">4.11 万亿</span><span class="v-sub">调用 5828.2 万次</span></td><td class="price up">44.16%</td><td class="price"><span class="v-main">¥0.94</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥1.89</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.02</span><span class="v-sub">官方 —</span></td><td class="price" style="white-space:nowrap">1.1M</td></tr>
 <tr><td>10</td><td class="name">GLM 5.3</td><td class="price"><span class="v-main">3.62 万亿</span><span class="v-sub">调用 8333.1 万次</span></td><td class="price down">-0.79%</td><td class="price"><span class="v-main">¥0.47</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥9.43</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.46</span><span class="v-sub">官方 —</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
-      </tbody>    </table>  <div class="card">    <h2>（二）OpenRouter 调用量日榜（Today 前十大 AI 模型，按总 tokens）</h2>    <div class="note" style="margin-bottom:10px">统计周期：Today（当日）；数据抓取 2026-11-18（OR 按 UTC 日桶聚合，数据截止 2026-11-17；来源 OpenRouter Rankings）。</div>    <div class="tbl-scroll"><table>      <thead><tr><th scope="col">排名</th><th scope="col" style="text-align:left">模型</th><th scope="col">调用量（总 tokens）</th><th scope="col">涨跌幅</th><th scope="col">输入价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">输出价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">缓存命中价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">上下文</th></tr></thead>                        <tbody>
+      </tbody>    </table>  <div class="card">    <h2>（二）OpenRouter 调用量日榜（Today 前十大 AI 模型，按总 tokens）</h2>    <div class="note" style="margin-bottom:10px" data-opt-keep="1">统计周期：Today（当日）；数据抓取 2026-11-18（OR 按 UTC 日桶聚合，数据截止 2026-11-17；来源 OpenRouter Rankings）。</div>    <div class="tbl-scroll"><table>      <thead><tr><th scope="col">排名</th><th scope="col" style="text-align:left">模型</th><th scope="col">调用量（总 tokens）</th><th scope="col">涨跌幅</th><th scope="col">输入价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">输出价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">缓存命中价<span class="th-sub">¥/MTok · 上行OR/下行官方</span></th><th scope="col">上下文</th></tr></thead>                        <tbody>
 <tr><td>1</td><td class="name">Hy4 flash</td><td class="price"><span class="v-main">20.93 万亿</span><span class="v-sub">调用 1.74 亿次</span></td><td class="price up">1013.47%</td><td class="price"><span class="v-main">¥0.24</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.95</span><span class="v-sub">官方 —</span></td><td class="price"><span class="v-main">¥0.01</span><span class="v-sub">官方 —</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
 <tr><td>2</td><td class="name">DeepSeek V4.1 Flash 1017</td><td class="price"><span class="v-main">9.43 万亿</span><span class="v-sub">调用 1.43 亿次</span></td><td class="price up">3.19%</td><td class="price"><span class="v-main">¥0.24</span><span class="v-sub">官方 ¥1.00</span></td><td class="price"><span class="v-main">¥3.37</span><span class="v-sub">官方 ¥4.00</span></td><td class="price"><span class="v-main">¥0.07</span><span class="v-sub">官方 ¥0.02</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
 <tr><td>3</td><td class="name">DeepSeek V4.1 Flash</td><td class="price"><span class="v-main">2.73 万亿</span><span class="v-sub">调用 7859.5 万次</span></td><td class="price up">21.65%</td><td class="price"><span class="v-main">¥0.34</span><span class="v-sub">官方 ¥1.00</span></td><td class="price"><span class="v-main">¥3.82</span><span class="v-sub">官方 ¥4.00</span></td><td class="price"><span class="v-main">¥0.12</span><span class="v-sub">官方 ¥0.02</span></td><td class="price" style="white-space:nowrap">1.0M</td></tr>
@@ -1749,7 +1818,7 @@ GitHub 免费档 60 次/时（每日一次够用）。下载量/star 增量为<b
 </div>
   <div class="card">
     <h2 id="s-promo">十五、🎯 价格特惠——限时打折 2~5 折起</h2>
-    <div class="note" style="margin-bottom:10px">下列为 <b>本期（2026-11-04）复核</b>时仍在<b>进行中</b>或已<b>永久化</b>的折扣活动（10-26 轮询复核：阿里三条特惠均延续，GPT-5.6 Sol / Gemini Flash 定时项经 price_watch 复核正常；历史清理记录：09-17 期清理 5 条已失效/重复条目并补入 Gemini Flash 五折）。主表「标准费率」<b>不叠加</b>这些特惠；实际到手价（尤其错峰 / 会员 / 包季）可能显著低于主表。<span class="pill">进行中</span> 表示活动未明确结束日；<span class="pill">已永久化</span> 表示折扣已转为标准价。<b>「折扣后实际价」按主表标准费率（¥/MTok）折算</b>，输入/输出分别列出，基准价见备注列。</div>
+    <div class="note" style="margin-bottom:10px" data-opt-keep="1">下列为 <b>本期（2026-11-04）复核</b>时仍在<b>进行中</b>或已<b>永久化</b>的折扣活动（10-26 轮询复核：阿里三条特惠均延续，GPT-5.6 Sol / Gemini Flash 定时项经 price_watch 复核正常；历史清理记录：09-17 期清理 5 条已失效/重复条目并补入 Gemini Flash 五折）。主表「标准费率」<b>不叠加</b>这些特惠；实际到手价（尤其错峰 / 会员 / 包季）可能显著低于主表。<span class="pill">进行中</span> 表示活动未明确结束日；<span class="pill">已永久化</span> 表示折扣已转为标准价。<b>「折扣后实际价」按主表标准费率（¥/MTok）折算</b>，输入/输出分别列出，基准价见备注列。</div>
     <div class="tbl-scroll"><table>
       <thead><tr><th scope="col" style="text-align:left">厂商 / 模型</th><th scope="col" style="text-align:left">特惠内容</th><th scope="col">折扣力度</th><th scope="col">折扣后实际价<br>¥/MTok（输入/输出）</th><th scope="col" style="text-align:left">状态 / 有效期</th><th scope="col" style="text-align:left">备注</th></tr></thead>
       <tbody>
@@ -1768,7 +1837,7 @@ GitHub 免费档 60 次/时（每日一次够用）。下载量/star 增量为<b
 
   <div class="card">
     <h2 id="s-trial">十六、🎁 免费试用——白嫖指南（额度 + 送 Token）</h2>
-    <div class="note" style="margin-bottom:10px">主要厂商免费额度盘点（2026-11-04 复核）（新用户赠送 / 免费层）。多数<b>需实名</b>且<b>有有效期与限速</b>，超出后按量计费；生产环境请以付费标准费率为准。<br><b>阅读口径</b>：「有效期」列只列期限本身，适用对象、限速与限制条件见「备注」列。</div>
+    <div class="note" style="margin-bottom:10px" data-opt-keep="1">主要厂商免费额度盘点（2026-11-04 复核）（新用户赠送 / 免费层）。多数<b>需实名</b>且<b>有有效期与限速</b>，超出后按量计费；生产环境请以付费标准费率为准。<br><b>阅读口径</b>：「有效期」列只列期限本身，适用对象、限速与限制条件见「备注」列。</div>
     <div class="tbl-scroll"><table class="trial-tbl">
       <colgroup><col style="width:15%"><col style="width:27%"><col style="width:15%"><col style="width:43%"></colgroup>
       <thead><tr><th scope="col" style="text-align:left">厂商 / 平台</th><th scope="col" style="text-align:left">免费额度</th><th scope="col" style="text-align:left">有效期</th><th scope="col" style="text-align:left">备注 / 限制条件</th></tr></thead>
@@ -1811,7 +1880,7 @@ GitHub 免费档 60 次/时（每日一次够用）。下载量/star 增量为<b
   
 <div class="card local-track-card">
   <h2 id="s-local">二十一、💾 本地部署甜点——你的内存能跑哪个模型</h2>
-  <div class="note">口径：<b>本地自部署权重</b>的「甜点」= 推荐量化档位 × 权重文件体积 × 主机内存档位。⚠️ <b>权重大小 ≠ 峰值内存</b>：本表体积为权重文件占用，KV cache / 激活 / 上下文另计；GB 与 GiB 已统一折算 GB（1 GiB = 1.073741824 GB）并保留原值。<b>本节共 35 行 = 人工种子 23 条 + 自动派生 12 条</b>：种子行记录历史对话中的部署结论；<b>标「自动派生」的行由脚本每日从 OpenRouter 在架模型中筛出「有公开 Hugging Face 权重仓库 + 参数量可解析」的新型号自动生成</b>，其证据状态一律「待核查」，核实后应移回种子文件并升级状态。<b>收录门槛（2026-10-25 起）：仅收开放可下载权重的模型</b>——闭源系列、以及经核无官方权重仓库（仅第三方再分发／第三方量化）者不入本表，已据此剔除 3 行。<br>🔴 <b>两类数值每天都会被 HF 动态复核</b>（<code>refresh_local_weights.py</code>，走 hf-mirror 镜像读 <code>?blobs=true</code> 的 safetensors 权威参数量与权重文件真实字节数）：体积列下方小字即本次复核结果——<b>人工原值可被 HF 一手实测覆盖更新</b>（2026-10-25 用户指令，取代原「人工原值一律保留不被覆盖」规则；凡被改写或回填的行，须在本行小字注明改写日期与被覆盖的原值，可回溯）。比对按同口径折算（先把体积按其量化档还原成参数量，再与 HF 参数量比）：|偏差|≤15% 记「印证」，&gt;15% 标「<b>与人工值不符</b>」交每周五轮询人工裁定；未标量化档、只搜到第三方再分发仓库、或实测与折算口径不可比（如混合精度计数字段 vs 总参数量）的，明说「不可比／未采信」并在本行注明原因，不猜。<br>主机档位现为两套并列：<b>Mac 统一内存档</b>（16／24／32／48／64／96／128／192／256／512GB，沿用人工结论）与 <b>NVIDIA 显存档位</b>（单卡 12／16／24／32／48／80／96／192GB，依次对应 RTX 3060-4070／4060 Ti／3090-4090／5090／A6000-RTX6000 Ada／A100-H100／RTX Pro 6000／B200-MI300X；单卡装不下时取<b>卡数最少</b>的多卡方案，≤48GB 多卡另标「需分层卸载」）。显存档按「Q4 体积 × 1.35 峰值系数」判定，<b>已含 KV cache／激活余量，非权重裸体积</b>。证据状态沿用「有部署资料 / 待核查 / 需纠正 / 无单机方案」四态，<b>「有部署资料」仅表示曾引用模型卡、量化文件表或运行指南，不等于已在目标机器实测</b>。本区使用自带筛选（页面顶部搜索仅覆盖排序总览表）。</div>
+  <div class="note" data-opt-keep="1">口径：<b>本地自部署权重</b>的「甜点」= 推荐量化档位 × 权重文件体积 × 主机内存档位。⚠️ <b>权重大小 ≠ 峰值内存</b>：本表体积为权重文件占用，KV cache / 激活 / 上下文另计；GB 与 GiB 已统一折算 GB（1 GiB = 1.073741824 GB）并保留原值。<b>本节共 35 行 = 人工种子 23 条 + 自动派生 12 条</b>：种子行记录历史对话中的部署结论；<b>标「自动派生」的行由脚本每日从 OpenRouter 在架模型中筛出「有公开 Hugging Face 权重仓库 + 参数量可解析」的新型号自动生成</b>，其证据状态一律「待核查」，核实后应移回种子文件并升级状态。<b>收录门槛（2026-10-25 起）：仅收开放可下载权重的模型</b>——闭源系列、以及经核无官方权重仓库（仅第三方再分发／第三方量化）者不入本表，已据此剔除 3 行。<br>🔴 <b>两类数值每天都会被 HF 动态复核</b>（<code>refresh_local_weights.py</code>，走 hf-mirror 镜像读 <code>?blobs=true</code> 的 safetensors 权威参数量与权重文件真实字节数）：体积列下方小字即本次复核结果——<b>人工原值可被 HF 一手实测覆盖更新</b>（2026-10-25 用户指令，取代原「人工原值一律保留不被覆盖」规则；凡被改写或回填的行，须在本行小字注明改写日期与被覆盖的原值，可回溯）。比对按同口径折算（先把体积按其量化档还原成参数量，再与 HF 参数量比）：|偏差|≤15% 记「印证」，&gt;15% 标「<b>与人工值不符</b>」交每周五轮询人工裁定；未标量化档、只搜到第三方再分发仓库、或实测与折算口径不可比（如混合精度计数字段 vs 总参数量）的，明说「不可比／未采信」并在本行注明原因，不猜。<br>主机档位现为两套并列：<b>Mac 统一内存档</b>（16／24／32／48／64／96／128／192／256／512GB，沿用人工结论）与 <b>NVIDIA 显存档位</b>（单卡 12／16／24／32／48／80／96／192GB，依次对应 RTX 3060-4070／4060 Ti／3090-4090／5090／A6000-RTX6000 Ada／A100-H100／RTX Pro 6000／B200-MI300X；单卡装不下时取<b>卡数最少</b>的多卡方案，≤48GB 多卡另标「需分层卸载」）。显存档按「Q4 体积 × 1.35 峰值系数」判定，<b>已含 KV cache／激活余量，非权重裸体积</b>。证据状态沿用「有部署资料 / 待核查 / 需纠正 / 无单机方案」四态，<b>「有部署资料」仅表示曾引用模型卡、量化文件表或运行指南，不等于已在目标机器实测</b>。本区使用自带筛选（页面顶部搜索仅覆盖排序总览表）。</div>
   <div class="lc-toolbar"><label for="lcq">搜索</label><input id="lcq" type="search" placeholder="模型、体积、量化、硬件…" aria-label="搜索本地部署配置"><label for="lcstate">证据状态</label><select id="lcstate" aria-label="按证据状态筛选"><option value="">全部证据状态</option><option>有部署资料</option><option>待核查</option><option>需纠正</option><option>无单机方案</option></select><label for="lcsrc">来源</label><select id="lcsrc" aria-label="按来源筛选"><option value="">全部来源</option><option value="seed">人工种子</option><option value="auto">自动派生</option></select><button id="lcreset" type="button">重置</button><span class="lc-count" id="lccount" aria-live="polite"></span></div>
   <div class="local-track">
     <div class="lc-row lc-head"><span class="lc-rk">#</span><span class="lc-nm">模型</span><span class="lc-use">用途</span><span class="lc-q">甜点量化</span><span class="lc-sz">权重体积／占用</span><span class="lc-hw">Mac 统一内存档</span><span class="lc-vram">NVIDIA 显存档位</span><span class="lc-fit">256GB 档结论</span><span class="lc-ev">证据状态</span><span class="lc-note">限制／修正</span></div>
@@ -1881,7 +1950,7 @@ GitHub 免费档 60 次/时（每日一次够用）。下载量/star 增量为<b
 <!-- img-track:begin -->
 <div class="card img-track-card">
     <h2 id="s-image">十七、🖼️ 图像生成——一张图要多少钱<span class="tag">试点</span></h2>
-    <div class="note">跨赛道扩展<b>试点</b>：本表覆盖 OpenRouter 上「输出含图像」的 <b>10 个</b>模型（数据源为 OpenRouter 免费接口，与文本赛道同源、可每日刷新）+ <b>4 个</b>官方种子行（GPT-Image-2.5 系 / 豆包 Seedream 系；OR 未上架或按张计价，官方页一手价 2026-10-19 复核；来源：GPT-Image-2.5 Flare/Sunburst = <b>openai.com/api/pricing</b>（图像入 $8 / 图像出 $30 每 1M tokens），Seedream 4.0/4.5 = <b>volcengine.com</b> 火山方舟模型价格页（¥0.20 / ¥0.25 每张））。口径：OR 按 <b>token 计费</b>，故统一为 <b>¥/1M tokens</b>（×6.7351）；「图像单价」为 OR 的 image token 费率（缺失显示「—」；注意图像模型的官方「图像输出」费率常远高于 OR 文本输出价，如 Nano Banana 2 官方 $60/1M vs OR 文本出 $3/1M）；排序按混合价（0.75×入+0.25×出）。Seedream 系<b>按张计价</b>（¥/张，输入图免费），不适用 token 估算器。图像的实际「每张成本」取决于分辨率与厂商折算口径，请用下方估算器按需折算。</div>
+    <div class="note" data-opt-keep="1">跨赛道扩展<b>试点</b>：本表覆盖 OpenRouter 上「输出含图像」的 <b>10 个</b>模型（数据源为 OpenRouter 免费接口，与文本赛道同源、可每日刷新）+ <b>4 个</b>官方种子行（GPT-Image-2.5 系 / 豆包 Seedream 系；OR 未上架或按张计价，官方页一手价 2026-10-19 复核；来源：GPT-Image-2.5 Flare/Sunburst = <b>openai.com/api/pricing</b>（图像入 $8 / 图像出 $30 每 1M tokens），Seedream 4.0/4.5 = <b>volcengine.com</b> 火山方舟模型价格页（¥0.20 / ¥0.25 每张））。口径：OR 按 <b>token 计费</b>，故统一为 <b>¥/1M tokens</b>（×6.7351）；「图像单价」为 OR 的 image token 费率（缺失显示「—」；注意图像模型的官方「图像输出」费率常远高于 OR 文本输出价，如 Nano Banana 2 官方 $60/1M vs OR 文本出 $3/1M）；排序按混合价（0.75×入+0.25×出）。Seedream 系<b>按张计价</b>（¥/张，输入图免费），不适用 token 估算器。图像的实际「每张成本」取决于分辨率与厂商折算口径，请用下方估算器按需折算。</div>
     <div class="img-track">
       <div class="img-row img-head"><span class="img-rk">#</span><span class="img-nm">模型</span><span class="img-cr">厂商</span><span class="img-in">输入 ¥/1M</span><span class="img-out">输出 ¥/1M</span><span class="img-img">图像单价 ¥/1M</span><span class="img-ctx">上下文</span><span class="img-rel">发布</span></div>
       <div class="img-row"><span class="img-rk">1</span><span class="img-nm">Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)</span><span class="img-cr">Google</span><span class="img-in">¥1.68</span><span class="img-out">¥10.10</span><span class="img-img">—</span><span class="img-ctx">65.5K</span><span class="img-rel">2026-06</span></div>
@@ -2044,7 +2113,7 @@ window.IMG_MODELS=[{"n":"Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)","ri":
 <!-- embed-track:begin -->
 <div class="card embed-track-card">
     <h2 id="s-embed">十八、🧭 Embedding 向量——RAG 检索的地基怎么选</h2>
-    <div class="note">口径：<b>¥/1M tokens</b>（USD 行 ×6.7351 四舍五入到分）。⚠️ OpenRouter 现版接口<b>不含</b> embedding 模型（2026-10-15 实测 0 个），本节数据为<b>静态种子</b>（官方页一手 + 聚合站二手，来源逐行标注），随每周五第二梯队轮询复核，不做每日自动刷新。*检索质量为 usefulai.com 2026-10 二手归一化分（非 AA 数据），仅供参考；开源行「¥0.00」指自托管权重免费，托管价见来源列。</div>
+    <div class="note" data-opt-keep="1">口径：<b>¥/1M tokens</b>（USD 行 ×6.7351 四舍五入到分）。⚠️ OpenRouter 现版接口<b>不含</b> embedding 模型（2026-10-15 实测 0 个），本节数据为<b>静态种子</b>（官方页一手 + 聚合站二手，来源逐行标注），随每周五第二梯队轮询复核，不做每日自动刷新。*检索质量为 usefulai.com 2026-10 二手归一化分（非 AA 数据），仅供参考；开源行「¥0.00」指自托管权重免费，托管价见来源列。</div>
     <div class="embed-track">
       <div class="emb-row emb-head"><span class="emb-rk">#</span><span class="emb-nm">模型</span><span class="emb-cr">厂商</span><span class="emb-p">价格 ¥/1M tokens</span><span class="emb-dim">维度</span><span class="emb-lic">授权</span><span class="emb-q">检索质量*</span><span class="emb-src">来源</span></div>
       <div class="emb-row"><span class="emb-rk">1</span><span class="emb-nm">text-embedding-3-small</span><span class="emb-cr">OpenAI</span><span class="emb-p">¥0.13</span><span class="emb-dim">1536</span><span class="emb-lic">专有</span><span class="emb-q">76%</span><span class="emb-src">官方 openai.com/api/pricing（三源一致）</span></div>
@@ -2064,7 +2133,7 @@ window.IMG_MODELS=[{"n":"Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)","ri":
 <!-- voice-track:begin -->
 <div class="card voice-track-card">
     <h2 id="s-voice">十九、🎧 语音赛道——让机器开口与听懂</h2>
-    <div class="note">覆盖 19 个语音产品行。⚠️ OpenRouter 无语音 TTS/ASR 专轨（audio 输出仅 4 个音乐/对话模型），本节为<b>静态种子</b>：官方页一手价（标「官方」+ 日期）优先，社区比价为二手（标「二手」）；「待核实」行待官方页复核后回填，严禁编造。随每周五第二梯队轮询复核。</div>
+    <div class="note" data-opt-keep="1">覆盖 19 个语音产品行。⚠️ OpenRouter 无语音 TTS/ASR 专轨（audio 输出仅 4 个音乐/对话模型），本节为<b>静态种子</b>：官方页一手价（标「官方」+ 日期）优先，社区比价为二手（标「二手」）；「待核实」行待官方页复核后回填，严禁编造。随每周五第二梯队轮询复核。</div>
     <div class="voice-track">
       <div class="vc-group"><div class="vc-gt">🎙️ 语音合成 TTS<span class="vc-unit">TTS</span></div><div class="vc-note">口径：<b>¥/1M 字符</b>（官方「元/万字符」×100 换算；字符计数口径各厂不同，MiniMax 1 汉字=2 字符、火山 1 汉字=1 字符，比价前务必核对）。</div><div class="vc-tbl">
       <div class="vc-row vc-head"><span class="vc-nm">产品</span><span class="vc-cr">厂商</span><span class="vc-p">单价</span><span class="vc-src">备注｜来源</span></div>
@@ -2102,7 +2171,7 @@ window.IMG_MODELS=[{"n":"Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)","ri":
 <!-- video-track:begin -->
 <div class="card video-track-card">
     <h2 id="s-video">二十、🎬 视频生成——一条视频多少钱</h2>
-    <div class="note">口径：<b>¥/条</b>，统一两档 <b>5s@720p</b> / <b>10s@1080p</b>。按秒计价（$/秒 × 秒数 × 6.7351）与按条计价（官方条价 5s 基准线性放大）分别换算。⚠️ OpenRouter 无视频轨、AA 视频榜无合规获取路径（Pro 条款红线），本节为<b>静态种子</b>（官方页一手优先 + 二手标源，随每周五轮询复核）。<b>Sora 2 API 已于 2026-09-24 关停</b>，不列入在售表。「待核实」档待官方页复核，严禁编造。</div>
+    <div class="note" data-opt-keep="1">口径：<b>¥/条</b>，统一两档 <b>5s@720p</b> / <b>10s@1080p</b>。按秒计价（$/秒 × 秒数 × 6.7351）与按条计价（官方条价 5s 基准线性放大）分别换算。⚠️ OpenRouter 无视频轨、AA 视频榜无合规获取路径（Pro 条款红线），本节为<b>静态种子</b>（官方页一手优先 + 二手标源，随每周五轮询复核）。<b>Sora 2 API 已于 2026-09-24 关停</b>，不列入在售表。「待核实」档待官方页复核，严禁编造。</div>
     <div class="video-track">
       <div class="vd-row vd-head"><span class="vd-nm">模型</span><span class="vd-cr">厂商</span><span class="vd-p1">5s@720p ¥/条</span><span class="vd-p2">10s@1080p ¥/条</span><span class="vd-src">备注｜来源</span></div>
       <div class="vd-row"><span class="vd-nm">Veo 3.1（Standard，含音频）</span><span class="vd-cr">Google</span><span class="vd-p1">¥13.47</span><span class="vd-p2">¥26.94</span><span class="vd-src">$0.40/秒（720p 与 1080p 同价）；4K $0.60/秒｜官方 Google AI for Developers / Vertex AI（aitachyon 2026-10 引官方页）</span></div>
@@ -3857,16 +3926,7 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
     var nav = document.querySelector('nav.toc'); if (!nav) return;
     var anchors = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
     if (!anchors.length) return;
-    var items = anchors.map(function (a) { return { id: (a.getAttribute('href') || '').slice(1), el: a }; });
-    var groups = [
-      { name: '全景对比', ids: ['s-land', 's-diff', 's-or', 's-family', 's-gaps', 's-timeline', 's-landconcl', 's-events'] },
-      { name: '定价与工具', ids: ['s-price', 's-method', 's-sort', 's-bars', 's-guide', 's-calc', 's-trend'] },
-      { name: '数据与附录', ids: ['s-bench', 's-eco', 's-promo', 's-trial'] }
-    ];
-    var grouped = ENH.groupSections(items, groups);
-    grouped.forEach(function (g) {
-      if (g.items.length) { var first = g.items[0].el; if (first.parentNode) first.parentNode.insertBefore(mk('span', 'enh-toc-group', g.name), first); }
-    });
+    /* 五组目录已接管分组标签；这里只保留滚动高亮，避免重复插入旧组名 */
     function onScroll() {
       var y = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || 0;
       var offs = [];
@@ -3952,6 +4012,16 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
   var FOLD = [
     { id: 's-timeline', label: '展开完整时间线' },
     { id: 's-gaps', label: '展开查漏完整说明' },
+    { h2: '（一）OpenRouter', label: '展开周榜完整明细' },
+    { h2: '（二）OpenRouter', label: '展开日榜完整明细' },
+    { id: 's-method', label: '展开口径与方法全文' },
+    { id: 's-promo', label: '展开价格特惠完整表' },
+    { id: 's-trial', label: '展开免费试用完整表' },
+    { id: 's-local', label: '展开本地部署完整说明' },
+    { id: 's-image', label: '展开图像生成完整明细' },
+    { id: 's-embed', label: '展开 Embedding 完整明细' },
+    { id: 's-voice', label: '展开语音赛道完整明细' },
+    { id: 's-video', label: '展开视频生成完整明细' },
     { h2: '二十二、', label: '查看来源明细' },
     { h2: '二十三、', label: '查看完整免责说明' }
   ];
@@ -4385,6 +4455,53 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
   };
 })();
 
+</script>
+<script id="toc-groups-1118">
+/* 五组目录：只负责展开/收起组内章节，不改 hash、不接管搜索与折叠 */
+(function () {
+  if (window.__tocGroups1118) return;
+  window.__tocGroups1118 = true;
+  var groups = [].slice.call(document.querySelectorAll('.toc-group'));
+  if (!groups.length) return;
+  function closeAll(except) {
+    groups.forEach(function (g) {
+      if (g === except) return;
+      g.classList.remove('is-open');
+      var btn = g.querySelector('.toc-group-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+  groups.forEach(function (g) {
+    var btn = g.querySelector('.toc-group-toggle');
+    var menu = g.querySelector('.toc-group-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var willOpen = !g.classList.contains('is-open');
+      closeAll(g);
+      g.classList.toggle('is-open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      var a = e.target;
+      while (a && a.tagName !== 'A') a = a.parentNode;
+      if (a) closeAll();
+    });
+  });
+  document.addEventListener('click', function (e) {
+    var node = e.target;
+    while (node && node !== document) {
+      if (node.classList && node.classList.contains('toc-group')) return;
+      node = node.parentNode;
+    }
+    closeAll();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll();
+  });
+  window.addEventListener('hashchange', function () { closeAll(); });
+})();
 </script>
 
 </body>
