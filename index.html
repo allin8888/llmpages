@@ -3107,6 +3107,7 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
 
 /* P1-2 #15：屏外章节渲染跳过（单文件形态传输量不变，仅优化渲染与滚动；打印时回退全渲染） */
 .doc-landscape .card, .doc-pricing .card { content-visibility: auto; contain-intrinsic-size: auto 480px; }
+.doc-landscape .card.is-jump-target, .doc-pricing .card.is-jump-target { content-visibility: visible; }
 @media print { .doc-landscape .card, .doc-pricing .card { content-visibility: visible; } }
 /* P1-3 #4：历史价格浮层 */
 .enh-hist-panel{display:none;position:fixed;z-index:9999;top:16%;left:50%;transform:translateX(-50%);width:min(620px,92vw);background:#fff;border:1px solid #dbe4f3;border-radius:12px;box-shadow:0 12px 40px rgba(16,24,40,.18);padding:14px 16px}
@@ -4002,6 +4003,7 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
   window.__opt1116 = true;
 
   var doc = document;
+  var win = window;
   var body = doc.body;
   if (!body) return;
   body.classList.add('js-on');
@@ -4371,6 +4373,40 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
   });
 
   /* ================= hash 定位：先展开，再滚动 ================= */
+  var jumpCard = null;
+  var jumpSeq = 0;
+
+  function markJumpTarget(el) {
+    var card = null;
+    if (el && el.closest) card = el.closest('.card');
+    if (!card && el) {
+      var p = el.parentNode;
+      while (p && p !== body) {
+        if (p.classList && p.classList.contains('card')) { card = p; break; }
+        p = p.parentNode;
+      }
+    }
+    if (jumpCard && jumpCard !== card) jumpCard.classList.remove('is-jump-target');
+    if (card) {
+      card.classList.add('is-jump-target');
+      jumpCard = card;
+    }
+  }
+
+  function scrollToHashTarget(el) {
+    var nav = doc.querySelector('.toc');
+    var offset = 0;
+    if (nav) {
+      var pos = win.getComputedStyle(nav).position;
+      if (pos === 'sticky' || pos === '-webkit-sticky') {
+        offset = nav.getBoundingClientRect().height + 10;
+      }
+    }
+    var y = el.getBoundingClientRect().top +
+      (win.pageYOffset || doc.documentElement.scrollTop || 0) - offset;
+    win.scrollTo(0, Math.max(0, Math.round(y)));
+  }
+
   function revealFor(el) {
     var node = el;
     while (node && node !== body) {
@@ -4390,15 +4426,32 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
 
   function jumpToHash() {
     var h = location.hash;
-    if (!h || h.length < 2) return;
+    if (!h || h.length < 2) {
+      if (jumpCard) { jumpCard.classList.remove('is-jump-target'); jumpCard = null; }
+      return;
+    }
     var id;
     try { id = decodeURIComponent(h.slice(1)); } catch (e) { id = h.slice(1); }
     var el = doc.getElementById(id);
     if (!el) return;
+    var seq = ++jumpSeq;
+    markJumpTarget(el);
     revealFor(el);
-    setTimeout(function () {
-      try { el.scrollIntoView({ block: 'start' }); } catch (e) { el.scrollIntoView(); }
-    }, 0);
+    // 先让折叠/内容可见性产生的布局变化完成，再定位；后续帧只校正位置，
+    // 不再次打开其他内容，避免把命中摘要的控制明细误展开。
+    void el.offsetHeight;
+    var started = Date.now();
+    function align() {
+      if (seq !== jumpSeq) return;
+      scrollToHashTarget(el);
+      if (Date.now() - started < 1600) setTimeout(align, 120);
+    }
+    win.requestAnimationFrame(function () {
+      align();
+    });
+    if (doc.fonts && doc.fonts.ready && doc.fonts.ready.then) {
+      doc.fonts.ready.then(function () { if (seq === jumpSeq) scrollToHashTarget(el); });
+    }
   }
 
   window.addEventListener('hashchange', jumpToHash);
@@ -4409,9 +4462,18 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
     if (!a || !a.getAttribute) return;
     var href = a.getAttribute('href') || '';
     if (href.charAt(0) !== '#') return;
+    e.preventDefault();
+    if (location.hash === href) {
+      jumpToHash();
+    } else {
+      location.hash = href;
+    }
     setTimeout(jumpToHash, 0);
   }, true);
   if (location.hash) setTimeout(jumpToHash, 60);
+  win.addEventListener('load', function () {
+    if (location.hash) setTimeout(jumpToHash, 0);
+  });
 
   /* ================= 审计出口：供无头验收读取 ================= */
   try {
