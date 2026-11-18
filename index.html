@@ -1146,6 +1146,10 @@ body.js-on .ov-glance .ov-tip-js{display:inline}
 .fold-btn{display:none;margin:6px 0 10px;font-size:12.5px;padding:5px 11px;border:1px dashed #cfdae8;border-radius:999px;background:#fff;color:#475569;cursor:pointer}
 body.js-on .fold-btn{display:inline-flex}
 .fold-body.is-collapsed{display:none}
+.sort-fold-meta{font-size:12px;color:#64748b;line-height:1.6;margin-left:4px}
+.sort-fold-btn{margin:0}
+body:not(.js-on) .sort-fold-meta{display:none}
+@media (max-width:600px){.sort-fold-meta{display:none}.sort-fold-btn{font-size:11px;padding:3px 9px}}
 .note-more{display:inline}
 .note-more.is-collapsed{display:none}
 .note-toggle{display:none;margin-left:4px;font-size:11px;color:#1d4ed8;border:1px solid #dbeafe;background:#eff6ff;border-radius:5px;padding:0 5px;cursor:pointer;line-height:1.6;vertical-align:1px}
@@ -1427,7 +1431,7 @@ body.js-on .toc-group:nth-last-child(-n+2) .toc-group-menu{left:auto;right:0}
 <tr><td><span class="badge b-risk">下线预告</span></td><td class="obj" style="text-align:left"><b>Qwen4-Max-Preview 预览结束退役</b><span class="osub">阿里官方：预览窗口 11-11 10:00 至 11-25 24:00；结束后预览标识下线（正式版已于 11-16 以同名 qwen4-max 发布并开放按量 API）</span></td><td>2026-11-25</td><td><b class="evt-days">7 天</b></td><td><span class="evt-status pending">pending</span></td><td style="text-align:left" class="note-cell">11-16 复核：正式版提前于 11-16 发布（同名 qwen4-max、¥10/¥30 按量 API 已上线，当日补录主表四方——见差异表「新增模型」行）；预览标识 qwen4-max-preview 仍按官方计划 11-25 24:00 退役（T-9，T-7 提醒 11-18 起）；定价经科创板日报/IT之家/官方博客/OR 挂牌多源交叉确认。</td></tr>
 </tbody></table></div><footer>P26-08-19）。部分 2026 在训 / 预览型号（如 Grok 5、Gemini 3.5 Pro、Gemini 4、Llama 5 开放性）以官方信息为准，检索未确认或口径存疑处已标注（如 MiniMax 旗舰版本号、豆包最新子型号、星火 X2-VL 上下文）。<br><b>本次刷新时间：2026-07-23，已按各家 7 月最新公开发布重排“最新产品”列，并新增“上下文长度 / 参数量（架构）/ 多模态·协议”三列；同时将上述参数细化为“产品级”——同一家族的不同具体型号（如 Claude Opus 4.8 / Sonnet 5 / Fable 5·Mythos 5 / Haiku 4.5，DeepSeek V4 Pro / Flash，豆包 2.1 Pro / 4.0）各自成行、携带自身参数，依据各厂商官方模型卡 / Release Notes，闭源未公开项已注明。关键修正：MiniMax M2.7 参数经核实为 229.9B/9.8B（非“未公开”）、授权为非商业；文心 5.1 参数较 5.0 的 2.4T 压缩至约 0.8T；GLM-5.2 最大输出 131K。2026-07-24 新增新兴厂商：LongCat（美团，2026-07-06 开源 2.0：1.6T 总/48B 激活 MoE、1M 上下文、MIT）与 Agnes（新加坡 Sapiens AI，2026-07-13 发布 2.5-Flash：512K 上下文、闭源免费 API），已补充至第一节产品级总表与第四节最早版本时间线，并新增“新加坡/其他”地区标识。</b> 2026-07-24 将“价格与折扣”数据并入第一节产品级总表——新增「API 价 ¥/MTok」「特惠/折扣」「免费额度」3 列，25 个产品行全部填充；缺口已联网核实：MiniMax M2.7 ¥2.10/¥8.40（缓存¥0.42）、豆包 4.0 ¥2/¥6（专业版¥8/¥24）、LongCat-2.0 ¥5/¥20（初上线限时¥2/¥8）、Qwen3.8-Max 预览版走 Token Plan 限时白日 1 折/夜间 2 折、星火 X2-VL ¥2–3/¥2–3（X2 系列统一单价）。<div id="refresh-history">
 <p style="color:#b45309;font-size:12px"><b>2026-11-18 刷新（10:19）：</b>① OR 周榜 Top3 DeepSeek V4.1 Flash 1017 61.95T / Hy4 flash 22.81T / DeepSeek V4.1 Flash 15.91T；② 日榜 Top3 Hy4 flash 20.93T / DeepSeek V4.1 Flash 1017 9.43T / DeepSeek V4.1 Flash 2.73T；③ A-3b 挂牌价漂移 12 处；④ 事件倒计时重算（10 行）；⑤ 汇率 6.7351 维持；⑥ 官方价核实结论与逐条变动见顶部「🔄 刷新要点」与两期对比差异表。</p>
-</div></footer></div></div><hr class="merge-sep"><div class="doc-pricing"><div class="wrap">  <header>    <h1 id="s-price">💰 主流大模型定价总表——百万 Token 到底多少钱</h1>    <div class="meta">数据截至 <b>2026-11-18（10:19 刷新）</b> ｜ 汇率 1 USD = <b>6.7351</b> CNY（CFETS 2026-11-06 中间价 6.7168，较 6.7351 偏差 -0.27% &lt; 0.5%，沿用 6.7351；官方人民币价行不随汇率变动）｜ 计价单位：元 / 百万 tokens（¥/MTok）｜ 主表为标准费率；<b style="color:var(--accent)">特惠 / 免费额度见下方两个新增板块</b></div>  </header>  <div class="card">    <h2 id="s-method">七、📐 口径与方法——数字怎么算的 <span class="tag">重要</span></h2>    <ul>      <li><b>取价原则</b>：优先采用各厂商<b>官方 API 定价页</b>；官方未列（如 Meta Llama 5 无官方 API）则采用第三方托管（Together / 主流聚合平台）报价并明确标注。</li>      <li><b>“最新产品”= 各家族当前旗舰/主力模型</b>（截至 2026-11-04 已公开发布并开放 API 计费）。同家族更便宜的轻量档（如 GPT-5.6 Luna、Gemini 3.5 Flash-Lite、DeepSeek V4 Flash）见「排序总览」。 </li>      <li><b>价格均为标准处理费率</b>（非 Batch 批量 5 折、非峰谷、非缓存命中）。输入价为「缓存未命中」标准输入价；部分模型输出价为官方公布值。</li>      <li><b>人民币换算</b>：美/欧系模型按 1 USD = 6.7351 CNY 换算；国产模型官方本身以人民币报价，直接采用。</li>      <li>各国产模型官方价均为<b>中国内地</b>部署价；同一模型国际/海外部署价通常更高（如 Qwen 国际版、文心国际版）。</li>      <li><b>特惠活动口径</b>：2026-07 多家厂商推出 <b>2–5 折限时 / 错峰特惠</b>（阿里 Qwen3.7-Max 常规 5 折 + 错峰 2 折、DeepSeek 峰谷深夜 2.5 折、百炼 Token Plan 5 折 / 包季 4.5 折等）。部分为<b>限时活动</b>、部分已<b>永久化</b>为标准价、部分属<b>峰谷动态打折</b>。主表为<b>标准费率</b>（不叠加特惠），实际到手价可能显著低于主表；特惠明细见「价格特惠」板块。</li>      <li><b>免费额度口径</b>：绝大多数厂商提供<b>新用户免费 Token / 免费层</b>（阿里百炼、智谱 2000 万永久、腾讯 TokenHub、火山每日 200 万、Kimi、硅基流动、OpenRouter、Gemini 免费层、GitHub Models 等）。免费额度多有<b>有效期与限速</b>，且常需实名；生产调用请以付费标准费率为准。明细见「免费试用 / 送 Token 活动」板块。</li>    </ul>  </div>  <div class="card">    <h2 id="s-sort">八、📈 排序总览——从最便宜到最贵全排好队</h2>    <div class="legend">      <span><i class="dot" style="background:var(--cn)"></i> 中国厂商</span>      <span><i class="dot" style="background:var(--us)"></i> 美国厂商</span>      <span><i class="dot" style="background:var(--eu)"></i> 欧洲厂商</span>      <span><i class="dot" style="background:var(--accent)"></i> 加拿大</span>    </div>    <div class="tbl-scroll"><table>      <thead>        <tr><th scope="col">#<br><span class="th-sub">按混合价升序</span></th><th scope="col" style="text-align:left">模型（厂商）</th><th scope="col" style="text-align:left">最新产品</th><th scope="col">地区</th><th scope="col">输入价<br>¥/MTok<br><span class="th-sub">官方、挂牌价</span></th><th scope="col">输出价<br>¥/MTok<br><span class="th-sub">官方、挂牌价</span></th><th scope="col">混合价<br>¥/MTok<br><span class="th-sub">0.75×入+0.25×出</span></th><th scope="col">缓存命中<br>输入价<br><span class="th-sub">¥/MTok</span></th><th scope="col" style="text-align:left">备注</th></tr>      </thead><tbody>
+</div></footer></div></div><hr class="merge-sep"><div class="doc-pricing"><div class="wrap">  <header>    <h1 id="s-price">💰 主流大模型定价总表——百万 Token 到底多少钱</h1>    <div class="meta">数据截至 <b>2026-11-18（10:19 刷新）</b> ｜ 汇率 1 USD = <b>6.7351</b> CNY（CFETS 2026-11-06 中间价 6.7168，较 6.7351 偏差 -0.27% &lt; 0.5%，沿用 6.7351；官方人民币价行不随汇率变动）｜ 计价单位：元 / 百万 tokens（¥/MTok）｜ 主表为标准费率；<b style="color:var(--accent)">特惠 / 免费额度见下方两个新增板块</b></div>  </header>  <div class="card">    <h2 id="s-method">七、📐 口径与方法——数字怎么算的 <span class="tag">重要</span></h2>    <ul>      <li><b>取价原则</b>：优先采用各厂商<b>官方 API 定价页</b>；官方未列（如 Meta Llama 5 无官方 API）则采用第三方托管（Together / 主流聚合平台）报价并明确标注。</li>      <li><b>“最新产品”= 各家族当前旗舰/主力模型</b>（截至 2026-11-04 已公开发布并开放 API 计费）。同家族更便宜的轻量档（如 GPT-5.6 Luna、Gemini 3.5 Flash-Lite、DeepSeek V4 Flash）见「排序总览」。 </li>      <li><b>价格均为标准处理费率</b>（非 Batch 批量 5 折、非峰谷、非缓存命中）。输入价为「缓存未命中」标准输入价；部分模型输出价为官方公布值。</li>      <li><b>人民币换算</b>：美/欧系模型按 1 USD = 6.7351 CNY 换算；国产模型官方本身以人民币报价，直接采用。</li>      <li>各国产模型官方价均为<b>中国内地</b>部署价；同一模型国际/海外部署价通常更高（如 Qwen 国际版、文心国际版）。</li>      <li><b>特惠活动口径</b>：2026-07 多家厂商推出 <b>2–5 折限时 / 错峰特惠</b>（阿里 Qwen3.7-Max 常规 5 折 + 错峰 2 折、DeepSeek 峰谷深夜 2.5 折、百炼 Token Plan 5 折 / 包季 4.5 折等）。部分为<b>限时活动</b>、部分已<b>永久化</b>为标准价、部分属<b>峰谷动态打折</b>。主表为<b>标准费率</b>（不叠加特惠），实际到手价可能显著低于主表；特惠明细见「价格特惠」板块。</li>      <li><b>免费额度口径</b>：绝大多数厂商提供<b>新用户免费 Token / 免费层</b>（阿里百炼、智谱 2000 万永久、腾讯 TokenHub、火山每日 200 万、Kimi、硅基流动、OpenRouter、Gemini 免费层、GitHub Models 等）。免费额度多有<b>有效期与限速</b>，且常需实名；生产调用请以付费标准费率为准。明细见「免费试用 / 送 Token 活动」板块。</li>    </ul>  </div>  <div class="card">    <h2 id="s-sort">八、📈 排序总览——从最便宜到最贵全排好队</h2>    <div class="legend">      <span><i class="dot" style="background:var(--cn)"></i> 中国厂商</span>      <span><i class="dot" style="background:var(--us)"></i> 美国厂商</span>      <span><i class="dot" style="background:var(--eu)"></i> 欧洲厂商</span>      <span><i class="dot" style="background:var(--accent)"></i> 加拿大</span>      <button type="button" class="fold-btn sort-fold-btn" data-sortfold aria-expanded="true" aria-controls="sortBody">收起排序记录（专注阅读）</button><span class="sort-fold-meta">93 条记录 · 可切换专注阅读</span>    </div><div class="tbl-scroll"><table>      <thead>        <tr><th scope="col">#<br><span class="th-sub">按混合价升序</span></th><th scope="col" style="text-align:left">模型（厂商）</th><th scope="col" style="text-align:left">最新产品</th><th scope="col">地区</th><th scope="col">输入价<br>¥/MTok<br><span class="th-sub">官方、挂牌价</span></th><th scope="col">输出价<br>¥/MTok<br><span class="th-sub">官方、挂牌价</span></th><th scope="col">混合价<br>¥/MTok<br><span class="th-sub">0.75×入+0.25×出</span></th><th scope="col">缓存命中<br>输入价<br><span class="th-sub">¥/MTok</span></th><th scope="col" style="text-align:left">备注</th></tr>      </thead><tbody id="sortBody">
 <tr><td>1</td><td class="name">InclusionAI Ling ling-3.0-flash</td><td class="prod">inclusionai/ling-3.0-flash</td><td class="region rg-cn">中国</td><td class="price in">¥0.14</td><td class="price out">¥0.43</td><td class="price mix">¥0.21</td><td class="price">¥0.03</td><td style="text-align:left" class="note"><span class="badge src-or">OR</span> OpenRouter 挂牌价（第三方，非官方）；缓存读 ¥0.03；上下文 262K；来源 openrouter.ai</td></tr>
 <tr><td>2</td><td class="name">Inception Labs Mercury 2.5</td><td class="prod">inception/mercury-2.5</td><td class="region rg-us">美国</td><td class="price in">¥0.27</td><td class="price out">¥1.01</td><td class="price mix">¥0.46</td><td class="price">¥0.03</td><td style="text-align:left" class="note"><span class="badge src-or">OR挂牌</span> OpenRouter 挂牌价 $0.04 / $0.15；缓存读 ¥0.03；上下文 260K；来源 openrouter.ai</td></tr>
 <tr><td>3</td><td class="name">Agnes 3.0 Flash</td><td class="prod">Agnes-3.0-Flash</td><td class="region" style="color:#0d9488">新加坡</td><td class="price in">¥0.34</td><td class="price out">¥1.01</td><td class="price mix">¥0.51</td><td class="price">¥0.03</td><td style="text-align:left" class="note"><span class="badge src-official">官方</span> 官方 API 列价 $0.05 / $0.15（缓存 $0.005≈¥0.03；促销期 $0）；官方 512K 上下文（AA 记 1M，口径未统一）；AA Intelligence Index 36（估算值，与 DeepSeek V4 Pro 持平）；2026-09-09 API 上线</td></tr>
@@ -4083,6 +4087,29 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
   }
   FOLD.forEach(makeFold);
 
+  /* 排序表可选专注阅读：默认展开 93 行，用户点击后才收起；沿用 foldRecords 状态机 */
+  (function initSortFold() {
+    var tbody = doc.getElementById('sortBody');
+    var btn = doc.querySelector('[data-sortfold]');
+    if (!tbody || !btn) return;
+    var rec = {
+      body: tbody,
+      btn: btn,
+      heading: doc.getElementById('s-sort'),
+      label: '展开排序总览 93 条记录',
+      expandedLabel: '收起排序记录（专注阅读）'
+    };
+    tbody.classList.add('fold-body');
+    btn.addEventListener('click', function () {
+      setFold(rec, !tbody.classList.contains('is-collapsed'));
+      syncAll();
+    });
+    foldRecords.push(rec);
+    AUDIT.folds.push({ label: rec.label, chars: (tbody.textContent || '').replace(/\s+/g, '').length });
+    window.__sortFoldOpen = function () { tbody.classList.remove('is-collapsed'); syncAll(); };
+    window.__sortFoldClose = function () { tbody.classList.add('is-collapsed'); syncAll(); };
+  })();
+
   /* ================= 注记三层样板（审定白名单） ================= */
   /* 审定白名单（15 条）：只认「记录标识 + 原始注记指纹」完全一致者，
      匹配不到就跳过并写入 AUDIT.missed，绝不按名称前缀补足数量。 */
@@ -4321,7 +4348,7 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
   function syncAll() {
     foldRecords.forEach(function (r) {
       var collapsed = r.body.classList.contains('is-collapsed');
-      r.btn.textContent = collapsed ? r.label : '收起';
+      r.btn.textContent = collapsed ? r.label : (r.expandedLabel || '收起');
       r.btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
     });
     cellRecords.forEach(function (c) {
@@ -4408,6 +4435,7 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
   }
 
   function revealFor(el) {
+    if (el && el.id === 's-sort' && win.__sortFoldOpen) win.__sortFoldOpen();
     var node = el;
     while (node && node !== body) {
       var p = node.parentNode;
