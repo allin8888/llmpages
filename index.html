@@ -3112,6 +3112,7 @@ nav.toc a.enh-active{background:var(--c-blue,#2563eb);color:#fff;font-weight:700
 /* P1-2 #15：屏外章节渲染跳过（单文件形态传输量不变，仅优化渲染与滚动；打印时回退全渲染） */
 .doc-landscape .card, .doc-pricing .card { content-visibility: auto; contain-intrinsic-size: auto 480px; }
 .doc-landscape .card.is-jump-target, .doc-pricing .card.is-jump-target { content-visibility: visible; }
+html.llm-hash-jump{scroll-behavior:auto}
 @media print { .doc-landscape .card, .doc-pricing .card { content-visibility: visible; } }
 /* P1-3 #4：历史价格浮层 */
 .enh-hist-panel{display:none;position:fixed;z-index:9999;top:16%;left:50%;transform:translateX(-50%);width:min(620px,92vw);background:#fff;border:1px solid #dbe4f3;border-radius:12px;box-shadow:0 12px 40px rgba(16,24,40,.18);padding:14px 16px}
@@ -4431,7 +4432,8 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
     }
     var y = el.getBoundingClientRect().top +
       (win.pageYOffset || doc.documentElement.scrollTop || 0) - offset;
-    win.scrollTo(0, Math.max(0, Math.round(y)));
+    try { win.scrollTo({ top: Math.max(0, Math.round(y)), left: 0, behavior: 'instant' }); }
+    catch (e0) { win.scrollTo(0, Math.max(0, Math.round(y))); }
   }
 
   function revealFor(el) {
@@ -4455,6 +4457,7 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
   function jumpToHash() {
     var h = location.hash;
     if (!h || h.length < 2) {
+      try { doc.documentElement.classList.remove('llm-hash-jump'); } catch (e0) {}
       if (jumpCard) { jumpCard.classList.remove('is-jump-target'); jumpCard = null; }
       return;
     }
@@ -4462,6 +4465,7 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
     try { id = decodeURIComponent(h.slice(1)); } catch (e) { id = h.slice(1); }
     var el = doc.getElementById(id);
     if (!el) return;
+    try { doc.documentElement.classList.add('llm-hash-jump'); } catch (e0) {}
     var seq = ++jumpSeq;
     markJumpTarget(el);
     revealFor(el);
