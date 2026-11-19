@@ -4,33 +4,33 @@
 
 ## 本期变更摘要（刷新要点）
 
-本期为「OR 双榜刷新 + 事件倒计时重算 + 差异表真实快照对比」刷新——① OpenRouter 周榜：Top3 DeepSeek V4.1 Flash 1017 62.14T / Hy4 flash 46.63T / DeepSeek V4.1 Flash 16.01T；② OpenRouter 日榜：Top3 Hy4 flash 23.81T / DeepSeek V4.1 Flash 1017 9.81T / DeepSeek V4.1 Flash 2.50T；③ OpenRouter 挂牌价漂移（A-3b 自动发现）：跨日期检测到 12 处 OR 挂牌价变动（详见差异表「OR 改价」行）；④ 事件日历：倒计时重算（更新 0 行，基准 2026-11-19）；⑤ 汇率：6.7351（当日 CFETS 中间价判定与偏差见变更摘要）；⑥ 价格核实：第一梯队 14 家 WebSearch 全量核实由 LLM 步骤 2 执行，核实结论见差异表「官方定价」行与家族总览核实卡；⑦ 规则 A：OpenRouter 全量扫描 480 模型完成（vendor/模型数见差异表「市场覆盖」行；A-2 发现见「待补录」行）。
+本期为「OR 双榜刷新 + 事件倒计时重算 + 差异表真实快照对比」刷新——① OpenRouter 周榜：Top3 DeepSeek V4.1 Flash 1017 62.14T / Hy4 flash 46.63T / DeepSeek V4.1 Flash 16.01T；② OpenRouter 日榜：Top3 Hy4 flash 23.81T / DeepSeek V4.1 Flash 1017 9.81T / DeepSeek V4.1 Flash 2.50T；③ OpenRouter 挂牌价漂移（A-3b 自动发现）：跨日期检测到 13 处 OR 挂牌价变动（详见差异表「OR 改价」行）；④ 事件日历：倒计时重算（更新 0 行，基准 2026-11-19）；⑤ 汇率：6.7351（当日 CFETS 中间价判定与偏差见变更摘要）；⑥ 价格核实：第一梯队 14 家 WebSearch 全量核实由 LLM 步骤 2 执行，核实结论见差异表「官方定价」行与家族总览核实卡；⑦ 规则 A：OpenRouter 全量扫描 480 模型完成（vendor/模型数见差异表「市场覆盖」行；A-2 发现见「待补录」行）。
 
 ---
 
 ## 表 1：两期对比差异表
 
-| 变动类型 | 模型家族 / 厂商 | 上期 · 11-18 10:36 | 本期 · 11-19 13:48 | 变动说明 |
+| 变动类型 | 模型家族 / 厂商 | 上期 · 11-18 10:36 | 本期 · 11-19 14:23 | 变动说明 |
 | --- | --- | --- | --- | --- |
 | 排行榜 | OpenRouter 周榜Top10 调用量（总 tokens） | 周榜 Top10（2026-11-18）：DeepSeek V4.1 Flash 1017 61.95T / Hy4 flash 22.81T / DeepSeek V4.1 Flash 15.91T / Hy4 14.34T / GLM 5.3 Flash 11.55T / GPT-6 Luna 8.38T / Claude Opus 5.5 7.53T / Step 5 Preview 6.57T / MiMo-V2.6-Flash 4.11T / GLM 5.3 3.62T / 快照日期 2026-11-18 | ↻周榜 Top10（2026-11-19）：DeepSeek V4.1 Flash 1017 62.14T / Hy4 flash 46.63T / DeepSeek V4.1 Flash 16.01T / Hy4 12.97T / GLM 5.3 Flash 10.86T / GPT-6 Luna 8.62T / Claude Opus 5.5 7.63T / Step 5 Preview 6.39T / MiMo-V2.6-Flash 4.05T / MiniMax M3.1 Flash 3.67T / 快照日期 2026-11-19 | GLM 5.3 跌出 Top10；MiniMax M3.1 Flash 新入第 10；数据来自 OpenRouter 前端 rankings API（view=week） |
 | 排行榜 | OpenRouter 日榜Top10 调用量（总 tokens） | 日榜 Top10（2026-11-18）：Hy4 flash 20.93T / DeepSeek V4.1 Flash 1017 9.43T / DeepSeek V4.1 Flash 2.73T / GLM 5.3 Flash 1.84T / GPT-6 Luna 1.37T / Claude Opus 5.5 1.28T / Hy4 1.12T / Step 5 Preview 1.01T / Kimi K3.1 Pro 0.61T / MiMo-V2.6-Flash 0.60T / 快照日期 2026-11-18 | ↻日榜 Top10（2026-11-19）：Hy4 flash 23.81T / DeepSeek V4.1 Flash 1017 9.81T / DeepSeek V4.1 Flash 2.50T / GLM 5.3 Flash 1.92T / GPT-6 Luna 1.48T / Hy4 1.34T / Claude Opus 5.5 1.14T / Step 5 Preview 0.78T / Kimi K3.1 Pro 0.68T / MiMo-V2.6-Flash 0.61T / 快照日期 2026-11-19 | Claude Opus 5.5 6→7 ↓；Hy4 7→6 ↑；数据来自 OpenRouter 前端 rankings API（view=day） |
 | 市场覆盖 | 规则 A 全量扫描OpenRouter vendor 枚举 | 2026-11-18 基线（家族总数以家族总览实际行数为准） | —本期扫描 61 vendor / 480 模型；A-2 扫描无未登记的新型号 | 社区微调类（nousresearch 等）不纳入；notable 新厂商/新型号的补录由 LLM 步骤 2 策展完成，主表变动见对应行 |
 | 价格变动 | 规则 B 官网一致性主表价格快照对比 | — | ▼检测到主表价格变动：Reflection Beam 1.0（上期 [2.02, 6.74, 0.27] → 本期 [1.68, 6.74, 0.27]）；Google Gemini 4 Neon（上期 None → 本期 [20.21, 101.03, 1.01]） | 基于上期快照与本期主表逐模型对比，发现上述变动 |
-| OR 改价 | OpenRouter 挂牌价漂移A-3b 自动发现 · 挂牌价 vs 上期基线 | 上期 OR 挂牌价（基线 2026-11-18） | ▲检测到 12 处 OR 挂牌价变动：deepseek-v4.1-flash ↑入 494%、deepseek-v4.1-flash-1017 ↑入 321%、mimo-v2.5-pro ↑出 107%、deepseek-v4-flash-0731 ↑出 67% 等 | 脚本自动对比本期 or_models.json 与上期基线（data/or_price_baseline.json），过滤 :free/:batch 变体与 None↔0 噪声后得出；自 2026-08-28 起每次自动运行均自动播报 |
+| OR 改价 | OpenRouter 挂牌价漂移A-3b 自动发现 · 挂牌价 vs 上期基线 | 上期 OR 挂牌价（基线 2026-11-18） | ▲检测到 13 处 OR 挂牌价变动：deepseek-v4.1-flash-1017 ↑入 742%、deepseek-v4.1-flash ↑入 494%、mimo-v2.5-pro ↑出 107%、deepseek-v4-flash-0731 ↑出 67% 等 | 脚本自动对比本期 or_models.json 与上期基线（data/or_price_baseline.json），过滤 :free/:batch 变体与 None↔0 噪声后得出；自 2026-08-28 起每次自动运行均自动播报 |
+| OR 改价 | deepseek-v4.1-flash-1017OpenRouter 挂牌价 | 输入 ¥0.24 / 输出 ¥3.37 | ▲¥0.24 → ¥2.02 / ▲¥3.37 → ¥8.08 | 输入 +742%；输出 +140% |
 | OR 改价 | deepseek-v4.1-flashOpenRouter 挂牌价 | 输入 ¥0.34 / 输出 ¥3.82 | ▲¥0.34 → ¥2.02 / ▲¥3.82 → ¥8.08 | 输入 +494%；输出 +112% |
-| OR 改价 | deepseek-v4.1-flash-1017OpenRouter 挂牌价 | 输入 ¥0.24 / 输出 ¥3.37 | ▲¥0.24 → ¥1.01 / ▲¥3.37 → ¥4.04 | 输入 +321%；输出 +20% |
 | OR 改价 | mimo-v2.5-proOpenRouter 挂牌价 | 输入 ¥2.93 / 输出 ¥5.86 | ▲¥2.93 → ¥3.23 / ▲¥5.86 → ¥12.12 | 输入 +10%；输出 +107% |
 | OR 改价 | deepseek-v4-flash-0731OpenRouter 挂牌价 | 输入 ¥0.40 / 输出 ¥1.21 | ▼¥0.40 → ¥0.37 / ▲¥1.21 → ¥2.02 | 输入 -8%；输出 +67% |
 | OR 改价 | gemma-3-27b-itOpenRouter 挂牌价 | 输入 ¥0.54 / 输出 ¥3.03 | ▼¥0.54 → ¥0.54 / ▼¥3.03 → ¥1.08 | 输入 +0%；输出 -64% |
 | OR 改价 | qwen3.5-27bOpenRouter 挂牌价 | 输入 ¥2.02 / 输出 ¥16.16 | ▼¥2.02 → ¥1.31 / ▼¥16.16 → ¥10.51 | 输入 -35%；输出 -35% |
+| OR 改价 | gemma-4-26b-a4b-itOpenRouter 挂牌价 | 输入 ¥0.52 / 输出 ¥1.72 | ▲¥0.52 → ¥0.61 / ▲¥1.72 → ¥2.02 | 输入 +17%；输出 +17% |
 | OR 改价 | beam-1.0-501b-a23bOpenRouter 挂牌价 | 输入 ¥2.02 / 输出 ¥6.74 | ▼¥2.02 → ¥1.68 / ▼¥6.74 → ¥6.74 | 输入 -17%；输出 +0% |
-| OR 改价 | glm-5.1OpenRouter 挂牌价 | 输入 ¥9.43 / 输出 ¥29.63 | ▼¥9.43 → ¥8.01 / ▼¥29.63 → ¥25.19 | 输入 -15%；输出 -15% |
 
 ## 表 2：（一）OpenRouter 调用量周榜（本周前十大 AI 模型，按总 tokens）
 
 | 排名 | 模型 | 调用量（总 tokens） | 涨跌幅 | 输入价¥/MTok · 上行OR/下行官方 | 输出价¥/MTok · 上行OR/下行官方 | 缓存命中价¥/MTok · 上行OR/下行官方 | 上下文 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | DeepSeek V4.1 Flash 1017 | 62.14 万亿调用 9.78 亿次 | 16.84% | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.02官方 ¥0.02 | 1.0M |
+| 1 | DeepSeek V4.1 Flash 1017 | 62.14 万亿调用 9.78 亿次 | 16.84% | ¥2.02官方 ¥1.00 | ¥8.08官方 ¥4.00 | ¥0.04官方 ¥0.02 | 1.0M |
 | 2 | Hy4 flash | 46.63 万亿调用 3.87 亿次 | — | ¥0.24官方 — | ¥0.95官方 — | ¥0.01官方 — | 1.0M |
 | 3 | DeepSeek V4.1 Flash | 16.01 万亿调用 5.01 亿次 | -1.76% | ¥2.02官方 ¥1.00 | ¥8.08官方 ¥4.00 | ¥0.04官方 ¥0.02 | 1.0M |
 | 4 | Hy4 | 12.97 万亿调用 9546.1 万次 | -35.88% | ¥2.81官方 — | ¥8.42官方 — | ¥0.14官方 — | 1.0M |
@@ -46,7 +46,7 @@
 | 排名 | 模型 | 调用量（总 tokens） | 涨跌幅 | 输入价¥/MTok · 上行OR/下行官方 | 输出价¥/MTok · 上行OR/下行官方 | 缓存命中价¥/MTok · 上行OR/下行官方 | 上下文 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Hy4 flash | 23.81 万亿调用 1.99 亿次 | 13.76% | ¥0.24官方 — | ¥0.95官方 — | ¥0.01官方 — | 1.0M |
-| 2 | DeepSeek V4.1 Flash 1017 | 9.81 万亿调用 1.47 亿次 | 4.10% | ¥1.01官方 ¥1.00 | ¥4.04官方 ¥4.00 | ¥0.02官方 ¥0.02 | 1.0M |
+| 2 | DeepSeek V4.1 Flash 1017 | 9.81 万亿调用 1.47 亿次 | 4.10% | ¥2.02官方 ¥1.00 | ¥8.08官方 ¥4.00 | ¥0.04官方 ¥0.02 | 1.0M |
 | 3 | DeepSeek V4.1 Flash | 2.50 万亿调用 7340.1 万次 | -8.46% | ¥2.02官方 ¥1.00 | ¥8.08官方 ¥4.00 | ¥0.04官方 ¥0.02 | 1.0M |
 | 4 | GLM 5.3 Flash | 1.92 万亿调用 5920.0 万次 | 4.40% | ¥1.01官方 ¥0.80 | ¥3.37官方 ¥2.80 | ¥0.20官方 ¥0.23 | 1.0M |
 | 5 | GPT-6 Luna | 1.48 万亿调用 9881.5 万次 | 8.39% | ¥0.67官方 — | ¥3.37官方 — | ¥0.07官方 — | 1.1M |
