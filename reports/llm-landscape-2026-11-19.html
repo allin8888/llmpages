@@ -3213,8 +3213,40 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
   }
   function setSize(v) { state.size = v; state.page = 1; state.full = false; apply(); }
   function scrollRow(tr) {
-    try { tr.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { tr.scrollIntoView(); }
-    tr.classList.remove('row-flash'); void tr.offsetWidth; tr.classList.add('row-flash');
+    function align() {
+      var nav = document.querySelector('.toc'), navH = 0;
+      if (nav) {
+        var pos = window.getComputedStyle(nav).position;
+        if (pos === 'sticky' || pos === '-webkit-sticky') navH = nav.getBoundingClientRect().height;
+      }
+      var viewH = window.innerHeight || document.documentElement.clientHeight || 900;
+      // 先让目标行进入可视区，再按固定导航高度校正到导航下方居中。
+      try { tr.scrollIntoView({ block: 'center', inline: 'nearest' }); } catch (e) {
+        try { tr.scrollIntoView(); } catch (e2) {}
+      }
+      var rect = tr.getBoundingClientRect();
+      var visibleH = Math.max(120, viewH - navH - 16);
+      var centerY = navH + Math.max(8, (visibleH - rect.height) / 2);
+      var y = rect.top + (window.pageYOffset || document.documentElement.scrollTop || 0) - centerY;
+      try { window.scrollTo({ top: Math.max(0, Math.round(y)), left: 0, behavior: 'instant' }); }
+      catch (e3) { window.scrollTo(0, Math.max(0, Math.round(y))); }
+      var after = tr.getBoundingClientRect();
+      if (after.top < navH + 4) window.scrollBy(0, after.top - navH - 8);
+      tr.classList.remove('row-flash'); void tr.offsetWidth; tr.classList.add('row-flash');
+    }
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        void tbody.offsetHeight;
+        void tr.offsetHeight;
+        align();
+        setTimeout(function () {
+          var nav = document.querySelector('.toc'), navH = nav ? nav.getBoundingClientRect().height : 0;
+          var viewH = window.innerHeight || document.documentElement.clientHeight || 900;
+          var r = tr.getBoundingClientRect();
+          if (r.top < navH + 4 || r.bottom > viewH - 4) align();
+        }, 240);
+      });
+    });
   }
   function goRow(tr) {
     if (!tr || tr.style.display === 'none' || !tbody.contains(tr)) return false;
@@ -3224,7 +3256,8 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
     state.page = state.size ? Math.floor(i / state.size) + 1 : 1;
     apply();
     if (tbody.classList.contains('is-collapsed') && window.__sortFoldOpen) window.__sortFoldOpen();
-    setTimeout(function () { scrollRow(tr); }, 80);
+    void tbody.offsetHeight;
+    setTimeout(function () { scrollRow(tr); }, 40);
     return true;
   }
   function goName(name) {
@@ -3278,6 +3311,22 @@ if(document.readyState==='complete')setTimeout(fboot,0);else window.addEventList
     return { size: state.size, page: state.page, full: state.full, total: dataRows().length,
       visible: dataRows().filter(function (tr) { return getComputedStyle(tr).display !== 'none'; }).length };
   };
+
+  /* 打印：临时切到全部，afterprint 精确恢复原页码与每页条数 */
+  var printState = null;
+  window.addEventListener('beforeprint', function () {
+    if (printState) return;
+    printState = { size: state.size, page: state.page, full: state.full, remember: state.remember };
+    state.full = true; state.page = 1;
+    apply();
+  });
+  window.addEventListener('afterprint', function () {
+    if (!printState) return;
+    state.size = printState.size; state.page = printState.page;
+    state.full = printState.full; state.remember = printState.remember;
+    printState = null;
+    apply();
+  });
 
   bar.addEventListener('click', function (e) {
     var b = e.target.closest ? e.target.closest('button') : null; if (!b) return;
